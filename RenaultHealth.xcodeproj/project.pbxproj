@@ -1,0 +1,753 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */; };
+		4DF91DA32C4835AF00C28E55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DA22C4835AF00C28E55 /* ContentView.swift */; };
+		4DF91DA52C4835B000C28E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF91DA42C4835B000C28E55 /* Assets.xcassets */; };
+		4DF91DA82C4835B000C28E55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF91DA72C4835B000C28E55 /* Preview Assets.xcassets */; };
+		4DF91DB22C4835B000C28E55 /* RenaultHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DB12C4835B000C28E55 /* RenaultHealthTests.swift */; };
+		4DF91DBC2C4835B000C28E55 /* RenaultHealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DBB2C4835B000C28E55 /* RenaultHealthUITests.swift */; };
+		4DF91DBE2C4835B000C28E55 /* RenaultHealthUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DBD2C4835B000C28E55 /* RenaultHealthUITestsLaunchTests.swift */; };
+		4DF91DCE2C48388500C28E55 /* HKSleepDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */; };
+		4DF91DD22C4838C900C28E55 /* HKSleepSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DD12C4838C900C28E55 /* HKSleepSession.swift */; };
+		4DF91DD42C4838EA00C28E55 /* HKSleepSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DD32C4838EA00C28E55 /* HKSleepSegment.swift */; };
+		4DF91DD62C48390E00C28E55 /* HKSleepProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DD52C48390E00C28E55 /* HKSleepProperties.swift */; };
+		4DF91DD92C48397B00C28E55 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DD82C48397B00C28E55 /* JSONDecodable.swift */; };
+		4DF91DDE2C4839DD00C28E55 /* DateIntervalCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DDD2C4839DD00C28E55 /* DateIntervalCalculations.swift */; };
+		4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE12C483A8400C28E55 /* Date+Extensions.swift */; };
+		4DF91DE52C483AE000C28E55 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */; };
+		4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */; };
+		4DF91DEB2C483D1000C28E55 /* HKQueryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEA2C483D1000C28E55 /* HKQueryManager.swift */; };
+		4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEC2C499AA400C28E55 /* HKAuthorizationManager.swift */; };
+		4DF91DF02C499CA400C28E55 /* SleepDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEF2C499CA400C28E55 /* SleepDataView.swift */; };
+		4DF91DF22C499CB300C28E55 /* SleepDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DF12C499CB300C28E55 /* SleepDataViewModel.swift */; };
+		4DF91DFB2C49AA3300C28E55 /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4DF91DAE2C4835B000C28E55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DF91D952C4835AF00C28E55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DF91D9C2C4835AF00C28E55;
+			remoteInfo = RenaultHealth;
+		};
+		4DF91DB82C4835B000C28E55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DF91D952C4835AF00C28E55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DF91D9C2C4835AF00C28E55;
+			remoteInfo = RenaultHealth;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4DF91D9D2C4835AF00C28E55 /* RenaultHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenaultHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenaultHealthApp.swift; sourceTree = "<group>"; };
+		4DF91DA22C4835AF00C28E55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4DF91DA42C4835B000C28E55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4DF91DA72C4835B000C28E55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4DF91DAD2C4835B000C28E55 /* RenaultHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RenaultHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF91DB12C4835B000C28E55 /* RenaultHealthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenaultHealthTests.swift; sourceTree = "<group>"; };
+		4DF91DB72C4835B000C28E55 /* RenaultHealthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RenaultHealthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF91DBB2C4835B000C28E55 /* RenaultHealthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenaultHealthUITests.swift; sourceTree = "<group>"; };
+		4DF91DBD2C4835B000C28E55 /* RenaultHealthUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenaultHealthUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4DF91DCA2C48366E00C28E55 /* RenaultHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RenaultHealth.entitlements; sourceTree = "<group>"; };
+		4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKSleepDataSource.swift; sourceTree = "<group>"; };
+		4DF91DD12C4838C900C28E55 /* HKSleepSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKSleepSession.swift; sourceTree = "<group>"; };
+		4DF91DD32C4838EA00C28E55 /* HKSleepSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKSleepSegment.swift; sourceTree = "<group>"; };
+		4DF91DD52C48390E00C28E55 /* HKSleepProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKSleepProperties.swift; sourceTree = "<group>"; };
+		4DF91DD82C48397B00C28E55 /* JSONDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
+		4DF91DDD2C4839DD00C28E55 /* DateIntervalCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIntervalCalculations.swift; sourceTree = "<group>"; };
+		4DF91DE12C483A8400C28E55 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
+		4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
+		4DF91DEA2C483D1000C28E55 /* HKQueryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKQueryManager.swift; sourceTree = "<group>"; };
+		4DF91DEC2C499AA400C28E55 /* HKAuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKAuthorizationManager.swift; sourceTree = "<group>"; };
+		4DF91DEF2C499CA400C28E55 /* SleepDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDataView.swift; sourceTree = "<group>"; };
+		4DF91DF12C499CB300C28E55 /* SleepDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDataViewModel.swift; sourceTree = "<group>"; };
+		4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4DF91D9A2C4835AF00C28E55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF91DAA2C4835B000C28E55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF91DB42C4835B000C28E55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4DF91D942C4835AF00C28E55 = {
+			isa = PBXGroup;
+			children = (
+				4DF91D9F2C4835AF00C28E55 /* RenaultHealth */,
+				4DF91DB02C4835B000C28E55 /* RenaultHealthTests */,
+				4DF91DBA2C4835B000C28E55 /* RenaultHealthUITests */,
+				4DF91D9E2C4835AF00C28E55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4DF91D9E2C4835AF00C28E55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91D9D2C4835AF00C28E55 /* RenaultHealth.app */,
+				4DF91DAD2C4835B000C28E55 /* RenaultHealthTests.xctest */,
+				4DF91DB72C4835B000C28E55 /* RenaultHealthUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DF91D9F2C4835AF00C28E55 /* RenaultHealth */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DCA2C48366E00C28E55 /* RenaultHealth.entitlements */,
+				4DF91DD72C48396C00C28E55 /* Utilities */,
+				4DF91DEE2C499C8C00C28E55 /* Views */,
+				4DF91DCB2C48381D00C28E55 /* Model */,
+				4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */,
+				4DF91DA22C4835AF00C28E55 /* ContentView.swift */,
+				4DF91DA42C4835B000C28E55 /* Assets.xcassets */,
+				4DF91DA62C4835B000C28E55 /* Preview Content */,
+			);
+			path = RenaultHealth;
+			sourceTree = "<group>";
+		};
+		4DF91DA62C4835B000C28E55 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DA72C4835B000C28E55 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4DF91DB02C4835B000C28E55 /* RenaultHealthTests */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DB12C4835B000C28E55 /* RenaultHealthTests.swift */,
+			);
+			path = RenaultHealthTests;
+			sourceTree = "<group>";
+		};
+		4DF91DBA2C4835B000C28E55 /* RenaultHealthUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DBB2C4835B000C28E55 /* RenaultHealthUITests.swift */,
+				4DF91DBD2C4835B000C28E55 /* RenaultHealthUITestsLaunchTests.swift */,
+			);
+			path = RenaultHealthUITests;
+			sourceTree = "<group>";
+		};
+		4DF91DCB2C48381D00C28E55 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DE92C483D0100C28E55 /* HealthKit */,
+				4DF91DCF2C4838A400C28E55 /* Entities */,
+				4DF91DCC2C48384800C28E55 /* DataSources */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4DF91DCC2C48384800C28E55 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		4DF91DCF2C4838A400C28E55 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DD02C4838B100C28E55 /* Sleep */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		4DF91DD02C4838B100C28E55 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DD12C4838C900C28E55 /* HKSleepSession.swift */,
+				4DF91DD32C4838EA00C28E55 /* HKSleepSegment.swift */,
+				4DF91DD52C48390E00C28E55 /* HKSleepProperties.swift */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		4DF91DD72C48396C00C28E55 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DDF2C483A7100C28E55 /* Extensions */,
+				4DF91DD82C48397B00C28E55 /* JSONDecodable.swift */,
+				4DF91DDD2C4839DD00C28E55 /* DateIntervalCalculations.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4DF91DDF2C483A7100C28E55 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DE62C483AFD00C28E55 /* String */,
+				4DF91DE32C483AD300C28E55 /* Numeric */,
+				4DF91DE02C483A7800C28E55 /* Date */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4DF91DE02C483A7800C28E55 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DE12C483A8400C28E55 /* Date+Extensions.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		4DF91DE32C483AD300C28E55 /* Numeric */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */,
+			);
+			path = Numeric;
+			sourceTree = "<group>";
+		};
+		4DF91DE62C483AFD00C28E55 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		4DF91DE92C483D0100C28E55 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DEA2C483D1000C28E55 /* HKQueryManager.swift */,
+				4DF91DEC2C499AA400C28E55 /* HKAuthorizationManager.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		4DF91DEE2C499C8C00C28E55 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DF72C49AA1700C28E55 /* Cells */,
+				4DF91DEF2C499CA400C28E55 /* SleepDataView.swift */,
+				4DF91DF12C499CB300C28E55 /* SleepDataViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4DF91DF72C49AA1700C28E55 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4DF91D9C2C4835AF00C28E55 /* RenaultHealth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DF91DC12C4835B000C28E55 /* Build configuration list for PBXNativeTarget "RenaultHealth" */;
+			buildPhases = (
+				4DF91D992C4835AF00C28E55 /* Sources */,
+				4DF91D9A2C4835AF00C28E55 /* Frameworks */,
+				4DF91D9B2C4835AF00C28E55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RenaultHealth;
+			productName = RenaultHealth;
+			productReference = 4DF91D9D2C4835AF00C28E55 /* RenaultHealth.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4DF91DAC2C4835B000C28E55 /* RenaultHealthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DF91DC42C4835B000C28E55 /* Build configuration list for PBXNativeTarget "RenaultHealthTests" */;
+			buildPhases = (
+				4DF91DA92C4835B000C28E55 /* Sources */,
+				4DF91DAA2C4835B000C28E55 /* Frameworks */,
+				4DF91DAB2C4835B000C28E55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DF91DAF2C4835B000C28E55 /* PBXTargetDependency */,
+			);
+			name = RenaultHealthTests;
+			productName = RenaultHealthTests;
+			productReference = 4DF91DAD2C4835B000C28E55 /* RenaultHealthTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4DF91DB62C4835B000C28E55 /* RenaultHealthUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DF91DC72C4835B000C28E55 /* Build configuration list for PBXNativeTarget "RenaultHealthUITests" */;
+			buildPhases = (
+				4DF91DB32C4835B000C28E55 /* Sources */,
+				4DF91DB42C4835B000C28E55 /* Frameworks */,
+				4DF91DB52C4835B000C28E55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DF91DB92C4835B000C28E55 /* PBXTargetDependency */,
+			);
+			name = RenaultHealthUITests;
+			productName = RenaultHealthUITests;
+			productReference = 4DF91DB72C4835B000C28E55 /* RenaultHealthUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4DF91D952C4835AF00C28E55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					4DF91D9C2C4835AF00C28E55 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					4DF91DAC2C4835B000C28E55 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4DF91D9C2C4835AF00C28E55;
+					};
+					4DF91DB62C4835B000C28E55 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4DF91D9C2C4835AF00C28E55;
+					};
+				};
+			};
+			buildConfigurationList = 4DF91D982C4835AF00C28E55 /* Build configuration list for PBXProject "RenaultHealth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4DF91D942C4835AF00C28E55;
+			productRefGroup = 4DF91D9E2C4835AF00C28E55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4DF91D9C2C4835AF00C28E55 /* RenaultHealth */,
+				4DF91DAC2C4835B000C28E55 /* RenaultHealthTests */,
+				4DF91DB62C4835B000C28E55 /* RenaultHealthUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4DF91D9B2C4835AF00C28E55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DF91DA82C4835B000C28E55 /* Preview Assets.xcassets in Resources */,
+				4DF91DA52C4835B000C28E55 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF91DAB2C4835B000C28E55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF91DB52C4835B000C28E55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4DF91D992C4835AF00C28E55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DF91DA32C4835AF00C28E55 /* ContentView.swift in Sources */,
+				4DF91DD62C48390E00C28E55 /* HKSleepProperties.swift in Sources */,
+				4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */,
+				4DF91DD92C48397B00C28E55 /* JSONDecodable.swift in Sources */,
+				4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */,
+				4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */,
+				4DF91DCE2C48388500C28E55 /* HKSleepDataSource.swift in Sources */,
+				4DF91DD42C4838EA00C28E55 /* HKSleepSegment.swift in Sources */,
+				4DF91DF02C499CA400C28E55 /* SleepDataView.swift in Sources */,
+				4DF91DEB2C483D1000C28E55 /* HKQueryManager.swift in Sources */,
+				4DF91DF22C499CB300C28E55 /* SleepDataViewModel.swift in Sources */,
+				4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */,
+				4DF91DE52C483AE000C28E55 /* TimeInterval+Extensions.swift in Sources */,
+				4DF91DDE2C4839DD00C28E55 /* DateIntervalCalculations.swift in Sources */,
+				4DF91DFB2C49AA3300C28E55 /* TitleValueCell.swift in Sources */,
+				4DF91DD22C4838C900C28E55 /* HKSleepSession.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF91DA92C4835B000C28E55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DF91DB22C4835B000C28E55 /* RenaultHealthTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF91DB32C4835B000C28E55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DF91DBE2C4835B000C28E55 /* RenaultHealthUITestsLaunchTests.swift in Sources */,
+				4DF91DBC2C4835B000C28E55 /* RenaultHealthUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4DF91DAF2C4835B000C28E55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DF91D9C2C4835AF00C28E55 /* RenaultHealth */;
+			targetProxy = 4DF91DAE2C4835B000C28E55 /* PBXContainerItemProxy */;
+		};
+		4DF91DB92C4835B000C28E55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DF91D9C2C4835AF00C28E55 /* RenaultHealth */;
+			targetProxy = 4DF91DB82C4835B000C28E55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4DF91DBF2C4835B000C28E55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4DF91DC02C4835B000C28E55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4DF91DC22C4835B000C28E55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RenaultHealth/RenaultHealth.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RenaultHealth/Preview Content\"";
+				DEVELOPMENT_TEAM = 7FD5U7X5TR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "HealthShare usage placecholder";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "HealthUpdate usage placecholder";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bts.renaulthealthpoc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4DF91DC32C4835B000C28E55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RenaultHealth/RenaultHealth.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RenaultHealth/Preview Content\"";
+				DEVELOPMENT_TEAM = 7FD5U7X5TR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "HealthShare usage placecholder";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "HealthUpdate usage placecholder";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bts.renaulthealthpoc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4DF91DC52C4835B000C28E55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FD5U7X5TR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bts.RenaultHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RenaultHealth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RenaultHealth";
+			};
+			name = Debug;
+		};
+		4DF91DC62C4835B000C28E55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FD5U7X5TR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bts.RenaultHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RenaultHealth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RenaultHealth";
+			};
+			name = Release;
+		};
+		4DF91DC82C4835B000C28E55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FD5U7X5TR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bts.RenaultHealthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RenaultHealth;
+			};
+			name = Debug;
+		};
+		4DF91DC92C4835B000C28E55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FD5U7X5TR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bts.RenaultHealthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RenaultHealth;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4DF91D982C4835AF00C28E55 /* Build configuration list for PBXProject "RenaultHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DF91DBF2C4835B000C28E55 /* Debug */,
+				4DF91DC02C4835B000C28E55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DF91DC12C4835B000C28E55 /* Build configuration list for PBXNativeTarget "RenaultHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DF91DC22C4835B000C28E55 /* Debug */,
+				4DF91DC32C4835B000C28E55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DF91DC42C4835B000C28E55 /* Build configuration list for PBXNativeTarget "RenaultHealthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DF91DC52C4835B000C28E55 /* Debug */,
+				4DF91DC62C4835B000C28E55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DF91DC72C4835B000C28E55 /* Build configuration list for PBXNativeTarget "RenaultHealthUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DF91DC82C4835B000C28E55 /* Debug */,
+				4DF91DC92C4835B000C28E55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4DF91D952C4835AF00C28E55 /* Project object */;
+}
