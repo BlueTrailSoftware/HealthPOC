@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SleepSDK
 
 struct SleepDataView: View {
     
@@ -49,7 +50,7 @@ struct SleepDataView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .refreshable {
-                        viewModel.fetchSleepSegments()
+                        viewModel.fetchSleepData()
                     }
                 }
             } else {
@@ -66,8 +67,7 @@ struct SleepDataView: View {
         //.padding(.horizontal,8)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .onAppear {
-            viewModel.requestHKPermission()
-            viewModel.fetchSleepSegments()
+            viewModel.setUp()
         }
     }
     
@@ -86,7 +86,7 @@ struct SleepDataView: View {
                 Spacer()
                 
                 Button {
-                    viewModel.fetchSleepSegments()
+                    viewModel.fetchSleepData()
                 } label: {
                     Text(
                         "Refresh"
