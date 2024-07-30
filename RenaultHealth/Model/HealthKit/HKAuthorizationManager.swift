@@ -20,12 +20,21 @@ class HKAuthorizationManager: NSObject {
     /// HK sample types required for sleep
     private func sleepSampleTypes() -> [HKSampleType] {
         // AvailableHKIdentifiers will provide the identifiers for sleep
-        [.sleepAnalysis].compactMap{
-            
+        AvailableHKIdentifiers.sleepIdentifiers.compactMap{
             // Parse the identifiers into HK CategoryType objects
             HKObjectType.categoryType(forIdentifier: $0)
         }
     }
+    
+    /// HK sample types required for nutrition
+    private func heartSampleTypes() -> [HKSampleType] {
+        // AvailableHKIdentifiers will provide the identifiers for nutrition
+        AvailableHKIdentifiers.heartIdentifiers.compactMap{
+            // Parse the identifiers into HKQuantityType objects
+            HKQuantityType.quantityType(forIdentifier: $0)
+        }
+    }
+    
     // MARK: - HK Authorization
     
     /// Displays the native iOS authorization view for the user to choose the access to HK Data
@@ -34,6 +43,7 @@ class HKAuthorizationManager: NSObject {
         // Create an empty array of HKSampleTypes to be requested
         var requestedTypes: [HKSampleType] = []
         requestedTypes.append(contentsOf: sleepSampleTypes())
+        requestedTypes.append(contentsOf: heartSampleTypes())
         
         // Display the authorization view with the selected HKSampleTypes
         if !requestedTypes.isEmpty {

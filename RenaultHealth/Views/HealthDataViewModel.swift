@@ -24,6 +24,7 @@ class HealthDataViewModel: ObservableObject {
     @Published var isRefreshing: Bool = false
     
     private var dataSource = HKSleepDataSource()
+    private var hDataSource = HKHeartDataSource()
     
     func requestHKPermission() {
         HKAuthorizationManager().requestPermissions()
@@ -68,5 +69,14 @@ class HealthDataViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func fetchHRV() {
+        hDataSource.fetchIdentifierData(
+            identifier: .heartRateVariabilitySDNN,
+            from: Date().startOfDay,
+            to: Date().endOfDay,
+            completion: nil
+        )
     }
 }

@@ -94,6 +94,7 @@ struct HealthDataView: View {
         .onAppear {
             viewModel.requestHKPermission()
             viewModel.fetchSleepSegments()
+            viewModel.fetchHRV()
         }
         .background(
             LinearGradient(gradient: Gradient(colors: [.purple.opacity(0.8), .white]), startPoint: .top, endPoint: .bottom)
