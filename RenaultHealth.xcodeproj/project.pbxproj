@@ -22,7 +22,6 @@
 		4DF91DDE2C4839DD00C28E55 /* DateIntervalCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DDD2C4839DD00C28E55 /* DateIntervalCalculations.swift */; };
 		4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE12C483A8400C28E55 /* Date+Extensions.swift */; };
 		4DF91DE52C483AE000C28E55 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */; };
-		4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */; };
 		4DF91DEB2C483D1000C28E55 /* HKQueryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEA2C483D1000C28E55 /* HKQueryManager.swift */; };
 		4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEC2C499AA400C28E55 /* HKAuthorizationManager.swift */; };
 		4DF91DF02C499CA400C28E55 /* SleepDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEF2C499CA400C28E55 /* SleepDataView.swift */; };
@@ -67,7 +66,6 @@
 		4DF91DDD2C4839DD00C28E55 /* DateIntervalCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIntervalCalculations.swift; sourceTree = "<group>"; };
 		4DF91DE12C483A8400C28E55 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
-		4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		4DF91DEA2C483D1000C28E55 /* HKQueryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKQueryManager.swift; sourceTree = "<group>"; };
 		4DF91DEC2C499AA400C28E55 /* HKAuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKAuthorizationManager.swift; sourceTree = "<group>"; };
 		4DF91DEF2C499CA400C28E55 /* SleepDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDataView.swift; sourceTree = "<group>"; };
@@ -209,7 +207,6 @@
 		4DF91DDF2C483A7100C28E55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4DF91DE62C483AFD00C28E55 /* String */,
 				4DF91DE32C483AD300C28E55 /* Numeric */,
 				4DF91DE02C483A7800C28E55 /* Date */,
 			);
@@ -230,14 +227,6 @@
 				4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */,
 			);
 			path = Numeric;
-			sourceTree = "<group>";
-		};
-		4DF91DE62C483AFD00C28E55 /* String */ = {
-			isa = PBXGroup;
-			children = (
-				4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */,
-			);
-			path = String;
 			sourceTree = "<group>";
 		};
 		4DF91DE92C483D0100C28E55 /* HealthKit */ = {
@@ -402,7 +391,6 @@
 				4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */,
 				4DF91DD92C48397B00C28E55 /* JSONDecodable.swift in Sources */,
 				4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */,
-				4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */,
 				4DF91DCE2C48388500C28E55 /* HKSleepDataSource.swift in Sources */,
 				4DF91DD42C4838EA00C28E55 /* HKSleepSegment.swift in Sources */,
 				4DF91DF02C499CA400C28E55 /* SleepDataView.swift in Sources */,

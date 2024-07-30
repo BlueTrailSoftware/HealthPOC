@@ -64,7 +64,7 @@ class HKSleepDataSource {
         ) { (query, result, error) in
             
             // Error
-            if let error = error {
+            if let _ = error {
                 // handle error
                 completion?(nil)
                 return
