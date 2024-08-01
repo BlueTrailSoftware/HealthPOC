@@ -47,9 +47,10 @@ struct HealthDataView: View {
                             
                             mainHeader()
                             
+                            sectionHeader(title: "Sleep")
+                            
                             ContentCard(
                                 title: "Longest sleep session",
-                                color: viewModel.sleepColor,
                                 content:
                                     VStack{
                                         ForEach(viewModel.sleepValues, id: \.self) { value in
@@ -60,11 +61,22 @@ struct HealthDataView: View {
                             
                             ContentCard(
                                 title: "Raw sleep stages",
-                                color: viewModel.sleepColor,
                                 content:
                                     VStack{
                                         ForEach(viewModel.sleepSegments, id: \.self) { value in
                                             sleepSegmentCell(value)
+                                        }
+                                    }
+                            )
+                            
+                            sectionHeader(title: "Heart")
+                            
+                            ContentCard(
+                                title: "HRV",
+                                content:
+                                    VStack{
+                                        ForEach(viewModel.hrvTableValues, id: \.self) { value in
+                                            hrvCell(value)
                                         }
                                     }
                             )
@@ -106,7 +118,7 @@ struct HealthDataView: View {
         ZStack{
             
             Text(
-                "Sleep Data"
+                "Health Data"
             )
             .foregroundColor(.white)
             .font(.title2)
@@ -138,7 +150,8 @@ struct HealthDataView: View {
             Text (
                 title
             )
-            .font(.title2)
+            .font(.system(size: 32))
+            .fontWeight(.bold)
             .foregroundColor(.black)
             
             Spacer()
@@ -227,7 +240,30 @@ struct HealthDataView: View {
         }
         .frame(height: 44)
         .padding(.leading, 16)
-
+    }
+    
+    private func hrvCell(
+        _ entry: HRVEntryTableValue
+    ) -> some View {
+        
+        HStack{
+            
+            Text(entry.date)
+                .foregroundColor(
+                    .black.opacity(0.6)
+                )
+                .font(Font.system(size: 16))
+            
+            Spacer()
+            
+            Text(entry.value)
+                .padding(8)
+                .font(Font.system(size: 14))
+                .fontWeight(.bold)
+                .cornerRadius(8)
+        }
+        .frame(height: 44)
+        .padding(.leading, 16)
     }
 }
 

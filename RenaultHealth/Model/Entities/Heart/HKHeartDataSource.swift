@@ -8,7 +8,7 @@
 import Foundation
 import HealthKit
 
-struct HRVEntry {
+struct HRVEntry: Hashable {
     var value: Double
     var startDate: Date
     var endDate: Date

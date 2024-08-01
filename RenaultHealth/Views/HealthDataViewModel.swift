@@ -15,16 +15,29 @@ struct SleepSegmentTableValue: Hashable {
     var duration: String = ""
 }
 
+struct HRVEntryTableValue: Hashable {
+    var date: String = ""
+    var value: String = ""
+    var isHighlighted: Bool = false
+}
+
 class HealthDataViewModel: ObservableObject {
     
     let sleepColor: Color = .mint
     
-    @Published var sleepValues: [SleepSessionTableValue] = []
-    @Published var sleepSegments: [SleepSegmentTableValue] = []
     @Published var isRefreshing: Bool = false
     
-    private var dataSource = HKSleepDataSource()
-    private var hDataSource = HKHeartDataSource()
+    // Sleep
+    @Published var sleepValues: [SleepSessionTableValue] = []
+    @Published var sleepSegments: [SleepSegmentTableValue] = []
+    
+    // Heart
+    @Published var hrvTableValues: [HRVEntryTableValue] = []
+    @Published var hrvAverage: Double = 0
+    
+    // DataSources
+    private var sleepDataSource = HKSleepDataSource()
+    private var heartDataSource = HKHeartDataSource()
     
     func requestHKPermission() {
         HKAuthorizationManager().requestPermissions()
@@ -35,18 +48,19 @@ class HealthDataViewModel: ObservableObject {
         fetchHRV()
     }
     
+    // MARK: - Sleep
+    
     private func fetchSleepSegments() {
         
         DispatchQueue.main.async {
             self.isRefreshing = true
         }
         
-        dataSource.fetchLongestSleepSession(for: Date()) { session in
+        sleepDataSource.fetchLongestSleepSession(for: Date()) { session in
             
             print("fetchLongestSleepSession : ", session?.startingDate ?? 0 ," ::: ",session?.endDate ?? 0)
             session?.tableValues.forEach({ value in
                 print("tableValue : ", value.titleString ?? "no" ," ::: ", value.valueString ?? "no", " ::: ", value.highlightValue, " ::: ", value.highlightAll)
-                
                 print("tableValue: segments : ", session?.segments ?? [])
             })
             
@@ -76,11 +90,31 @@ class HealthDataViewModel: ObservableObject {
         }
     }
     
+    // MARK: - Heart
+    
     private func fetchHRV() {
-        hDataSource.fetchHRV(
+        heartDataSource.fetchHRV(
             from: Date().startOfDay,
-            to: Date().endOfDay,
-            completion: nil
-        )
+            to: Date().endOfDay
+        ) { entries in
+        
+            DispatchQueue.main.async {
+                
+                guard let entries = entries else {
+                    self.hrvTableValues = []
+                    self.hrvAverage = 0
+                    return
+                }
+                
+                self.hrvTableValues = entries.map{ entry in
+                    HRVEntryTableValue(
+                        date: entry.startDate.string(withFormat: .readable),
+                        value: "\(entry.value)",
+                        isHighlighted: false
+                    )
+                }
+                self.hrvAverage = entries.map { $0.value }.reduce(0, +)
+            }
+        }
     }
 }
