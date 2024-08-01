@@ -47,9 +47,10 @@ struct HealthDataView: View {
                             
                             mainHeader()
                             
+                            sectionHeader(title: "Sleep")
+                            
                             ContentCard(
                                 title: "Longest sleep session",
-                                color: viewModel.sleepColor,
                                 content:
                                     VStack{
                                         ForEach(viewModel.sleepValues, id: \.self) { value in
@@ -60,12 +61,31 @@ struct HealthDataView: View {
                             
                             ContentCard(
                                 title: "Raw sleep stages",
-                                color: viewModel.sleepColor,
                                 content:
                                     VStack{
                                         ForEach(viewModel.sleepSegments, id: \.self) { value in
                                             sleepSegmentCell(value)
                                         }
+                                    }
+                            )
+                            
+                            sectionHeader(title: "Heart")
+                            
+                            ContentCard(
+                                title: "HRV",
+                                content:
+                                    VStack{
+                                        ForEach(viewModel.hrvTableValues, id: \.self) { value in
+                                            hrvCell(value)
+                                        }
+                                        titleValueCell(
+                                            title: "Average",
+                                            titleColor: viewModel.heartColor,
+                                            value: String(format: "%.2f", viewModel.hrvAverage),
+                                            valueColor: .white,
+                                            highlighted: true,
+                                            highlightedColor: viewModel.heartColor
+                                        )
                                     }
                             )
                         }
@@ -75,7 +95,7 @@ struct HealthDataView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(.clear)
                     .refreshable {
-                        viewModel.fetchSleepSegments()
+                        viewModel.refreshData()
                     }
                 }
                 .background(.clear)
@@ -93,7 +113,7 @@ struct HealthDataView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .onAppear {
             viewModel.requestHKPermission()
-            viewModel.fetchSleepSegments()
+            viewModel.refreshData()
         }
         .background(
             LinearGradient(gradient: Gradient(colors: [.purple.opacity(0.8), .white]), startPoint: .top, endPoint: .bottom)
@@ -106,16 +126,17 @@ struct HealthDataView: View {
         ZStack{
             
             Text(
-                "Sleep Data"
+                "Health Data"
             )
             .foregroundColor(.white)
             .font(.title2)
+            .fontWeight(.bold)
             
             HStack{
                 Spacer()
                 
                 Button {
-                    viewModel.fetchSleepSegments()
+                    viewModel.refreshData()
                 } label: {
                     Text(
                         "Refresh"
@@ -129,7 +150,6 @@ struct HealthDataView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 52)
-        
     }
     
     @ViewBuilder
@@ -138,8 +158,9 @@ struct HealthDataView: View {
             Text (
                 title
             )
-            .font(.title2)
-            .foregroundColor(.black)
+            .font(.system(size: 32))
+            .fontWeight(.bold)
+            .foregroundColor(.black.opacity(0.4))
             
             Spacer()
         }
@@ -201,33 +222,56 @@ struct HealthDataView: View {
         _ value: SleepSessionTableValue
     ) -> some View {
         
+        return titleValueCell(
+            title: value.titleString ?? "",
+            titleColor: value.highlightAll ? viewModel.sleepColor : value.highlightValue ? viewModel.sleepColor : .gray,
+            value: value.valueString ?? "",
+            valueColor: value.highlightAll ? .white : .black,
+            highlighted: value.highlightAll,
+            highlightedColor: viewModel.sleepColor
+        )
+    }
+    
+    private func hrvCell(
+        _ entry: HRVEntryTableValue
+    ) -> some View {
+        
+        return titleValueCell(
+            title: entry.date,
+            value: entry.value,
+            valueColor: viewModel.heartColor
+        )
+    }
+    
+    @ViewBuilder
+    private func titleValueCell(
+        title: String,
+        titleColor: Color? = Color.black.opacity(0.6),
+        value: String,
+        valueColor: Color? = Color.black.opacity(0.6),
+        highlighted: Bool? = false,
+        highlightedColor: Color? = Color.white
+    ) -> some View {
+        
         HStack{
             
-            Text(value.titleString ?? "")
-                .foregroundColor(
-                    value.highlightAll ? viewModel.sleepColor : value.highlightValue ? viewModel.sleepColor : .gray
-                )
+            Text(title)
+                .foregroundColor(titleColor)
+                .fontWeight(highlighted ?? false ? .bold : .regular)
                 .font(Font.system(size: 16))
             
             Spacer()
             
-            Text(value.valueString ?? "")
+            Text(value)
                 .padding(8)
                 .font(Font.system(size: 14))
-                .opacity(value.highlightAll ? 1 : 0.6)
                 .fontWeight(.bold)
-                .foregroundColor(
-                    value.highlightAll ? .white : .black
-                )
-                .background(
-                    value.highlightAll ? viewModel.sleepColor : .white
-                )
+                .foregroundColor(valueColor)
+                .background(highlighted ?? false ? highlightedColor : .white)
                 .cornerRadius(8)
-            
         }
         .frame(height: 44)
         .padding(.leading, 16)
-
     }
 }
 

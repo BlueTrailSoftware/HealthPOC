@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D9F82642C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */; };
+		4D9F82672C5C1B5B008E4C1D /* HKHeartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */; };
 		4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */; };
 		4DF91DA32C4835AF00C28E55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DA22C4835AF00C28E55 /* ContentView.swift */; };
 		4DF91DA52C4835B000C28E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF91DA42C4835B000C28E55 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableHKIdentifiers.swift; sourceTree = "<group>"; };
+		4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKHeartDataSource.swift; sourceTree = "<group>"; };
 		4DF91D9D2C4835AF00C28E55 /* RenaultHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenaultHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenaultHealthApp.swift; sourceTree = "<group>"; };
 		4DF91DA22C4835AF00C28E55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D9F82662C5C1B5B008E4C1D /* Heart */ = {
+			isa = PBXGroup;
+			children = (
+				4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */,
+			);
+			name = Heart;
+			path = Entities/Heart;
+			sourceTree = "<group>";
+		};
 		4DF91D942C4835AF00C28E55 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +176,7 @@
 		4DF91DCB2C48381D00C28E55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4D9F82662C5C1B5B008E4C1D /* Heart */,
 				4DF91DE92C483D0100C28E55 /* HealthKit */,
 				4DF91DCF2C4838A400C28E55 /* Entities */,
 				4DF91DCC2C48384800C28E55 /* DataSources */,
@@ -181,6 +195,7 @@
 		4DF91DCF2C4838A400C28E55 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */,
 				4DF91DD02C4838B100C28E55 /* Sleep */,
 			);
 			path = Entities;
@@ -404,10 +419,12 @@
 				4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */,
 				4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */,
 				4DF91DCE2C48388500C28E55 /* HKSleepDataSource.swift in Sources */,
+				4D9F82642C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift in Sources */,
 				4DF91DD42C4838EA00C28E55 /* HKSleepSegment.swift in Sources */,
 				4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */,
 				4DF91DEB2C483D1000C28E55 /* HKQueryManager.swift in Sources */,
 				4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */,
+				4D9F82672C5C1B5B008E4C1D /* HKHeartDataSource.swift in Sources */,
 				4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */,
 				4DF91DE52C483AE000C28E55 /* TimeInterval+Extensions.swift in Sources */,
 				4DF91DDE2C4839DD00C28E55 /* DateIntervalCalculations.swift in Sources */,
