@@ -78,6 +78,14 @@ struct HealthDataView: View {
                                         ForEach(viewModel.hrvTableValues, id: \.self) { value in
                                             hrvCell(value)
                                         }
+                                        titleValueCell(
+                                            title: "Average",
+                                            titleColor: viewModel.heartColor,
+                                            value: String(format: "%.2f", viewModel.hrvAverage),
+                                            valueColor: .white,
+                                            highlighted: true,
+                                            highlightedColor: viewModel.heartColor
+                                        )
                                     }
                             )
                         }
@@ -122,6 +130,7 @@ struct HealthDataView: View {
             )
             .foregroundColor(.white)
             .font(.title2)
+            .fontWeight(.bold)
             
             HStack{
                 Spacer()
@@ -141,7 +150,6 @@ struct HealthDataView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 52)
-        
     }
     
     @ViewBuilder
@@ -152,7 +160,7 @@ struct HealthDataView: View {
             )
             .font(.system(size: 32))
             .fontWeight(.bold)
-            .foregroundColor(.black)
+            .foregroundColor(.black.opacity(0.4))
             
             Spacer()
         }
@@ -214,52 +222,52 @@ struct HealthDataView: View {
         _ value: SleepSessionTableValue
     ) -> some View {
         
-        HStack{
-            
-            Text(value.titleString ?? "")
-                .foregroundColor(
-                    value.highlightAll ? viewModel.sleepColor : value.highlightValue ? viewModel.sleepColor : .gray
-                )
-                .font(Font.system(size: 16))
-            
-            Spacer()
-            
-            Text(value.valueString ?? "")
-                .padding(8)
-                .font(Font.system(size: 14))
-                .opacity(value.highlightAll ? 1 : 0.6)
-                .fontWeight(.bold)
-                .foregroundColor(
-                    value.highlightAll ? .white : .black
-                )
-                .background(
-                    value.highlightAll ? viewModel.sleepColor : .white
-                )
-                .cornerRadius(8)
-            
-        }
-        .frame(height: 44)
-        .padding(.leading, 16)
+        return titleValueCell(
+            title: value.titleString ?? "",
+            titleColor: value.highlightAll ? viewModel.sleepColor : value.highlightValue ? viewModel.sleepColor : .gray,
+            value: value.valueString ?? "",
+            valueColor: value.highlightAll ? .white : .black,
+            highlighted: value.highlightAll,
+            highlightedColor: viewModel.sleepColor
+        )
     }
     
     private func hrvCell(
         _ entry: HRVEntryTableValue
     ) -> some View {
         
+        return titleValueCell(
+            title: entry.date,
+            value: entry.value,
+            valueColor: viewModel.heartColor
+        )
+    }
+    
+    @ViewBuilder
+    private func titleValueCell(
+        title: String,
+        titleColor: Color? = Color.black.opacity(0.6),
+        value: String,
+        valueColor: Color? = Color.black.opacity(0.6),
+        highlighted: Bool? = false,
+        highlightedColor: Color? = Color.white
+    ) -> some View {
+        
         HStack{
             
-            Text(entry.date)
-                .foregroundColor(
-                    .black.opacity(0.6)
-                )
+            Text(title)
+                .foregroundColor(titleColor)
+                .fontWeight(highlighted ?? false ? .bold : .regular)
                 .font(Font.system(size: 16))
             
             Spacer()
             
-            Text(entry.value)
+            Text(value)
                 .padding(8)
                 .font(Font.system(size: 14))
                 .fontWeight(.bold)
+                .foregroundColor(valueColor)
+                .background(highlighted ?? false ? highlightedColor : .white)
                 .cornerRadius(8)
         }
         .frame(height: 44)

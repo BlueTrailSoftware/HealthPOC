@@ -24,6 +24,7 @@ struct HRVEntryTableValue: Hashable {
 class HealthDataViewModel: ObservableObject {
     
     let sleepColor: Color = .mint
+    let heartColor: Color = Color(red: 255/255, green: 89/255, blue: 94/255)
     
     @Published var isRefreshing: Bool = false
     
@@ -113,7 +114,7 @@ class HealthDataViewModel: ObservableObject {
                         isHighlighted: false
                     )
                 }
-                self.hrvAverage = entries.map { $0.value }.reduce(0, +)
+                self.hrvAverage = entries.map { $0.value }.reduce(0, +) / Double(entries.count)
             }
         }
     }
