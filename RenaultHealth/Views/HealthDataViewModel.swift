@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct SleepSegmentTableValue: Hashable {
     var title: String = ""
@@ -14,7 +15,9 @@ struct SleepSegmentTableValue: Hashable {
     var duration: String = ""
 }
 
-class SleepDataViewModel: ObservableObject {
+class HealthDataViewModel: ObservableObject {
+    
+    let sleepColor: Color = .mint
     
     @Published var sleepValues: [SleepSessionTableValue] = []
     @Published var sleepSegments: [SleepSegmentTableValue] = []
@@ -50,8 +53,8 @@ class SleepDataViewModel: ObservableObject {
                     self.sleepSegments = segments.map{ segment in
                         SleepSegmentTableValue(
                             title: HKSleepProperties.displayName(sleepSegmentType: segment.sleepAnalysis ?? .asleepUnspecified) ?? "unknown" ,
-                            start: segment.startDate.string(withFormat: StringDateFormat.basic),
-                            end: segment.endDate.string(withFormat: StringDateFormat.basic),
+                            start: segment.startDate.string(withFormat: StringDateFormat.readable),
+                            end: segment.endDate.string(withFormat: StringDateFormat.readable),
                             duration: DateIntervalCalculations.calculateTotalDuration(
                                 for: [
                                     DateInterval(

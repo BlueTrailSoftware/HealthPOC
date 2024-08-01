@@ -180,7 +180,7 @@ class HKSleepSession: NSObject {
         // Append the total duration string value
         tableValues.append(
             SleepSessionTableValue(
-                titleString: "totalSleepDuration",
+                titleString: "Total sleep duration",
                 valueString: durationString,
                 highlightAll: true
             )

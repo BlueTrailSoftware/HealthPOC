@@ -25,8 +25,8 @@
 		4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */; };
 		4DF91DEB2C483D1000C28E55 /* HKQueryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEA2C483D1000C28E55 /* HKQueryManager.swift */; };
 		4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEC2C499AA400C28E55 /* HKAuthorizationManager.swift */; };
-		4DF91DF02C499CA400C28E55 /* SleepDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEF2C499CA400C28E55 /* SleepDataView.swift */; };
-		4DF91DF22C499CB300C28E55 /* SleepDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DF12C499CB300C28E55 /* SleepDataViewModel.swift */; };
+		4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */; };
+		4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */; };
 		4DF91DFB2C49AA3300C28E55 /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,8 +70,8 @@
 		4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		4DF91DEA2C483D1000C28E55 /* HKQueryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKQueryManager.swift; sourceTree = "<group>"; };
 		4DF91DEC2C499AA400C28E55 /* HKAuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKAuthorizationManager.swift; sourceTree = "<group>"; };
-		4DF91DEF2C499CA400C28E55 /* SleepDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDataView.swift; sourceTree = "<group>"; };
-		4DF91DF12C499CB300C28E55 /* SleepDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDataViewModel.swift; sourceTree = "<group>"; };
+		4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataView.swift; sourceTree = "<group>"; };
+		4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataViewModel.swift; sourceTree = "<group>"; };
 		4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,8 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				4DF91DF72C49AA1700C28E55 /* Cells */,
-				4DF91DEF2C499CA400C28E55 /* SleepDataView.swift */,
-				4DF91DF12C499CB300C28E55 /* SleepDataViewModel.swift */,
+				4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */,
+				4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,9 +405,9 @@
 				4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */,
 				4DF91DCE2C48388500C28E55 /* HKSleepDataSource.swift in Sources */,
 				4DF91DD42C4838EA00C28E55 /* HKSleepSegment.swift in Sources */,
-				4DF91DF02C499CA400C28E55 /* SleepDataView.swift in Sources */,
+				4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */,
 				4DF91DEB2C483D1000C28E55 /* HKQueryManager.swift in Sources */,
-				4DF91DF22C499CB300C28E55 /* SleepDataViewModel.swift in Sources */,
+				4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */,
 				4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */,
 				4DF91DE52C483AE000C28E55 /* TimeInterval+Extensions.swift in Sources */,
 				4DF91DDE2C4839DD00C28E55 /* DateIntervalCalculations.swift in Sources */,
