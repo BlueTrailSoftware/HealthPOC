@@ -30,7 +30,12 @@ class HealthDataViewModel: ObservableObject {
         HKAuthorizationManager().requestPermissions()
     }
     
-    func fetchSleepSegments() {
+    func refreshData() {
+        fetchSleepSegments()
+        fetchHRV()
+    }
+    
+    private func fetchSleepSegments() {
         
         DispatchQueue.main.async {
             self.isRefreshing = true
@@ -71,9 +76,8 @@ class HealthDataViewModel: ObservableObject {
         }
     }
     
-    func fetchHRV() {
-        hDataSource.fetchIdentifierData(
-            identifier: .heartRateVariabilitySDNN,
+    private func fetchHRV() {
+        hDataSource.fetchHRV(
             from: Date().startOfDay,
             to: Date().endOfDay,
             completion: nil

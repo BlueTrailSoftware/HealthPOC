@@ -75,7 +75,7 @@ struct HealthDataView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(.clear)
                     .refreshable {
-                        viewModel.fetchSleepSegments()
+                        viewModel.refreshData()
                     }
                 }
                 .background(.clear)
@@ -93,8 +93,7 @@ struct HealthDataView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .onAppear {
             viewModel.requestHKPermission()
-            viewModel.fetchSleepSegments()
-            viewModel.fetchHRV()
+            viewModel.refreshData()
         }
         .background(
             LinearGradient(gradient: Gradient(colors: [.purple.opacity(0.8), .white]), startPoint: .top, endPoint: .bottom)
@@ -116,7 +115,7 @@ struct HealthDataView: View {
                 Spacer()
                 
                 Button {
-                    viewModel.fetchSleepSegments()
+                    viewModel.refreshData()
                 } label: {
                     Text(
                         "Refresh"

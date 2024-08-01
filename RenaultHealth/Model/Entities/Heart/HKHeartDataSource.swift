@@ -8,43 +8,30 @@
 import Foundation
 import HealthKit
 
+struct HRVEntry {
+    var value: Double
+    var startDate: Date
+    var endDate: Date
+}
+
 class HKHeartDataSource: NSObject {
     
     // Managers
     private var queryManager: HKQueryManager = HKQueryManager()
     
-    func fetchIdentifierData(
-        identifier: HKQuantityTypeIdentifier,
+    func fetchHRV(
         from startDate: Date,
         to endDate: Date,
-        completion: (() -> Void)?
+        completion: (([HRVEntry]?) -> Void)?
     ) {
         
         // Quantity type
         guard let quantityType = HKQuantityType.quantityType(
-            forIdentifier: identifier
+            forIdentifier: .heartRateVariabilitySDNN
         ) else {
-            completion?()
+            completion?(nil)
             return
         }
-        
-        /*
-        // Get identifier properties
-        let idProperties = HKNutrientIdsProperties.properties(for: identifier)
-        let nutrientGroup: HKNutrientGroup = idProperties?.nutrientGroup ?? .macronutrients
-        let displayName: String = idProperties?.displayName ?? ""
-        let preferredUnit: HKUnit = idProperties?.preferredUnit ?? .gram()
-        
-        // Build HKNutritionIdData object
-        let answer = HKNutrientIdData(
-            quantityTypeId: identifier,
-            nutrientGroup: nutrientGroup,
-            displayName: displayName,
-            preferredUnit: preferredUnit,
-            periodStartDate: startDate,
-            periodEndDate: endDate
-        )
-         */
         
         // Perform query
         queryManager.performQuery(
@@ -53,27 +40,27 @@ class HKHeartDataSource: NSObject {
             to: endDate
         ) { query, samples, error in
             
-            // Create a HKNutritionIdDataItem for each sample and append it to HKNutritionIdData.values
-            samples?.forEach { sample in
+            guard let samples = samples else {
+                completion?(nil)
+                return
+            }
+            
+            let entries = samples.compactMap { sample in
                 
                 let quantityValue: Double = (sample as? HKQuantitySample)?.quantity.doubleValue(
                     for: .secondUnit(with: .milli)
                 ) ?? 0.0
                 
-                print("HRV : ", quantityValue)
-                
-                /*
-                let dataItem = HKNutritionIdDataEntry(
-                    quantityTypeId: identifier,
+                return HRVEntry(
+                    value: quantityValue,
                     startDate: sample.startDate,
-                    endDate: sample.endDate,
-                    value: quantityValue
+                    endDate: sample.endDate
                 )
-                answer.append(entry: dataItem)
-                 */
             }
+
+            print("HRV_entries : ", entries)
             
-            //completion?(answer)
+            completion?(entries)
         }
     }
 }
