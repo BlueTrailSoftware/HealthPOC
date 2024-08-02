@@ -57,7 +57,7 @@ class HealthDataViewModel: ObservableObject {
             self.isRefreshing = true
         }
         
-        sleepDataSource.fetchLongestSleepSession(for: Date()) { session in
+        sleepDataSource.fetchLastSleepSession(for: Date()) { session in
             
             print("fetchLongestSleepSession : ", session?.startingDate ?? 0 ," ::: ",session?.endDate ?? 0)
             session?.tableValues.forEach({ value in

@@ -24,7 +24,7 @@ class HKSleepSession: NSObject {
     // Properties
     
     /// HKSleepSegment forming this sleep session
-    var segments: [HKSleepSegment] = []
+    var segments: [HKSleepStage] = []
     var startingDate: Date?
     var endDate: Date?
     var totalSleepDuration: TimeInterval = 0
@@ -98,7 +98,7 @@ class HKSleepSession: NSObject {
     private func calculateTotalSleepDuration() -> Double {
         
         // Get the ative sleep segments
-        let activeSleepSegments: [HKSleepSegment] = segments.filter {
+        let activeSleepSegments: [HKSleepStage] = segments.filter {
             if let sleepAnalysis = $0.sleepAnalysis {
                 return activeSleepStages.contains(sleepAnalysis)
             }
@@ -127,7 +127,7 @@ class HKSleepSession: NSObject {
     ) -> TimeInterval {
         
         // Get all segments for the given stage (sleepAnalysis)
-        let segments:[HKSleepSegment] = segments.filter {
+        let segments:[HKSleepStage] = segments.filter {
             $0.sleepAnalysis == sleepAnalysis
         }
         

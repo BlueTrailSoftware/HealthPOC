@@ -24,7 +24,7 @@ struct ContentCard<T: View>: View {
             
             content
         }
-        .padding(24)
+        .padding(16)
         .frame(maxWidth: .infinity)
         .background(.white)
         .cornerRadius(16)
@@ -66,26 +66,6 @@ struct HealthDataView: View {
                                         ForEach(viewModel.sleepSegments, id: \.self) { value in
                                             sleepSegmentCell(value)
                                         }
-                                    }
-                            )
-                            
-                            sectionHeader(title: "Heart")
-                            
-                            ContentCard(
-                                title: "HRV",
-                                content:
-                                    VStack{
-                                        ForEach(viewModel.hrvTableValues, id: \.self) { value in
-                                            hrvCell(value)
-                                        }
-                                        titleValueCell(
-                                            title: "Average",
-                                            titleColor: viewModel.heartColor,
-                                            value: String(format: "%.2f", viewModel.hrvAverage),
-                                            valueColor: .white,
-                                            highlighted: true,
-                                            highlightedColor: viewModel.heartColor
-                                        )
                                     }
                             )
                         }
