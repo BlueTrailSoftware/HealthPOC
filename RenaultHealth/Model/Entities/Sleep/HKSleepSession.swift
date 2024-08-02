@@ -10,7 +10,7 @@ import HealthKit
 
 /// Values that should be displayed in the sleep table
 /// This is to avoid calculatiions during the table cells setUp
-struct SleepSessionTableValue: Hashable {
+struct SleepSessionDisplayValues: Hashable {
     var titleString: String?
     var valueString: String?
     var highlightValue: Bool = false
@@ -28,7 +28,7 @@ class HKSleepSession: NSObject {
     var startingDate: Date?
     var endDate: Date?
     var totalSleepDuration: TimeInterval = 0
-    var tableValues: [SleepSessionTableValue] = []
+    var displayValues: [SleepSessionDisplayValues] = []
     
     /// Stages which are considered to be part of an active sleep
     private var activeSleepStages: [HKCategoryValueSleepAnalysis] {
@@ -51,7 +51,7 @@ class HKSleepSession: NSObject {
         startingDate = calculateStartingDate()
         endDate = calculateEndDate()
         totalSleepDuration = calculateTotalSleepDuration()
-        tableValues = arrangeTableValues()
+        displayValues = arrangeTableValues()
     }
     
     // MARK: - Getters
@@ -151,7 +151,7 @@ class HKSleepSession: NSObject {
     // MARK: - Strings
     
     /// Creates the table values that should be displayed to the user
-    private func arrangeTableValues() -> [SleepSessionTableValue] {
+    private func arrangeTableValues() -> [SleepSessionDisplayValues] {
         
         // sleep segments to extract
         var sleepSegmentTypes: [HKCategoryValueSleepAnalysis] = [
@@ -164,7 +164,7 @@ class HKSleepSession: NSObject {
         
         // Calulate the data and create an array of SleepSessionTableValue objects
         var tableValues = sleepSegmentTypes.compactMap {
-            SleepSessionTableValue(
+            SleepSessionDisplayValues(
                 titleString: HKSleepProperties.displayName(sleepSegmentType: $0),
                 valueString: totalDuration(for: $0).verboseTimeString(),
                 highlightValue: activeSleepStages.contains($0)
@@ -179,7 +179,7 @@ class HKSleepSession: NSObject {
         
         // Append the total duration string value
         tableValues.append(
-            SleepSessionTableValue(
+            SleepSessionDisplayValues(
                 titleString: "Total sleep duration",
                 valueString: durationString,
                 highlightAll: true
