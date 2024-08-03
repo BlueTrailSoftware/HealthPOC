@@ -17,6 +17,8 @@ struct HRVEntryTableValue: Hashable {
 struct SleepSessionValues: Hashable {
     var sessionValues: [SleepSessionDisplayValues] = []
     var stagesValues: [SleepStageDisplayValues] = []
+    var sleepDuration: String = "0"
+    var wakeUpTime: String = "none"
 }
 
 class HealthDataViewModel: ObservableObject {
@@ -28,6 +30,8 @@ class HealthDataViewModel: ObservableObject {
     
     // Sleep
     @Published var lastSleepSessionValues: SleepSessionValues = SleepSessionValues()
+    @Published var longestSleepSessionValues: SleepSessionValues = SleepSessionValues()
+    @Published var allSleepSessionValues: [SleepSessionValues] = []
     
     // Heart
     @Published var hrvTableValues: [HRVEntryTableValue] = []
@@ -37,63 +41,57 @@ class HealthDataViewModel: ObservableObject {
     private var sleepDataSource = HKSleepDataSource()
     private var heartDataSource = HKHeartDataSource()
     
+    // MARK: - Permissions
+    
     func requestHKPermission() {
         HKAuthorizationManager().requestPermissions()
     }
     
+    //MARK: - Data
+    
     func refreshData() {
-        fetchSleepSegments()
-        fetchHRV()
+        refreshSleepData()
     }
     
     // MARK: - Sleep
     
-    private func fetchSleepSegments() {
+    private func refreshSleepData() {
         
         DispatchQueue.main.async {
             self.isRefreshing = true
         }
         
-        sleepDataSource.fetchLastSleepSession(for: Date()) { session in
-            
-            print("fetchLongestSleepSession : ", session?.startingDate ?? 0 ," ::: ",session?.endDate ?? 0)
-            session?.displayValues.forEach({ value in
-                print("tableValue : ", value.titleString ?? "no" ," ::: ", value.valueString ?? "no", " ::: ", value.highlightValue, " ::: ", value.highlightAll)
-                print("tableValue: segments : ", session?.segments ?? [])
-            })
+        sleepDataSource.refreshSleepSessions(for: Date()) {
             
             DispatchQueue.main.async {
-                self.isRefreshing = false
                 
-                self.lastSleepSessionValues = SleepSessionValues(
-                    sessionValues: session?.displayValues ?? [],
-                    stagesValues: session?.segments.map{ $0.tableValues } ?? []
+                let longestSession = self.sleepDataSource.lastSleepSession
+                self.longestSleepSessionValues = SleepSessionValues(
+                    sessionValues: longestSession?.displayValues ?? [],
+                    stagesValues: longestSession?.segments.map{ $0.tableValues } ?? [],
+                    sleepDuration: (longestSession?.totalSleepDuration ?? 0).verboseTimeString(),
+                    wakeUpTime: longestSession?.endDate?.string(withFormat: .readable) ?? "none"
                 )
                 
+                let lastSession = self.sleepDataSource.lastSleepSession
+                self.lastSleepSessionValues = SleepSessionValues(
+                    sessionValues: lastSession?.displayValues ?? [],
+                    stagesValues: lastSession?.segments.map{ $0.tableValues } ?? [],
+                    sleepDuration: (lastSession?.totalSleepDuration ?? 0).verboseTimeString(),
+                    wakeUpTime: lastSession?.endDate?.string(withFormat: .readable) ?? "none"
+                )
                 
-                
-                /*
-                self.sleepValues = session?.tableValues ?? []
-                
-                // Raw sleep segments
-                if let segments = session?.segments {
-                    self.sleepSegments = segments.map{ segment in
-                        SleepStageTableValues(
-                            title: HKSleepProperties.displayName(sleepSegmentType: segment.sleepAnalysis ?? .asleepUnspecified) ?? "unknown" ,
-                            start: segment.startDate.string(withFormat: StringDateFormat.readable),
-                            end: segment.endDate.string(withFormat: StringDateFormat.readable),
-                            duration: DateIntervalCalculations.calculateTotalDuration(
-                                for: [
-                                    DateInterval(
-                                        start: segment.startDate,
-                                        end: segment.endDate
-                                    )
-                                ]
-                            ).verboseTimeString()
-                        )
-                    }
+                let allSessions = self.sleepDataSource.allSleepSessions
+                self.allSleepSessionValues = allSessions.compactMap { session in
+                    SleepSessionValues(
+                        sessionValues: session.displayValues,
+                        stagesValues: session.segments.map{ $0.tableValues },
+                        sleepDuration: (session.totalSleepDuration).verboseTimeString(),
+                        wakeUpTime: session.endDate?.string(withFormat: .readable) ?? "none"
+                    )
                 }
-                 */
+                
+                self.isRefreshing = false
             }
         }
     }
