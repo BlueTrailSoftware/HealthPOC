@@ -8,9 +8,17 @@
 import Foundation
 import HealthKit
 
+
+struct SleepSessionDisplayValues: Hashable {
+    var sessionValues: [SleepSessionSummaryValue] = []
+    var stagesValues: [SleepStageDisplayValues] = []
+    var sleepDuration: String = "0"
+    var wakeUpTime: String = "none"
+}
+
 /// Values that should be displayed in the sleep table
 /// This is to avoid calculatiions during the table cells setUp
-struct SleepSessionTableValue: Hashable {
+struct SleepSessionSummaryValue: Hashable {
     var titleString: String?
     var valueString: String?
     var highlightValue: Bool = false
@@ -24,11 +32,13 @@ class HKSleepSession: NSObject {
     // Properties
     
     /// HKSleepSegment forming this sleep session
-    var segments: [HKSleepSegment] = []
+    var segments: [HKSleepStage] = []
     var startingDate: Date?
     var endDate: Date?
     var totalSleepDuration: TimeInterval = 0
-    var tableValues: [SleepSessionTableValue] = []
+    var summaryValues: [SleepSessionSummaryValue] = []
+    
+    var displayValues: SleepSessionDisplayValues = SleepSessionDisplayValues()
     
     /// Stages which are considered to be part of an active sleep
     private var activeSleepStages: [HKCategoryValueSleepAnalysis] {
@@ -51,7 +61,8 @@ class HKSleepSession: NSObject {
         startingDate = calculateStartingDate()
         endDate = calculateEndDate()
         totalSleepDuration = calculateTotalSleepDuration()
-        tableValues = arrangeTableValues()
+        summaryValues = setUpSummaryValues()
+        displayValues = setUpDisplayValues()
     }
     
     // MARK: - Getters
@@ -98,7 +109,7 @@ class HKSleepSession: NSObject {
     private func calculateTotalSleepDuration() -> Double {
         
         // Get the ative sleep segments
-        let activeSleepSegments: [HKSleepSegment] = segments.filter {
+        let activeSleepSegments: [HKSleepStage] = segments.filter {
             if let sleepAnalysis = $0.sleepAnalysis {
                 return activeSleepStages.contains(sleepAnalysis)
             }
@@ -127,7 +138,7 @@ class HKSleepSession: NSObject {
     ) -> TimeInterval {
         
         // Get all segments for the given stage (sleepAnalysis)
-        let segments:[HKSleepSegment] = segments.filter {
+        let segments:[HKSleepStage] = segments.filter {
             $0.sleepAnalysis == sleepAnalysis
         }
         
@@ -151,7 +162,7 @@ class HKSleepSession: NSObject {
     // MARK: - Strings
     
     /// Creates the table values that should be displayed to the user
-    private func arrangeTableValues() -> [SleepSessionTableValue] {
+    private func setUpSummaryValues() -> [SleepSessionSummaryValue] {
         
         // sleep segments to extract
         var sleepSegmentTypes: [HKCategoryValueSleepAnalysis] = [
@@ -164,7 +175,7 @@ class HKSleepSession: NSObject {
         
         // Calulate the data and create an array of SleepSessionTableValue objects
         var tableValues = sleepSegmentTypes.compactMap {
-            SleepSessionTableValue(
+            SleepSessionSummaryValue(
                 titleString: HKSleepProperties.displayName(sleepSegmentType: $0),
                 valueString: totalDuration(for: $0).verboseTimeString(),
                 highlightValue: activeSleepStages.contains($0)
@@ -179,7 +190,7 @@ class HKSleepSession: NSObject {
         
         // Append the total duration string value
         tableValues.append(
-            SleepSessionTableValue(
+            SleepSessionSummaryValue(
                 titleString: "Total sleep duration",
                 valueString: durationString,
                 highlightAll: true
@@ -187,5 +198,14 @@ class HKSleepSession: NSObject {
         )
         
         return tableValues
+    }
+    
+    private func setUpDisplayValues() -> SleepSessionDisplayValues {
+        return SleepSessionDisplayValues(
+            sessionValues: summaryValues,
+            stagesValues: segments.map{ $0.tableValues },
+            sleepDuration: totalSleepDuration.verboseTimeString(),
+            wakeUpTime: endDate?.string(withFormat: .readable) ?? "none"
+        )
     }
 }

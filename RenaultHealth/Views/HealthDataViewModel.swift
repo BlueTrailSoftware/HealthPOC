@@ -8,13 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct SleepSegmentTableValue: Hashable {
-    var title: String = ""
-    var start: String = ""
-    var end: String = ""
-    var duration: String = ""
-}
-
 struct HRVEntryTableValue: Hashable {
     var date: String = ""
     var value: String = ""
@@ -29,8 +22,9 @@ class HealthDataViewModel: ObservableObject {
     @Published var isRefreshing: Bool = false
     
     // Sleep
-    @Published var sleepValues: [SleepSessionTableValue] = []
-    @Published var sleepSegments: [SleepSegmentTableValue] = []
+    @Published var lastSleepSessionValues: SleepSessionDisplayValues = SleepSessionDisplayValues()
+    @Published var longestSleepSessionValues: SleepSessionDisplayValues = SleepSessionDisplayValues()
+    @Published var allSleepSessionValues: [SleepSessionDisplayValues] = []
     
     // Heart
     @Published var hrvTableValues: [HRVEntryTableValue] = []
@@ -40,53 +34,39 @@ class HealthDataViewModel: ObservableObject {
     private var sleepDataSource = HKSleepDataSource()
     private var heartDataSource = HKHeartDataSource()
     
+    // MARK: - Permissions
+    
     func requestHKPermission() {
         HKAuthorizationManager().requestPermissions()
     }
     
+    //MARK: - Data
+    
     func refreshData() {
-        fetchSleepSegments()
-        fetchHRV()
+        refreshSleepData()
     }
     
     // MARK: - Sleep
     
-    private func fetchSleepSegments() {
+    private func refreshSleepData() {
         
         DispatchQueue.main.async {
             self.isRefreshing = true
         }
         
-        sleepDataSource.fetchLongestSleepSession(for: Date()) { session in
-            
-            print("fetchLongestSleepSession : ", session?.startingDate ?? 0 ," ::: ",session?.endDate ?? 0)
-            session?.tableValues.forEach({ value in
-                print("tableValue : ", value.titleString ?? "no" ," ::: ", value.valueString ?? "no", " ::: ", value.highlightValue, " ::: ", value.highlightAll)
-                print("tableValue: segments : ", session?.segments ?? [])
-            })
+        sleepDataSource.refreshSleepSessions(for: Date()) {
             
             DispatchQueue.main.async {
-                self.isRefreshing = false
-                self.sleepValues = session?.tableValues ?? []
+
+                self.longestSleepSessionValues = self.sleepDataSource.longestSleepSession?.displayValues ?? SleepSessionDisplayValues()
+                self.lastSleepSessionValues = self.sleepDataSource.lastSleepSession?.displayValues ?? SleepSessionDisplayValues()
                 
-                // Raw sleep segments
-                if let segments = session?.segments {
-                    self.sleepSegments = segments.map{ segment in
-                        SleepSegmentTableValue(
-                            title: HKSleepProperties.displayName(sleepSegmentType: segment.sleepAnalysis ?? .asleepUnspecified) ?? "unknown" ,
-                            start: segment.startDate.string(withFormat: StringDateFormat.readable),
-                            end: segment.endDate.string(withFormat: StringDateFormat.readable),
-                            duration: DateIntervalCalculations.calculateTotalDuration(
-                                for: [
-                                    DateInterval(
-                                        start: segment.startDate,
-                                        end: segment.endDate
-                                    )
-                                ]
-                            ).verboseTimeString()
-                        )
-                    }
+                let allSessions = self.sleepDataSource.allSleepSessions
+                self.allSleepSessionValues = allSessions.compactMap { session in
+                    session.displayValues
                 }
+                
+                self.isRefreshing = false
             }
         }
     }

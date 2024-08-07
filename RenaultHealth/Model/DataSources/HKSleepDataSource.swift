@@ -16,11 +16,46 @@ class HKSleepDataSource {
     // Query Manager
     private var queryManager: HKQueryManager = HKQueryManager()
     
+    // MARK: - Filters
+    
+    var allSleepSessions: [HKSleepSession] {
+        sleepSessions
+    }
+    
+    var longestSleepSession: HKSleepSession? {
+        sleepSessions.sorted(
+            by: { $0.totalSleepDuration > $1.totalSleepDuration }
+        ).first
+    }
+    
+    var lastSleepSession: HKSleepSession? {
+        let endDates = sleepSessions.map { $0.endDate }
+
+        print("HKSDS_lastSleepSession_sessions : \(endDates)")
+       
+        let sorted = sleepSessions.sorted(
+            by: { $0.endDate ?? Date() > $1.endDate ?? Date() }
+        )
+        
+        print("HKSDS_lastSleepSession_sorted : \(sorted)")
+        
+        let sorted_endDates = sorted.map { $0.endDate }
+        print("HKSDS_lastSleepSession_sessions_sorted_endDates : \(sorted_endDates)")
+        
+        let lastSleep = sorted.first
+        
+        print("HKSDS_lastSleepSession_lastSleep : \(lastSleep?.totalSleepDuration)")
+        
+        return lastSleep
+    }
+    
     // MARK: - Queries
     
-    func fetchSleepSegments(
+    // MARK: Sleep stages
+    
+    func fetchSleepStages (
         for dates: [Date],
-        completion: (([HKSleepSegment]?) -> Void)?
+        completion: (([HKSleepStage]?) -> Void)?
     ) {
         
         // Get dates for given dates range
@@ -36,17 +71,17 @@ class HKSleepDataSource {
             return
         }
         
-        fetchHKSleepSegments(
+        fetchHKSleepStages(
             from: firstDate,
             to: lastDate,
             completion: completion
         )
     }
     
-    func fetchHKSleepSegments(
+    func fetchHKSleepStages(
         from startDate: Date,
         to endDate: Date,
-        completion: (([HKSleepSegment]?) -> Void)?
+        completion: (([HKSleepStage]?) -> Void)?
     ) {
         // Category type
         guard let sleepType = HKObjectType.categoryType(
@@ -64,7 +99,7 @@ class HKSleepDataSource {
         ) { (query, result, error) in
             
             // Error
-            if let error = error {
+            if let _ = error {
                 // handle error
                 completion?(nil)
                 return
@@ -81,8 +116,8 @@ class HKSleepDataSource {
                 $0 as? HKCategorySample
             }
             
-            let sleepSegments: [HKSleepSegment] = samples.compactMap{
-                HKSleepSegment(
+            let sleepSegments: [HKSleepStage] = samples.compactMap{
+                HKSleepStage(
                     startDate: $0.startDate,
                     endDate: $0.endDate,
                     sleepAnalysis: HKCategoryValueSleepAnalysis(
@@ -94,76 +129,98 @@ class HKSleepDataSource {
         }
     }
     
-    func fetchLongestSleepSession(
-        for targetDay: Date,
-        completion: ((HKSleepSession?) -> Void)?
-    ) {
-     
-        let firstDate: Date = targetDay.startOfDay.modifyDateBy(
-            days: -1
-        )
-        
-        // get last date
-        let lastDate: Date = targetDay.endOfDay.modifyDateBy(
-            days: 1
-        )
-        
-        fetchSleepSessions(
-            from: firstDate,
-            to: lastDate
-        ) { [weak self] sessions in
-            
-            let daySessions = sessions.filter{
-                
-                guard let endDate = $0.endDate else {
-                    return false
-                }
-                return (
-                    targetDay.startOfDay ... targetDay.endOfDay
-                ).contains(
-                    endDate
-                )
-            }
-            
-            self?.sleepSessions = daySessions
-            
-            // Get longest sleep session
-            let longestSleep = self?.longestSleepSession()
-            
-            completion?(longestSleep)
-        }
-    }
+    // MARK: Sleep sessions
     
     private func fetchSleepSessions(
         from startDate: Date,
         to endDate: Date,
-        completion: (([HKSleepSession]) -> Void)?
+        completion: (() -> Void)?
     ) {
-        fetchHKSleepSegments(
+        fetchHKSleepStages(
             from: startDate,
             to: endDate
         ) { sleepSegments in
             
-            self.sleepSessions = []
-            
-            if
+            guard 
                 let sleepSegments = sleepSegments,
-                !sleepSegments.isEmpty {
-                
-                // Local HealthKit data success
-                self.sleepSessions = self.arrangeSleepSessions(
-                    from: sleepSegments
-                )
-                completion?(self.sleepSessions)
-            } else {
-                completion?([])
+                !sleepSegments.isEmpty
+            else {
+                completion?()
+                return
             }
+            
+            self.sleepSessions = self.arrangeSleepSessions(from: sleepSegments)
+            completion?()
         }
     }
     
+    func refreshSleepSessions(
+        for targetDay: Date,
+        completion: (() -> Void)?
+    ) {
+        
+        let firstDate: Date = targetDay.startOfDay.modifyDateBy(days: -1)
+           
+           // get last date
+        let lastDate: Date = targetDay.endOfDay.modifyDateBy(days: 1)
+            
+        fetchSleepSessions(
+            from: firstDate,
+            to: lastDate,
+            completion: completion
+        )
+        
+
+        /*
+           fetchSleepSessions(
+               from: firstDate,
+               to: lastDate
+           ) { sessions in
+               
+               // Filter only sessions which end within the target day
+               let daySessions = sessions.filter{
+                   guard let endDate = $0.endDate else {
+                       return false
+                   }
+                   return (
+                       targetDay.startOfDay ... targetDay.endOfDay
+                   ).contains(
+                       endDate
+                   )
+               }
+               
+               completion?(daySessions )
+           }
+        */
+    }
+    
+    /*
+    func fetchLongestSleepSession(
+        for targetDay: Date,
+        completion: ((HKSleepSession?) -> Void)?
+    ) {
+        fetchAllSleepSessions(for: targetDay) { [weak self] sessions in
+            completion?(
+                self?.longestSleepSession(from: sessions)
+            )
+        }
+    }
+    
+    func fetchLastSleepSession(
+        for targetDay: Date,
+        completion: ((HKSleepSession?) -> Void)?
+    ) {
+        fetchAllSleepSessions(for: targetDay) { [weak self] sessions in
+            completion?(
+                self?.lastSleepSession(from: sessions)
+            )
+        }
+    }
+    */
+    
+    /*
     func fetchSleepSessions(
         for dates: [Date],
-        includeRemote: Bool,
         completion: (([HKSleepSession]) -> Void)?
     ) {
         
@@ -197,11 +254,12 @@ class HKSleepDataSource {
             completion?(sessionsForDates)
         }
     }
+     */
     
     // MARK: - Sleep Sessions
     
     private func arrangeSleepSessions(
-        from segments: [HKSleepSegment]?
+        from segments: [HKSleepStage]?
     ) -> [HKSleepSession] {
         
         guard let segments = segments else {
@@ -254,12 +312,38 @@ class HKSleepDataSource {
     
     // MARK: - Filters
     
-    func longestSleepSession() -> HKSleepSession? {
+    func longestSleepSession(
+        from sessions: [HKSleepSession]
+    ) -> HKSleepSession? {
        
-        let longestSleep = sleepSessions.sorted(
+        let longestSleep = sessions.sorted(
             by: { $0.totalSleepDuration > $1.totalSleepDuration }
         ).first
         
         return longestSleep
+    }
+    
+    func lastSleepSession(
+        from sessions: [HKSleepSession]
+    ) -> HKSleepSession? {
+        
+        let endDates = sessions.map { $0.endDate }
+
+        print("HKSDS_lastSleepSession_sessions : \(endDates)")
+       
+        let sorted = sessions.sorted(
+            by: { $0.endDate ?? Date() > $1.endDate ?? Date() }
+        )
+        
+        print("HKSDS_lastSleepSession_sorted : \(sorted)")
+        
+        let sorted_endDates = sorted.map { $0.endDate }
+        print("HKSDS_lastSleepSession_sessions_sorted_endDates : \(sorted_endDates)")
+        
+        let lastSleep = sorted.last
+        
+        print("HKSDS_lastSleepSession_lastSleep : \(lastSleep?.totalSleepDuration)")
+        
+        return lastSleep
     }
 }

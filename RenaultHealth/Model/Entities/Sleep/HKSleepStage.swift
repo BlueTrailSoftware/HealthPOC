@@ -8,11 +8,36 @@
 import Foundation
 import HealthKit
 
+struct SleepStageDisplayValues: Hashable {
+    var title: String = ""
+    var start: String = ""
+    var end: String = ""
+    var duration: String = ""
+}
+
 /// Represents a sleep stage (HKCategoryValueSleepAnalysis) with their start and end dates
-struct HKSleepSegment: JSONDecodable {
+struct HKSleepStage: JSONDecodable {
     var startDate: Date = Date()
     var endDate: Date = Date()
     var sleepAnalysis: HKCategoryValueSleepAnalysis?
+    
+    var tableValues: SleepStageDisplayValues {
+        SleepStageDisplayValues(
+            title: HKSleepProperties.displayName(
+                sleepSegmentType: sleepAnalysis ?? .asleepUnspecified
+            ) ?? "unknown" ,
+            start: startDate.string(withFormat: StringDateFormat.readable),
+            end: endDate.string(withFormat: StringDateFormat.readable),
+            duration: DateIntervalCalculations.calculateTotalDuration(
+                for: [
+                    DateInterval(
+                        start: startDate,
+                        end: endDate
+                    )
+                ]
+            ).verboseTimeString()
+        )
+    }
 
     // MARK: - Init
     
@@ -54,37 +79,5 @@ struct HKSleepSegment: JSONDecodable {
     
     // MARK: - Getters
     
-    /// Dictionary to be used when uploading data to the server
-    func payloadDictionary() -> [String: Any] {
-        
-        // Get the start date
-        let startTime = startDate.string(
-            withFormat: .formatISO8601
-        )
-        
-        // Get the end date
-        let endTime = endDate.string(
-            withFormat: .formatISO8601
-        )
-        
-        // Create the data dictionary
-        let data = [
-            "start_date": startTime,
-            "end_date": endTime,
-            "sleep_stage": HKSleepProperties.stringId(
-                sleepSegmentType: sleepAnalysis ?? .asleepUnspecified
-            )
-        ]
-        
-        // Create the metadata dictionary
-        let metadata = [
-            "startTime": startTime,
-            "endTime": endTime
-        ]
-        
-        return [
-            "data": data,
-            "metadata": metadata
-        ]
-    }
+    
 }

@@ -9,22 +9,13 @@ import SwiftUI
 
 struct ContentCard<T: View>: View {
     
-    let title: String
-    var color: Color?
     let content: T
     
     var body: some View {
         VStack {
-            Text(title)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.system(size: 16))
-                .fontWeight(.bold)
-                .foregroundColor(color ?? .black)
-                .padding(.bottom, 32)
-            
             content
         }
-        .padding(24)
+        .padding(16)
         .frame(maxWidth: .infinity)
         .background(.white)
         .cornerRadius(16)
@@ -47,47 +38,16 @@ struct HealthDataView: View {
                             
                             mainHeader()
                             
-                            sectionHeader(title: "Sleep")
+                            sectionHeader(title: "Last sleep")
+                            sleepDataCard(viewModel.lastSleepSessionValues)
                             
-                            ContentCard(
-                                title: "Longest sleep session",
-                                content:
-                                    VStack{
-                                        ForEach(viewModel.sleepValues, id: \.self) { value in
-                                            sleepValueCell(value)
-                                        }
-                                    }
-                            )
+                            sectionHeader(title: "Longest sleep")
+                            sleepDataCard(viewModel.longestSleepSessionValues)
                             
-                            ContentCard(
-                                title: "Raw sleep stages",
-                                content:
-                                    VStack{
-                                        ForEach(viewModel.sleepSegments, id: \.self) { value in
-                                            sleepSegmentCell(value)
-                                        }
-                                    }
-                            )
-                            
-                            sectionHeader(title: "Heart")
-                            
-                            ContentCard(
-                                title: "HRV",
-                                content:
-                                    VStack{
-                                        ForEach(viewModel.hrvTableValues, id: \.self) { value in
-                                            hrvCell(value)
-                                        }
-                                        titleValueCell(
-                                            title: "Average",
-                                            titleColor: viewModel.heartColor,
-                                            value: String(format: "%.2f", viewModel.hrvAverage),
-                                            valueColor: .white,
-                                            highlighted: true,
-                                            highlightedColor: viewModel.heartColor
-                                        )
-                                    }
-                            )
+                            sectionHeader(title: "All sleep sessions")
+                            ForEach(viewModel.allSleepSessionValues, id: \.self) {
+                                sleepDataCard($0)
+                            }
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(.clear)
@@ -169,8 +129,21 @@ struct HealthDataView: View {
     }
     
     @ViewBuilder
+    private func contentCardHeader(
+        _ title: String,
+        color: Color? = .black.opacity(0.5)
+    ) -> some View {
+        Text(title)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .font(.system(size: 24))
+            .fontWeight(.light)
+            .foregroundColor(color ?? .black.opacity(0.5))
+            .padding(.bottom, 24)
+    }
+    
+    @ViewBuilder
     private func sleepSegmentCell(
-        _ value: SleepSegmentTableValue
+        _ value: SleepStageDisplayValues
     ) -> some View {
         HStack{
             
@@ -219,16 +192,16 @@ struct HealthDataView: View {
     }
     
     private func sleepValueCell(
-        _ value: SleepSessionTableValue
+        _ value: SleepSessionSummaryValue
     ) -> some View {
         
         return titleValueCell(
             title: value.titleString ?? "",
             titleColor: value.highlightAll ? viewModel.sleepColor : value.highlightValue ? viewModel.sleepColor : .gray,
             value: value.valueString ?? "",
-            valueColor: value.highlightAll ? .white : .black,
+            valueColor: value.highlightAll ? .black.opacity(0.8) : .black.opacity(0.5),
             highlighted: value.highlightAll,
-            highlightedColor: viewModel.sleepColor
+            highlightedColor: .white
         )
     }
     
@@ -241,6 +214,47 @@ struct HealthDataView: View {
             value: entry.value,
             valueColor: viewModel.heartColor
         )
+    }
+    
+    @ViewBuilder
+    private func sleepDataCard(
+        _ values: SleepSessionDisplayValues
+    ) -> some View {
+        
+        VStack {
+            
+            ContentCard(
+                content:
+                    VStack{
+                        
+                        titleValueCell(title: "Wake up time", value: values.wakeUpTime, valueColor: viewModel.sleepColor, highlighted: true, highlightedColor: .white)
+                        titleValueCell(title: "Duration", value: values.sleepDuration, valueColor: viewModel.sleepColor, highlighted: true, highlightedColor: .white)
+                        
+                        Rectangle()
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 1)
+                            .padding(.vertical, 16)
+                            .foregroundColor(.black.opacity(0.1))
+                        
+                        contentCardHeader("Summary")
+                        
+                        ForEach(values.sessionValues, id: \.self) { value in
+                            sleepValueCell(value)
+                        }
+                        
+                        Rectangle()
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 1)
+                            .padding(.vertical, 16)
+                            .foregroundColor(.black.opacity(0.1))
+                        
+                        contentCardHeader("Sleep Stages")
+                        ForEach(values.stagesValues, id: \.self) { value in
+                            sleepSegmentCell(value)
+                        }
+                    }
+            )
+        }
     }
     
     @ViewBuilder
@@ -277,8 +291,6 @@ struct HealthDataView: View {
 
 #Preview {
     ContentCard(
-        title: "Sleep analysis",
-        color: Color.purple,
         content:
                     HStack{}
         .frame(height: 100)
