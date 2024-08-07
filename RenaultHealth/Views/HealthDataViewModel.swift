@@ -14,6 +14,13 @@ struct HRVEntryTableValue: Hashable {
     var isHighlighted: Bool = false
 }
 
+struct TripPrettyPrintValues {
+    var startDate: String = ""
+    var restDate: String = ""
+    var elapsedTime: String  = ""
+    var intervalUntilRest = ""
+}
+
 class HealthDataViewModel: ObservableObject {
     
     let sleepColor: Color = .mint
@@ -33,8 +40,10 @@ class HealthDataViewModel: ObservableObject {
     // Trip
     @Published var currentTrip: Trip = Trip()
     @Published var tripMessage: String = "Start a new trip"
+    @Published var tripMessageColor: Color = .black.opacity(0.4)
     @Published var tripActionButtonText: String = "Start trip"
     @Published var tripActionButtonBackground: Color = .mint
+    @Published var tripValues: TripPrettyPrintValues = TripPrettyPrintValues()
     
     // DataSources
     private var sleepDataSource = HKSleepDataSource()
@@ -111,16 +120,19 @@ class HealthDataViewModel: ObservableObject {
         switch currentTrip.activityStatus {
         case .running:
             tripActionButtonText = "Stop"
-            tripActionButtonBackground = .red
+            tripActionButtonBackground = .orange
             tripMessage = "Running trip"
+            tripMessageColor = .orange
         case .completed:
-            tripActionButtonText = "Done"
-            tripActionButtonBackground = .blue
-            tripMessage = "Trip completed!"
+            tripActionButtonText = "Ok"
+            tripActionButtonBackground = .red
+            tripMessage = "Rest now!"
+            tripMessageColor = .red
         case .idle:
             tripActionButtonText = "Start Trip"
             tripActionButtonBackground = .mint
             tripMessage = "Start a new trip"
+            tripMessageColor = .black.opacity(0.4)
         }
     }
     
@@ -144,7 +156,14 @@ class HealthDataViewModel: ObservableObject {
         
         currentTrip.start(
             lastSleepSession: lastSleepSession
-        )
+        ) {
+            self.tripValues = TripPrettyPrintValues(
+                startDate: self.currentTrip.startDatePretty,
+                restDate: self.currentTrip.restDatePretty,
+                elapsedTime: self.currentTrip.elapsedTimePretty,
+                intervalUntilRest: self.currentTrip.intervalUntilRestPretty
+            )
+        }
     }
     
     func stopTrip() {

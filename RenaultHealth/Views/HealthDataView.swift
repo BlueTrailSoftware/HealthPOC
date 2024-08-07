@@ -271,7 +271,30 @@ struct HealthDataView: View {
                     Text(
                         viewModel.tripMessage
                     )
-                    .foregroundColor(.black.opacity(0.4))
+                    .font(.system(size: 22))
+                    .foregroundColor(viewModel.tripMessageColor)
+                    
+                    if viewModel.currentTrip.activityStatus != .idle {
+                        titleValueCell(
+                            title: "Trip start",
+                            value: viewModel.tripValues.startDate
+                        )
+                        
+                        titleValueCell(
+                            title: "Rest date",
+                            value: viewModel.tripValues.restDate
+                        )
+                        
+                        titleValueCell(
+                            title: "Trip elapsed time",
+                            value: viewModel.tripValues.elapsedTime
+                        )
+                        
+                        titleValueCell(
+                            title: "Rest coming in:",
+                            value: viewModel.tripValues.intervalUntilRest
+                        )
+                    }
                     
                     Button {
                         viewModel.toggleTrip()
