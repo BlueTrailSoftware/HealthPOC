@@ -42,7 +42,7 @@ class HKSleepDataSource {
         let sorted_endDates = sorted.map { $0.endDate }
         print("HKSDS_lastSleepSession_sessions_sorted_endDates : \(sorted_endDates)")
         
-        let lastSleep = sorted.last
+        let lastSleep = sorted.first
         
         print("HKSDS_lastSleepSession_lastSleep : \(lastSleep?.totalSleepDuration)")
         

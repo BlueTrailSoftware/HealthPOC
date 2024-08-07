@@ -8,9 +8,17 @@
 import Foundation
 import HealthKit
 
+
+struct SleepSessionDisplayValues: Hashable {
+    var sessionValues: [SleepSessionSummaryValue] = []
+    var stagesValues: [SleepStageDisplayValues] = []
+    var sleepDuration: String = "0"
+    var wakeUpTime: String = "none"
+}
+
 /// Values that should be displayed in the sleep table
 /// This is to avoid calculatiions during the table cells setUp
-struct SleepSessionDisplayValues: Hashable {
+struct SleepSessionSummaryValue: Hashable {
     var titleString: String?
     var valueString: String?
     var highlightValue: Bool = false
@@ -28,7 +36,9 @@ class HKSleepSession: NSObject {
     var startingDate: Date?
     var endDate: Date?
     var totalSleepDuration: TimeInterval = 0
-    var displayValues: [SleepSessionDisplayValues] = []
+    var summaryValues: [SleepSessionSummaryValue] = []
+    
+    var displayValues: SleepSessionDisplayValues = SleepSessionDisplayValues()
     
     /// Stages which are considered to be part of an active sleep
     private var activeSleepStages: [HKCategoryValueSleepAnalysis] {
@@ -51,7 +61,8 @@ class HKSleepSession: NSObject {
         startingDate = calculateStartingDate()
         endDate = calculateEndDate()
         totalSleepDuration = calculateTotalSleepDuration()
-        displayValues = arrangeTableValues()
+        summaryValues = setUpSummaryValues()
+        displayValues = setUpDisplayValues()
     }
     
     // MARK: - Getters
@@ -151,7 +162,7 @@ class HKSleepSession: NSObject {
     // MARK: - Strings
     
     /// Creates the table values that should be displayed to the user
-    private func arrangeTableValues() -> [SleepSessionDisplayValues] {
+    private func setUpSummaryValues() -> [SleepSessionSummaryValue] {
         
         // sleep segments to extract
         var sleepSegmentTypes: [HKCategoryValueSleepAnalysis] = [
@@ -164,7 +175,7 @@ class HKSleepSession: NSObject {
         
         // Calulate the data and create an array of SleepSessionTableValue objects
         var tableValues = sleepSegmentTypes.compactMap {
-            SleepSessionDisplayValues(
+            SleepSessionSummaryValue(
                 titleString: HKSleepProperties.displayName(sleepSegmentType: $0),
                 valueString: totalDuration(for: $0).verboseTimeString(),
                 highlightValue: activeSleepStages.contains($0)
@@ -179,7 +190,7 @@ class HKSleepSession: NSObject {
         
         // Append the total duration string value
         tableValues.append(
-            SleepSessionDisplayValues(
+            SleepSessionSummaryValue(
                 titleString: "Total sleep duration",
                 valueString: durationString,
                 highlightAll: true
@@ -187,5 +198,14 @@ class HKSleepSession: NSObject {
         )
         
         return tableValues
+    }
+    
+    private func setUpDisplayValues() -> SleepSessionDisplayValues {
+        return SleepSessionDisplayValues(
+            sessionValues: summaryValues,
+            stagesValues: segments.map{ $0.tableValues },
+            sleepDuration: totalSleepDuration.verboseTimeString(),
+            wakeUpTime: endDate?.string(withFormat: .readable) ?? "none"
+        )
     }
 }

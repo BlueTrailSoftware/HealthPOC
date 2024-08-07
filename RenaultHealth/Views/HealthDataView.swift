@@ -131,13 +131,13 @@ struct HealthDataView: View {
     @ViewBuilder
     private func contentCardHeader(
         _ title: String,
-        color: Color? = .black
+        color: Color? = .black.opacity(0.5)
     ) -> some View {
         Text(title)
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(.system(size: 24))
             .fontWeight(.light)
-            .foregroundColor(color ?? .black.opacity(0.8))
+            .foregroundColor(color ?? .black.opacity(0.5))
             .padding(.bottom, 24)
     }
     
@@ -192,16 +192,16 @@ struct HealthDataView: View {
     }
     
     private func sleepValueCell(
-        _ value: SleepSessionDisplayValues
+        _ value: SleepSessionSummaryValue
     ) -> some View {
         
         return titleValueCell(
             title: value.titleString ?? "",
             titleColor: value.highlightAll ? viewModel.sleepColor : value.highlightValue ? viewModel.sleepColor : .gray,
             value: value.valueString ?? "",
-            valueColor: value.highlightAll ? .white : .black.opacity(0.6),
+            valueColor: value.highlightAll ? .black.opacity(0.8) : .black.opacity(0.5),
             highlighted: value.highlightAll,
-            highlightedColor: viewModel.sleepColor
+            highlightedColor: .white
         )
     }
     
@@ -218,7 +218,7 @@ struct HealthDataView: View {
     
     @ViewBuilder
     private func sleepDataCard(
-        _ values: SleepSessionValues
+        _ values: SleepSessionDisplayValues
     ) -> some View {
         
         VStack {
@@ -227,8 +227,8 @@ struct HealthDataView: View {
                 content:
                     VStack{
                         
-                        titleValueCell(title: "Wake up time", value: values.wakeUpTime, valueColor: .white, highlighted: true, highlightedColor: viewModel.sleepColor)
-                        titleValueCell(title: "Duration", value: values.sleepDuration, valueColor: .white, highlighted: true, highlightedColor: viewModel.sleepColor)
+                        titleValueCell(title: "Wake up time", value: values.wakeUpTime, valueColor: viewModel.sleepColor, highlighted: true, highlightedColor: .white)
+                        titleValueCell(title: "Duration", value: values.sleepDuration, valueColor: viewModel.sleepColor, highlighted: true, highlightedColor: .white)
                         
                         Rectangle()
                             .frame(maxWidth: .infinity)
