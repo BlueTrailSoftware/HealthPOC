@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1287032C6407CC00646015 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287022C6407CC00646015 /* Trip.swift */; };
 		4D9F82642C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */; };
 		4D9F82672C5C1B5B008E4C1D /* HKHeartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */; };
 		4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D1287022C6407CC00646015 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableHKIdentifiers.swift; sourceTree = "<group>"; };
 		4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKHeartDataSource.swift; sourceTree = "<group>"; };
 		4DF91D9D2C4835AF00C28E55 /* RenaultHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenaultHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D1287012C6407BF00646015 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				4D1287022C6407CC00646015 /* Trip.swift */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
 		4D9F82662C5C1B5B008E4C1D /* Heart */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +186,7 @@
 		4DF91DCB2C48381D00C28E55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4D1287012C6407BF00646015 /* Trip */,
 				4D9F82662C5C1B5B008E4C1D /* Heart */,
 				4DF91DE92C483D0100C28E55 /* HealthKit */,
 				4DF91DCF2C4838A400C28E55 /* Entities */,
@@ -422,6 +433,7 @@
 				4D9F82642C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift in Sources */,
 				4DF91DD42C4838EA00C28E55 /* HKSleepStage.swift in Sources */,
 				4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */,
+				4D1287032C6407CC00646015 /* Trip.swift in Sources */,
 				4DF91DEB2C483D1000C28E55 /* HKQueryManager.swift in Sources */,
 				4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */,
 				4D9F82672C5C1B5B008E4C1D /* HKHeartDataSource.swift in Sources */,
