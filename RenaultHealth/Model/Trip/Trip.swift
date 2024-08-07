@@ -7,27 +7,55 @@
 
 import Foundation
 
+enum TripStatus {
+    case running, completed, idle
+}
+
 class Trip {
     
-    private var startDate: Date?
+    private var startDate: Date = Date()
     private var lastSleepSession: HKSleepSession?
     private var intervalUntilRest: TimeInterval = 0
     
-    var restDate: Date? {
-        startDate?.addingTimeInterval(intervalUntilRest)
+    private var status: TripStatus = .idle
+    
+    var activityStatus: TripStatus {
+        status
     }
     
-    func start(date: Date, lastSleep: HKSleepSession) {
-        self.startDate = date
-        self.lastSleepSession = lastSleep
-        
-        calculateRestInterval()
+    var restDate: Date? {
+        startDate.addingTimeInterval(intervalUntilRest)
     }
+    
+    var restDatePrettyPrint: String {
+        restDate?.string(withFormat: .readable) ?? ""
+    }
+    
+    // MARK: -
+    
+    func start(
+        lastSleepSession: HKSleepSession
+    ) {
+        self.startDate = Date()
+        self.lastSleepSession = lastSleepSession
+        calculateRestInterval()
+        self.status = .running
+    }
+    
+    func reset() {
+        self.lastSleepSession = nil
+        self.status = .idle
+    }
+    
+    // MARK: - Pretty print
+    
+    
  
+    // MARK: - Calculations
+    
     private func calculateRestInterval() {
         
         guard
-            let startDate = self.startDate,
             let lastSleep = self.lastSleepSession
         else {
             return
@@ -35,4 +63,8 @@ class Trip {
         
         self.intervalUntilRest = lastSleep.totalSleepDuration * 1.5
     }
+    
+    // MARK: - Callbacks
+    
+    
 }

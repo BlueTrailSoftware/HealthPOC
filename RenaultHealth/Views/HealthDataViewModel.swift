@@ -30,6 +30,12 @@ class HealthDataViewModel: ObservableObject {
     @Published var hrvTableValues: [HRVEntryTableValue] = []
     @Published var hrvAverage: Double = 0
     
+    // Trip
+    @Published var currentTrip: Trip = Trip()
+    @Published var tripMessage: String = "Start a new trip"
+    @Published var tripActionButtonText: String = "Start trip"
+    @Published var tripActionButtonBackground: Color = .mint
+    
     // DataSources
     private var sleepDataSource = HKSleepDataSource()
     private var heartDataSource = HKHeartDataSource()
@@ -97,5 +103,51 @@ class HealthDataViewModel: ObservableObject {
                 self.hrvAverage = entries.map { $0.value }.reduce(0, +) / Double(entries.count)
             }
         }
+    }
+    
+    // MARK: - Trip
+    
+    func refreshTripPublishedValues() {
+        switch currentTrip.activityStatus {
+        case .running:
+            tripActionButtonText = "Stop"
+            tripActionButtonBackground = .red
+            tripMessage = "Running trip"
+        case .completed:
+            tripActionButtonText = "Done"
+            tripActionButtonBackground = .blue
+            tripMessage = "Trip completed!"
+        case .idle:
+            tripActionButtonText = "Start Trip"
+            tripActionButtonBackground = .mint
+            tripMessage = "Start a new trip"
+        }
+    }
+    
+    func toggleTrip() {
+        if currentTrip.activityStatus == .idle {
+            startTrip()
+        } else {
+            stopTrip()
+        }
+        
+        refreshTripPublishedValues()
+    }
+    
+    func startTrip() {
+        
+        guard 
+            let lastSleepSession = sleepDataSource.lastSleepSession
+        else {
+            return
+        }
+        
+        currentTrip.start(
+            lastSleepSession: lastSleepSession
+        )
+    }
+    
+    func stopTrip() {
+        self.currentTrip.reset()
     }
 }

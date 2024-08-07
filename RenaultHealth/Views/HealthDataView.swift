@@ -38,6 +38,9 @@ struct HealthDataView: View {
                             
                             mainHeader()
                             
+                            sectionHeader(title: "Current Trip")
+                            tripInfoCard()
+                            
                             sectionHeader(title: "Last sleep")
                             sleepDataCard(viewModel.lastSleepSessionValues)
                             
@@ -255,6 +258,38 @@ struct HealthDataView: View {
                     }
             )
         }
+    }
+    
+    @ViewBuilder
+    private func tripInfoCard() -> some View {
+        
+        ContentCard(
+            content:
+                
+                VStack {
+                    
+                    Text(
+                        viewModel.tripMessage
+                    )
+                    .foregroundColor(.black.opacity(0.4))
+                    
+                    Button {
+                        viewModel.toggleTrip()
+                    } label: {
+                        Text(
+                            viewModel.tripActionButtonText
+                        )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .fontWeight(.bold)
+                        .font(.system(size: 18))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 44)
+                    .background(viewModel.tripActionButtonBackground)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+                }
+        )
     }
     
     @ViewBuilder
