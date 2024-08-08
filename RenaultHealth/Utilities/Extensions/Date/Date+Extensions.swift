@@ -50,7 +50,7 @@ extension Date {
 
     func string(
         withFormat format: StringDateFormat = StringDateFormat.formatDay,
-        and timeZone: TimeZone = TimeZone(abbreviation: "UTC")!,
+        and timeZone: TimeZone = .current,
         locale: Locale = Locale(identifier: "en_US")
     ) -> String {
         Date.formatter.dateFormat = format.rawValue

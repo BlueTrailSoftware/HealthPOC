@@ -233,11 +233,7 @@ struct HealthDataView: View {
                         titleValueCell(title: "Wake up time", value: values.wakeUpTime, valueColor: viewModel.sleepColor, highlighted: true, highlightedColor: .white)
                         titleValueCell(title: "Duration", value: values.sleepDuration, valueColor: viewModel.sleepColor, highlighted: true, highlightedColor: .white)
                         
-                        Rectangle()
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 1)
-                            .padding(.vertical, 16)
-                            .foregroundColor(.black.opacity(0.1))
+                        separator()
                         
                         contentCardHeader("Summary")
                         
@@ -245,11 +241,7 @@ struct HealthDataView: View {
                             sleepValueCell(value)
                         }
                         
-                        Rectangle()
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 1)
-                            .padding(.vertical, 16)
-                            .foregroundColor(.black.opacity(0.1))
+                        separator()
                         
                         contentCardHeader("Sleep Stages")
                         ForEach(values.stagesValues, id: \.self) { value in
@@ -280,10 +272,45 @@ struct HealthDataView: View {
                             value: viewModel.tripValues.startDate
                         )
                         
+                        separator()
+                        
                         titleValueCell(
-                            title: "Rest date",
-                            value: viewModel.tripValues.restDate
+                            title: "Last sleep duration",
+                            value: viewModel.lastSleepSessionValues.sleepDuration
                         )
+                        
+                        separator()
+                        
+                        Text(
+                            "formula: last_sleep_duration / 60"
+                        )
+                        .opacity(0.4)
+                        
+                        titleValueCell(
+                            title: "",
+                            value: "\(viewModel.lastSleepSessionValues.sleepDuration) / 60 = \(viewModel.tripValues.intervalUntilRest)"
+                        )
+                        
+                        titleValueCell(
+                            title: "Driving time before rest",
+                            value: "\(viewModel.tripValues.intervalUntilRest)",
+                            valueColor: .white,
+                            highlighted: true,
+                            highlightedColor: .mint
+                        )
+                        
+                        Text(
+                            "Rest should start \(viewModel.tripValues.intervalUntilRest) after the trip started."
+                        )
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .multilineTextAlignment(.center)
+                        .padding(8)
+                        .fontWeight(.bold)
+                        //.background(.pink)
+                        .foregroundColor(.orange)
+                        
+                        
+                        separator()
                         
                         titleValueCell(
                             title: "Trip elapsed time",
@@ -291,8 +318,20 @@ struct HealthDataView: View {
                         )
                         
                         titleValueCell(
-                            title: "Rest coming in:",
-                            value: viewModel.tripValues.intervalUntilRest
+                            title: "Current date",
+                            value: Date().dateTimeString(withFormat: .readable)
+                        )
+
+                        separator()
+                        
+                        titleValueCell(
+                            title: "Rest should start in",
+                            value: viewModel.tripValues.realTimeIntervalUntilRest
+                        )
+                        
+                        titleValueCell(
+                            title: "Rest date",
+                            value: viewModel.tripValues.restDate
                         )
                     }
                     
@@ -344,6 +383,15 @@ struct HealthDataView: View {
         }
         .frame(height: 44)
         .padding(.leading, 16)
+    }
+    
+    @ViewBuilder
+    private func separator() -> some View {
+        Rectangle()
+            .frame(maxWidth: .infinity)
+            .frame(height: 1)
+            .padding(.vertical, 16)
+            .foregroundColor(.black.opacity(0.1))
     }
 }
 

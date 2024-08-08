@@ -19,6 +19,7 @@ struct TripPrettyPrintValues {
     var restDate: String = ""
     var elapsedTime: String  = ""
     var intervalUntilRest = ""
+    var realTimeIntervalUntilRest = ""
 }
 
 class HealthDataViewModel: ObservableObject {
@@ -124,7 +125,7 @@ class HealthDataViewModel: ObservableObject {
             tripMessage = "Running trip"
             tripMessageColor = .orange
         case .completed:
-            tripActionButtonText = "Ok"
+            tripActionButtonText = "Rest Now!"
             tripActionButtonBackground = .red
             tripMessage = "Rest now!"
             tripMessageColor = .red
@@ -157,12 +158,16 @@ class HealthDataViewModel: ObservableObject {
         currentTrip.start(
             lastSleepSession: lastSleepSession
         ) {
+            
             self.tripValues = TripPrettyPrintValues(
                 startDate: self.currentTrip.startDatePretty,
                 restDate: self.currentTrip.restDatePretty,
                 elapsedTime: self.currentTrip.elapsedTimePretty,
-                intervalUntilRest: self.currentTrip.intervalUntilRestPretty
+                intervalUntilRest: self.currentTrip.intervalUntilRestPretty,
+                realTimeIntervalUntilRest: self.currentTrip.realTimeIntervalUntilRestPretty
             )
+            
+            self.refreshTripPublishedValues()
         }
     }
     

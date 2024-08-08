@@ -27,7 +27,13 @@ class Trip {
     }
     
     var restDate: Date? {
-        startDate.addingTimeInterval(intervalUntilRest)
+        
+        let restDate = Calendar.current.date(byAdding: .second, value: Int(intervalUntilRest), to: startDate)
+        
+        print("restDate : \(restDate)")
+        
+        return restDate
+        //return startDate.addingTimeInterval(intervalUntilRest)
     }
     
     // MARK: - Pretty print
@@ -37,7 +43,9 @@ class Trip {
     }
     
     var restDatePretty: String {
-        restDate?.string(withFormat: .readable) ?? ""
+        restDate?.string(
+            withFormat: .readable
+        ) ?? ""
     }
     
     var elapsedTimePretty: String {
@@ -47,6 +55,10 @@ class Trip {
     }
     
     var intervalUntilRestPretty: String {
+        intervalUntilRest.verboseTimeString(includeSeconds: true)
+    }
+    
+    var realTimeIntervalUntilRestPretty: String {
         (intervalUntilRest - elapsedTime).verboseTimeString(
             includeSeconds: true
         )
@@ -86,7 +98,7 @@ class Trip {
             return
         }
         
-        self.intervalUntilRest = lastSleep.totalSleepDuration * 1.5
+        self.intervalUntilRest = lastSleep.totalSleepDuration / 60
     }
     
     // MARK: - Timer
@@ -106,14 +118,14 @@ class Trip {
     }
     
     @objc private func timerTasks(timer: Timer) {
-        self.elapsedTime += 1
+        self.elapsedTime = Date().timeIntervalSince(startDate)
         print("elapsedTime : \(elapsedTime) ::: \(intervalUntilRest) ::: \(elapsedTimePretty) ::: \(intervalUntilRestPretty)")
         
-        timerWasFired?()
-        
-        if elapsedTime == intervalUntilRest {
-            status = .completed
+        if elapsedTime >= intervalUntilRest {
+            self.status = .completed
             stopTimer()
         }
+        
+        timerWasFired?()
     }
 }
