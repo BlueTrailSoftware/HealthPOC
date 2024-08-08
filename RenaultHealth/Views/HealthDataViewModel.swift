@@ -45,6 +45,7 @@ class HealthDataViewModel: ObservableObject {
     @Published var tripActionButtonText: String = "Start trip"
     @Published var tripActionButtonBackground: Color = .mint
     @Published var tripValues: TripPrettyPrintValues = TripPrettyPrintValues()
+    @Published var canStartTrip: Bool = false
     
     // DataSources
     private var sleepDataSource = HKSleepDataSource()
@@ -81,6 +82,8 @@ class HealthDataViewModel: ObservableObject {
                 self.allSleepSessionValues = allSessions.compactMap { session in
                     session.displayValues
                 }
+                
+                self.canStartTrip = self.sleepDataSource.lastSleepSession != nil
                 
                 self.isRefreshing = false
             }

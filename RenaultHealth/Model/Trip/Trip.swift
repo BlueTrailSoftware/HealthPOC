@@ -104,12 +104,17 @@ class Trip {
     // MARK: - Timer
     
     private func startTimer() {
+        
         self.timer = Timer.scheduledTimer(
             timeInterval: 1.0,
             target: self,
             selector: #selector(timerTasks),
             userInfo: nil, repeats: true
         )
+        
+        if let timer = self.timer {
+            RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+        }
     }
     
     private func stopTimer() {

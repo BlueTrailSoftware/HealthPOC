@@ -159,102 +159,19 @@ class HKSleepDataSource {
         completion: (() -> Void)?
     ) {
         
+        
         let firstDate: Date = targetDay.startOfDay.modifyDateBy(days: -1)
-           
+        /*
            // get last date
         let lastDate: Date = targetDay.endOfDay.modifyDateBy(days: 1)
+        */
             
         fetchSleepSessions(
             from: firstDate,
-            to: lastDate,
+            to: targetDay,
             completion: completion
         )
-        
-
-        /*
-           fetchSleepSessions(
-               from: firstDate,
-               to: lastDate
-           ) { sessions in
-               
-               // Filter only sessions which end within the target day
-               let daySessions = sessions.filter{
-                   guard let endDate = $0.endDate else {
-                       return false
-                   }
-                   return (
-                       targetDay.startOfDay ... targetDay.endOfDay
-                   ).contains(
-                       endDate
-                   )
-               }
-               
-               completion?(daySessions )
-           }
-        */
     }
-    
-    /*
-    func fetchLongestSleepSession(
-        for targetDay: Date,
-        completion: ((HKSleepSession?) -> Void)?
-    ) {
-        fetchAllSleepSessions(for: targetDay) { [weak self] sessions in
-            completion?(
-                self?.longestSleepSession(from: sessions)
-            )
-        }
-    }
-    
-    func fetchLastSleepSession(
-        for targetDay: Date,
-        completion: ((HKSleepSession?) -> Void)?
-    ) {
-        fetchAllSleepSessions(for: targetDay) { [weak self] sessions in
-            completion?(
-                self?.lastSleepSession(from: sessions)
-            )
-        }
-    }
-    */
-    
-    /*
-    func fetchSleepSessions(
-        for dates: [Date],
-        completion: (([HKSleepSession]) -> Void)?
-    ) {
-        
-        // Get dates for given dates range
-        let sortedDates = dates.sorted { date1, date2 in
-            date1 < date2
-        }
-        
-        guard
-            let firstDate = sortedDates.first,
-            let lastDate = sortedDates.last
-        else {
-            completion?([])
-            return
-        }
-        
-        fetchSleepSessions(
-            from: firstDate,
-            to: lastDate
-        ) { sleepSessions in
-         
-            // get only the sleep sessions for the given dates
-            let dateIds: [String] = dates.compactMap {
-                $0.string(withFormat: .yearMonthDayNumeric)
-            }
-            
-            let sessionsForDates = sleepSessions.filter{
-                dateIds.contains($0.startingDate?.string(withFormat: .yearMonthDayNumeric) ?? "")
-            }
-            
-            completion?(sessionsForDates)
-        }
-    }
-     */
     
     // MARK: - Sleep Sessions
     
@@ -308,42 +225,5 @@ class HKSleepDataSource {
         }
         
         return sessions
-    }
-    
-    // MARK: - Filters
-    
-    func longestSleepSession(
-        from sessions: [HKSleepSession]
-    ) -> HKSleepSession? {
-       
-        let longestSleep = sessions.sorted(
-            by: { $0.totalSleepDuration > $1.totalSleepDuration }
-        ).first
-        
-        return longestSleep
-    }
-    
-    func lastSleepSession(
-        from sessions: [HKSleepSession]
-    ) -> HKSleepSession? {
-        
-        let endDates = sessions.map { $0.endDate }
-
-        print("HKSDS_lastSleepSession_sessions : \(endDates)")
-       
-        let sorted = sessions.sorted(
-            by: { $0.endDate ?? Date() > $1.endDate ?? Date() }
-        )
-        
-        print("HKSDS_lastSleepSession_sorted : \(sorted)")
-        
-        let sorted_endDates = sorted.map { $0.endDate }
-        print("HKSDS_lastSleepSession_sessions_sorted_endDates : \(sorted_endDates)")
-        
-        let lastSleep = sorted.last
-        
-        print("HKSDS_lastSleepSession_lastSleep : \(lastSleep?.totalSleepDuration)")
-        
-        return lastSleep
     }
 }

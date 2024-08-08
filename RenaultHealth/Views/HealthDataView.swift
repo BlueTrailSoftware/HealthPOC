@@ -260,96 +260,106 @@ struct HealthDataView: View {
                 
                 VStack {
                     
-                    Text(
-                        viewModel.tripMessage
-                    )
-                    .font(.system(size: 22))
-                    .foregroundColor(viewModel.tripMessageColor)
-                    
-                    if viewModel.currentTrip.activityStatus != .idle {
-                        titleValueCell(
-                            title: "Trip start",
-                            value: viewModel.tripValues.startDate
-                        )
-                        
-                        separator()
-                        
-                        titleValueCell(
-                            title: "Last sleep duration",
-                            value: viewModel.lastSleepSessionValues.sleepDuration
-                        )
-                        
-                        separator()
-                        
+                    if viewModel.canStartTrip {
                         Text(
-                            "formula: last_sleep_duration / 60"
+                            viewModel.tripMessage
                         )
-                        .opacity(0.4)
+                        .font(.system(size: 22))
+                        .foregroundColor(viewModel.tripMessageColor)
                         
-                        titleValueCell(
-                            title: "",
-                            value: "\(viewModel.lastSleepSessionValues.sleepDuration) / 60 = \(viewModel.tripValues.intervalUntilRest)"
-                        )
-                        
-                        titleValueCell(
-                            title: "Driving time before rest",
-                            value: "\(viewModel.tripValues.intervalUntilRest)",
-                            valueColor: .white,
-                            highlighted: true,
-                            highlightedColor: .mint
-                        )
-                        
-                        Text(
-                            "Rest should start \(viewModel.tripValues.intervalUntilRest) after the trip started."
-                        )
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .multilineTextAlignment(.center)
-                        .padding(8)
-                        .fontWeight(.bold)
-                        //.background(.pink)
-                        .foregroundColor(.orange)
-                        
-                        
-                        separator()
-                        
-                        titleValueCell(
-                            title: "Trip elapsed time",
-                            value: viewModel.tripValues.elapsedTime
-                        )
-                        
-                        titleValueCell(
-                            title: "Current date",
-                            value: Date().dateTimeString(withFormat: .readable)
-                        )
+                        if viewModel.currentTrip.activityStatus != .idle {
+                            titleValueCell(
+                                title: "Trip start",
+                                value: viewModel.tripValues.startDate
+                            )
+                            
+                            separator()
+                            
+                            titleValueCell(
+                                title: "Last sleep duration",
+                                value: viewModel.lastSleepSessionValues.sleepDuration
+                            )
+                            
+                            separator()
+                            
+                            Text(
+                                "formula: last_sleep_duration / 60"
+                            )
+                            .opacity(0.4)
+                            
+                            titleValueCell(
+                                title: "",
+                                value: "\(viewModel.lastSleepSessionValues.sleepDuration) / 60 = \(viewModel.tripValues.intervalUntilRest)"
+                            )
+                            
+                            titleValueCell(
+                                title: "Driving time before rest",
+                                value: "\(viewModel.tripValues.intervalUntilRest)",
+                                valueColor: .white,
+                                highlighted: true,
+                                highlightedColor: .mint
+                            )
+                            
+                            Text(
+                                "Rest should start \(viewModel.tripValues.intervalUntilRest) after the trip started."
+                            )
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .multilineTextAlignment(.center)
+                            .padding(8)
+                            .fontWeight(.bold)
+                            //.background(.pink)
+                            .foregroundColor(.orange)
+                            
+                            
+                            separator()
+                            
+                            titleValueCell(
+                                title: "Trip elapsed time",
+                                value: viewModel.tripValues.elapsedTime
+                            )
+                            
+                            titleValueCell(
+                                title: "Current date",
+                                value: Date().dateTimeString(withFormat: .readable)
+                            )
 
-                        separator()
+                            separator()
+                            
+                            titleValueCell(
+                                title: "Rest should start in",
+                                value: viewModel.tripValues.realTimeIntervalUntilRest
+                            )
+                            
+                            titleValueCell(
+                                title: "Rest date",
+                                value: viewModel.tripValues.restDate
+                            )
+                        }
                         
-                        titleValueCell(
-                            title: "Rest should start in",
-                            value: viewModel.tripValues.realTimeIntervalUntilRest
-                        )
+                        Button {
+                            viewModel.toggleTrip()
+                        } label: {
+                            Text(
+                                viewModel.tripActionButtonText
+                            )
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .fontWeight(.bold)
+                            .font(.system(size: 18))
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 44)
+                        .background(viewModel.tripActionButtonBackground)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                    } else {
                         
-                        titleValueCell(
-                            title: "Rest date",
-                            value: viewModel.tripValues.restDate
-                        )
-                    }
-                    
-                    Button {
-                        viewModel.toggleTrip()
-                    } label: {
                         Text(
-                            viewModel.tripActionButtonText
+                            "No sleep data available to start a new trip"
                         )
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .fontWeight(.bold)
-                        .font(.system(size: 18))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                        .multilineTextAlignment(.center)
+                        .opacity(0.5)
                     }
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 44)
-                    .background(viewModel.tripActionButtonBackground)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
                 }
         )
     }
