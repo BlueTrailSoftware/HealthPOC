@@ -35,6 +35,8 @@
 		FFDE755F2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */; };
 		FFDE75602C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */; };
 		FFDE75612C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */; };
+		FFDE75632C6AA303005E90D0 /* ContentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE75622C6AA303005E90D0 /* ContentCard.swift */; };
+		FFDE75642C6AA303005E90D0 /* ContentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE75622C6AA303005E90D0 /* ContentCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,7 @@
 		4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
 		FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAppButton.swift; sourceTree = "<group>"; };
 		FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateValues.swift; sourceTree = "<group>"; };
+		FFDE75622C6AA303005E90D0 /* ContentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */,
+				FFDE75622C6AA303005E90D0 /* ContentCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -468,6 +472,7 @@
 				4DF91DDE2C4839DD00C28E55 /* DateIntervalCalculations.swift in Sources */,
 				4DF91DFB2C49AA3300C28E55 /* TitleValueCell.swift in Sources */,
 				4DF91DD22C4838C900C28E55 /* HKSleepSession.swift in Sources */,
+				FFDE75632C6AA303005E90D0 /* ContentCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF91DB22C4835B000C28E55 /* RenaultHealthTests.swift in Sources */,
+				FFDE75642C6AA303005E90D0 /* ContentCard.swift in Sources */,
 				FFDE75612C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */,
 				FFDE755F2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */,
 			);

@@ -7,20 +7,7 @@
 
 import SwiftUI
 
-struct ContentCard<T: View>: View {
-    
-    let content: T
-    
-    var body: some View {
-        VStack {
-            content
-        }
-        .padding(16)
-        .frame(maxWidth: .infinity)
-        .background(.white)
-        .cornerRadius(16)
-    }
-}
+
 
 struct HealthDataView: View {
     
@@ -31,45 +18,14 @@ struct HealthDataView: View {
         VStack {
             if !viewModel.isRefreshing {
                 if !viewModel.allSleepSessionValues.isEmpty {
-                    VStack {
-                        ScrollView(showsIndicators: false) {
-                            VStack {
+                    healthView()
 
-                                mainHeader()
-
-                                sectionHeader(title: "Current Trip")
-                                tripInfoCard()
-
-                                sectionHeader(title: "Last sleep")
-                                sleepDataCard(viewModel.lastSleepSessionValues)
-
-                                sectionHeader(title: "Longest sleep")
-                                sleepDataCard(viewModel.longestSleepSessionValues)
-
-                                sectionHeader(title: "All sleep sessions")
-                                ForEach(viewModel.allSleepSessionValues, id: \.self) {
-                                    sleepDataCard($0)
-                                }
-                            }
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(.clear)
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(.clear)
-                        .refreshable {
-                            viewModel.refreshData()
-                        }
-                    }
-                    .background(.clear)
                 } else {
                     emptyStateView()
                 }
+
             } else {
-                ZStack {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                        .scaleEffect(1.5)
-                }
+               loadingView()
             }
             
             Spacer()
@@ -84,7 +40,81 @@ struct HealthDataView: View {
             LinearGradient(gradient: Gradient(colors: [.purple.opacity(0.8), .white]), startPoint: .top, endPoint: .bottom)
             )
     }
-    
+
+    // MARK: Main Views
+    @ViewBuilder
+    private func healthView() -> some View {
+        VStack {
+            ScrollView(showsIndicators: false) {
+                VStack {
+
+                    mainHeader()
+
+                    sectionHeader(title: "Current Trip")
+                    tripInfoCard()
+
+                    sectionHeader(title: "Last sleep")
+                    sleepDataCard(viewModel.lastSleepSessionValues)
+
+                    sectionHeader(title: "Longest sleep")
+                    sleepDataCard(viewModel.longestSleepSessionValues)
+
+                    sectionHeader(title: "All sleep sessions")
+                    ForEach(viewModel.allSleepSessionValues, id: \.self) {
+                        sleepDataCard($0)
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.clear)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.clear)
+            .refreshable {
+                viewModel.refreshData()
+            }
+        }
+        .background(.clear)
+    }
+
+    @ViewBuilder
+    private func loadingView() -> some View {
+        ZStack {
+            ProgressView()
+                .progressViewStyle(.circular)
+                .scaleEffect(1.5)
+        }
+    }
+
+    @ViewBuilder
+    private func emptyStateView() -> some View {
+        ContentUnavailableView {
+            // Icon & Title
+            Label(EmptyStateValues.emptyTitle, systemImage: "heart")
+                .font(.largeTitle)
+                .symbolRenderingMode(.multicolor)
+                .symbolEffect(.pulse)
+        } description: {
+            // Instructions
+            Text(EmptyStateValues.emptyMessage)
+                .font(.footnote)
+        } actions: {
+            // Alternative Actions
+            VStack {
+                Button {
+                    viewModel.refreshData()
+                } label: {
+                    Label(EmptyStateValues.emptyButtonTry, systemImage: "arrow.circlepath")
+                }
+
+                HealthAppButton(type: .labeled)
+            }
+            .buttonStyle(.bordered)
+            .foregroundStyle(.indigo)
+        }
+        .padding()
+    }
+
+    // MARK: Headers
     @ViewBuilder
     private func mainHeader() -> some View {
         
@@ -144,6 +174,7 @@ struct HealthDataView: View {
             .padding(.bottom, 24)
     }
     
+    // MARK: Cells
     @ViewBuilder
     private func sleepSegmentCell(
         _ value: SleepStageDisplayValues
@@ -218,7 +249,48 @@ struct HealthDataView: View {
             valueColor: viewModel.heartColor
         )
     }
-    
+
+    @ViewBuilder
+    private func titleValueCell(
+        title: String,
+        titleColor: Color? = Color.black.opacity(0.6),
+        value: String,
+        valueColor: Color? = Color.black.opacity(0.6),
+        highlighted: Bool? = false,
+        highlightedColor: Color? = Color.white
+    ) -> some View {
+
+        HStack{
+
+            Text(title)
+                .foregroundColor(titleColor)
+                .fontWeight(highlighted ?? false ? .bold : .regular)
+                .font(Font.system(size: 16))
+
+            Spacer()
+
+            Text(value)
+                .padding(8)
+                .font(Font.system(size: 14))
+                .fontWeight(.bold)
+                .foregroundColor(valueColor)
+                .background(highlighted ?? false ? highlightedColor : .white)
+                .cornerRadius(8)
+        }
+        .frame(height: 44)
+        .padding(.leading, 16)
+    }
+
+    @ViewBuilder
+    private func separator() -> some View {
+        Rectangle()
+            .frame(maxWidth: .infinity)
+            .frame(height: 1)
+            .padding(.vertical, 16)
+            .foregroundColor(.black.opacity(0.1))
+    }
+
+    // MARK: Cards
     @ViewBuilder
     private func sleepDataCard(
         _ values: SleepSessionDisplayValues
@@ -362,75 +434,6 @@ struct HealthDataView: View {
                     }
                 }
         )
-    }
-    
-    @ViewBuilder
-    private func titleValueCell(
-        title: String,
-        titleColor: Color? = Color.black.opacity(0.6),
-        value: String,
-        valueColor: Color? = Color.black.opacity(0.6),
-        highlighted: Bool? = false,
-        highlightedColor: Color? = Color.white
-    ) -> some View {
-        
-        HStack{
-            
-            Text(title)
-                .foregroundColor(titleColor)
-                .fontWeight(highlighted ?? false ? .bold : .regular)
-                .font(Font.system(size: 16))
-            
-            Spacer()
-            
-            Text(value)
-                .padding(8)
-                .font(Font.system(size: 14))
-                .fontWeight(.bold)
-                .foregroundColor(valueColor)
-                .background(highlighted ?? false ? highlightedColor : .white)
-                .cornerRadius(8)
-        }
-        .frame(height: 44)
-        .padding(.leading, 16)
-    }
-    
-    @ViewBuilder
-    private func separator() -> some View {
-        Rectangle()
-            .frame(maxWidth: .infinity)
-            .frame(height: 1)
-            .padding(.vertical, 16)
-            .foregroundColor(.black.opacity(0.1))
-    }
-
-    @ViewBuilder
-    private func emptyStateView() -> some View {
-        ContentUnavailableView {
-            // Icon & Title
-            Label(EmptyStateValues.emptyTitle, systemImage: "heart")
-                .font(.largeTitle)
-                .symbolRenderingMode(.multicolor)
-                .symbolEffect(.pulse)
-        } description: {
-            // Instructions
-            Text(EmptyStateValues.emptyMessage)
-                .font(.footnote)
-        } actions: {
-            // Alternative Actions
-            VStack {
-                Button {
-                    viewModel.refreshData()
-                } label: {
-                    Label(EmptyStateValues.emptyButtonTry, systemImage: "arrow.circlepath")
-                }
-
-                HealthAppButton(type: .labeled)
-            }
-            .buttonStyle(.bordered)
-            .foregroundStyle(.indigo)
-        }
-        .padding()
     }
 }
 
