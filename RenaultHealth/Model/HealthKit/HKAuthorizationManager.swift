@@ -7,9 +7,13 @@
 
 import Foundation
 import HealthKit
+import Combine
 
 class HKAuthorizationManager: NSObject {
-    
+
+    // Publisher
+    var requestAuthorizationDone = PassthroughSubject<Void, Never>()
+
     // Properties
     
     /// An instance of HKHealthStore is used to interact with the HealthKit repository
@@ -74,6 +78,7 @@ class HKAuthorizationManager: NSObject {
             }
             // Success message
             print("HKAuthorizationManager: requestHKAuthorization success")
+            self.requestAuthorizationDone.send(())
         }
     }
 }

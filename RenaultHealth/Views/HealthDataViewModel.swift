@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 struct HRVEntryTableValue: Hashable {
     var date: String = ""
@@ -26,9 +27,10 @@ class HealthDataViewModel: ObservableObject {
     
     let sleepColor: Color = .mint
     let heartColor: Color = Color(red: 255/255, green: 89/255, blue: 94/255)
-    
+    private var cancellables = Set<AnyCancellable>()
+
     @Published var isRefreshing: Bool = true
-    
+
     // Sleep
     @Published var lastSleepSessionValues: SleepSessionDisplayValues = SleepSessionDisplayValues()
     @Published var longestSleepSessionValues: SleepSessionDisplayValues = SleepSessionDisplayValues()
@@ -47,6 +49,9 @@ class HealthDataViewModel: ObservableObject {
     @Published var tripValues: TripPrettyPrintValues = TripPrettyPrintValues()
     @Published var canStartTrip: Bool = false
     
+    // Managers
+    private var authorizationManager = HKAuthorizationManager()
+
     // DataSources
     private var sleepDataSource = HKSleepDataSource()
     private var heartDataSource = HKHeartDataSource()
@@ -54,7 +59,12 @@ class HealthDataViewModel: ObservableObject {
     // MARK: - Permissions
     
     func requestHKPermission() {
-        HKAuthorizationManager().requestPermissions()
+        authorizationManager.requestPermissions()
+        authorizationManager.requestAuthorizationDone
+            .sink { [weak self] _ in
+                self?.refreshSleepData()
+            }
+            .store(in: &cancellables)
     }
     
     //MARK: - Data
