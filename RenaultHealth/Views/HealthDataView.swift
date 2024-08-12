@@ -29,39 +29,41 @@ struct HealthDataView: View {
     var body: some View {
         
         VStack {
-            
             if !viewModel.isRefreshing {
-                VStack{
-                    ScrollView(showsIndicators: false) {
-                        
-                        VStack {
-                            
-                            mainHeader()
-                            
-                            sectionHeader(title: "Current Trip")
-                            tripInfoCard()
-                            
-                            sectionHeader(title: "Last sleep")
-                            sleepDataCard(viewModel.lastSleepSessionValues)
-                            
-                            sectionHeader(title: "Longest sleep")
-                            sleepDataCard(viewModel.longestSleepSessionValues)
-                            
-                            sectionHeader(title: "All sleep sessions")
-                            ForEach(viewModel.allSleepSessionValues, id: \.self) {
-                                sleepDataCard($0)
+                if !viewModel.allSleepSessionValues.isEmpty {
+                    VStack {
+                        ScrollView(showsIndicators: false) {
+                            VStack {
+
+                                mainHeader()
+
+                                sectionHeader(title: "Current Trip")
+                                tripInfoCard()
+
+                                sectionHeader(title: "Last sleep")
+                                sleepDataCard(viewModel.lastSleepSessionValues)
+
+                                sectionHeader(title: "Longest sleep")
+                                sleepDataCard(viewModel.longestSleepSessionValues)
+
+                                sectionHeader(title: "All sleep sessions")
+                                ForEach(viewModel.allSleepSessionValues, id: \.self) {
+                                    sleepDataCard($0)
+                                }
                             }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(.clear)
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(.clear)
+                        .refreshable {
+                            viewModel.refreshData()
+                        }
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(.clear)
-                    .refreshable {
-                        viewModel.refreshData()
-                    }
+                } else {
+                    emptyStateView()
                 }
-                .background(.clear)
             } else {
                 ZStack {
                     ProgressView()
@@ -72,7 +74,7 @@ struct HealthDataView: View {
             
             Spacer()
         }
-        .padding(.horizontal, 8)
+        .padding(.horizontal,8)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .onAppear {
             viewModel.requestHKPermission()
@@ -95,21 +97,19 @@ struct HealthDataView: View {
             .font(.title2)
             .fontWeight(.bold)
             
-            HStack{
+            HStack(spacing: 10) {
                 Spacer()
-                
+
+                HealthAppButton(type: .iconic)
+
                 Button {
                     viewModel.refreshData()
                 } label: {
-                    Text(
-                        "Refresh"
-                    )
+                    Image(systemName: "arrow.triangle.2.circlepath")
                 }
-                .foregroundColor(.white)
-                .background(.clear)
-                .frame(height: 44)
-                .padding(.horizontal, 16)
             }
+            .foregroundColor(.white)
+            .padding(.horizontal, 8)
         }
         .frame(maxWidth: .infinity)
         .frame(height: 52)
@@ -402,6 +402,35 @@ struct HealthDataView: View {
             .frame(height: 1)
             .padding(.vertical, 16)
             .foregroundColor(.black.opacity(0.1))
+    }
+
+    @ViewBuilder
+    private func emptyStateView() -> some View {
+        ContentUnavailableView {
+            // Icon & Title
+            Label(EmptyStateValues.emptyTitle, systemImage: "heart")
+                .font(.largeTitle)
+                .symbolRenderingMode(.multicolor)
+                .symbolEffect(.pulse)
+        } description: {
+            // Instructions
+            Text(EmptyStateValues.emptyMessage)
+                .font(.footnote)
+        } actions: {
+            // Alternative Actions
+            VStack {
+                Button {
+                    viewModel.refreshData()
+                } label: {
+                    Label(EmptyStateValues.emptyButtonTry, systemImage: "arrow.circlepath")
+                }
+
+                HealthAppButton(type: .labeled)
+            }
+            .buttonStyle(.bordered)
+            .foregroundStyle(.indigo)
+        }
+        .padding()
     }
 }
 
