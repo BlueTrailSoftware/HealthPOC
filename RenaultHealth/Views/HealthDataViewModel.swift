@@ -27,7 +27,7 @@ class HealthDataViewModel: ObservableObject {
     let sleepColor: Color = .mint
     let heartColor: Color = Color(red: 255/255, green: 89/255, blue: 94/255)
     
-    @Published var isRefreshing: Bool = false
+    @Published var isRefreshing: Bool = true
     
     // Sleep
     @Published var lastSleepSessionValues: SleepSessionDisplayValues = SleepSessionDisplayValues()
