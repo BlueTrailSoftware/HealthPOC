@@ -126,14 +126,16 @@ class HealthDataViewModel: ObservableObject {
         switch currentTrip.activityStatus {
         case .running:
             tripActionButtonText = "Stop"
-            tripActionButtonBackground = .orange
+            tripActionButtonBackground = .red
             tripMessage = "Running trip"
             tripMessageColor = .orange
+
         case .completed:
             tripActionButtonText = "Rest Now!"
-            tripActionButtonBackground = .red
+            tripActionButtonBackground = .blue
             tripMessage = "Rest now!"
             tripMessageColor = .red
+
         case .idle:
             tripActionButtonText = "Start Trip"
             tripActionButtonBackground = .mint

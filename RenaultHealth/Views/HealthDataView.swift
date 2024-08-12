@@ -410,12 +410,9 @@ struct HealthDataView: View {
                         Button {
                             viewModel.toggleTrip()
                         } label: {
-                            Text(
-                                viewModel.tripActionButtonText
-                            )
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .fontWeight(.bold)
-                            .font(.system(size: 18))
+                            Label(viewModel.tripActionButtonText, systemImage: viewModel.currentTrip.activityStatus == .running 
+                                  ? "stop.fill"
+                                  : viewModel.currentTrip.activityStatus == .completed ? "bed.double.fill" :  "play.fill")
                         }
                         .frame(maxWidth: .infinity)
                         .frame(height: 44)
