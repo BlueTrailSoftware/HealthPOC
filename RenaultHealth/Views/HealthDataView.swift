@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-
-
 struct HealthDataView: View {
     
     @StateObject private var viewModel = HealthDataViewModel()
-    
+
     var body: some View {
         
         VStack {
@@ -79,9 +77,9 @@ struct HealthDataView: View {
     @ViewBuilder
     private func loadingView() -> some View {
         ZStack {
-            ProgressView()
-                .progressViewStyle(.circular)
-                .scaleEffect(1.5)
+            ContentUnavailableView("Loading", systemImage: "lines.measurement.horizontal")
+                .imageScale(.small)
+                .symbolEffect(.variableColor)
         }
     }
 
@@ -136,6 +134,7 @@ struct HealthDataView: View {
                     viewModel.refreshData()
                 } label: {
                     Image(systemName: "arrow.triangle.2.circlepath")
+                        .imageScale(.large)
                 }
             }
             .foregroundColor(.white)

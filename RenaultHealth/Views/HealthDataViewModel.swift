@@ -85,7 +85,9 @@ class HealthDataViewModel: ObservableObject {
                 
                 self.canStartTrip = self.sleepDataSource.lastSleepSession != nil
                 
-                self.isRefreshing = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0..<3)) {
+                    self.isRefreshing = false
+                }
             }
         }
     }

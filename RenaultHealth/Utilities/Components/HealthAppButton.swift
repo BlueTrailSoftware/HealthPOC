@@ -27,9 +27,11 @@ struct HealthAppButton: View {
             case .labeled:
                 Label(EmptyStateValues.emptyButtonHealth, systemImage: "heart.fill")
                     .symbolRenderingMode(.multicolor)
+                    .imageScale(.large)
 
             case .iconic:
                 Image(systemName: "heart.fill")
+                    .imageScale(.large)
 
             case .text:
                 Text(EmptyStateValues.emptyButtonHealth)
