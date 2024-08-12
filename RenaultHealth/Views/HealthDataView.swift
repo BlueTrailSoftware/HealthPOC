@@ -72,7 +72,7 @@ struct HealthDataView: View {
             
             Spacer()
         }
-        .padding(.horizontal,8)
+        .padding(.horizontal, 8)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .onAppear {
             viewModel.requestHKPermission()
