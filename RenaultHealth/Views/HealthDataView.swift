@@ -418,7 +418,9 @@ struct HealthDataView: View {
                         .frame(height: 44)
                         .background(viewModel.tripActionButtonBackground)
                         .foregroundColor(.white)
-                        .cornerRadius(8)
+                        .clipShape(.capsule)
+
+
                     } else {
                         
                         Text(
