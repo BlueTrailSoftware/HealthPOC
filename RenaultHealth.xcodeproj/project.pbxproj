@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D1287032C6407CC00646015 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287022C6407CC00646015 /* Trip.swift */; };
+		4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287082C6BDCF100646015 /* SDKEngine.swift */; };
 		4D9F82642C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */; };
 		4D9F82672C5C1B5B008E4C1D /* HKHeartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */; };
 		4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		4D1287022C6407CC00646015 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		4D1287082C6BDCF100646015 /* SDKEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKEngine.swift; sourceTree = "<group>"; };
 		4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableHKIdentifiers.swift; sourceTree = "<group>"; };
 		4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKHeartDataSource.swift; sourceTree = "<group>"; };
 		4DF91D9D2C4835AF00C28E55 /* RenaultHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenaultHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,12 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D1287012C6407BF00646015 /* Trip */ = {
+		4D1287072C6BDCE500646015 /* SDk  */ = {
 			isa = PBXGroup;
 			children = (
+				4D1287082C6BDCF100646015 /* SDKEngine.swift */,
 				4D1287022C6407CC00646015 /* Trip.swift */,
+				4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */,
 			);
-			path = Trip;
+			path = "SDk ";
 			sourceTree = "<group>";
 		};
 		4D9F82662C5C1B5B008E4C1D /* Heart */ = {
@@ -195,21 +199,12 @@
 		4DF91DCB2C48381D00C28E55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4D1287012C6407BF00646015 /* Trip */,
+				4D1287072C6BDCE500646015 /* SDk  */,
 				4D9F82662C5C1B5B008E4C1D /* Heart */,
 				4DF91DE92C483D0100C28E55 /* HealthKit */,
 				4DF91DCF2C4838A400C28E55 /* Entities */,
-				4DF91DCC2C48384800C28E55 /* DataSources */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		4DF91DCC2C48384800C28E55 /* DataSources */ = {
-			isa = PBXGroup;
-			children = (
-				4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */,
-			);
-			path = DataSources;
 			sourceTree = "<group>";
 		};
 		4DF91DCF2C4838A400C28E55 /* Entities */ = {
@@ -456,6 +451,7 @@
 				4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */,
 				FFDE755E2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */,
 				4DF91DD92C48397B00C28E55 /* JSONDecodable.swift in Sources */,
+				4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */,
 				4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */,
 				4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */,
 				4DF91DCE2C48388500C28E55 /* HKSleepDataSource.swift in Sources */,

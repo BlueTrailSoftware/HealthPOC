@@ -20,7 +20,9 @@ class Trip {
     
     private var timer: Timer?
     private var elapsedTime: TimeInterval = 0
-    var timerWasFired: (() -> Void)?
+    
+    var timerWasFired: ((TripStatus) -> Void)?
+    var restMustStart: (() -> Void)?
     
     var activityStatus: TripStatus {
         status
@@ -68,13 +70,16 @@ class Trip {
     
     func start(
         lastSleepSession: HKSleepSession,
-        timerWasFired: (() -> Void)? = nil
+        timerWasFired: ((TripStatus) -> Void)? = nil,
+        restMustStart: (() -> Void)? = nil
     ) {
         self.startDate = Date()
         self.lastSleepSession = lastSleepSession
         self.elapsedTime = 0
         
         self.timerWasFired = timerWasFired
+        self.restMustStart = restMustStart
+
         calculateRestInterval()
         startTimer()
         
@@ -131,6 +136,10 @@ class Trip {
             stopTimer()
         }
         
-        timerWasFired?()
+        timerWasFired?(self.status)
+                
+        if (self.status == .completed) {
+            self.restMustStart?()
+        }
     }
 }
