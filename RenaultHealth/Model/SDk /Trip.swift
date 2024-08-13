@@ -41,12 +41,12 @@ class Trip {
     // MARK: - Pretty print
     
     var startDatePretty: String {
-        startDate.string(withFormat: .readableMilitary)
+        startDate.string(withFormat: .readable)
     }
     
     var restDatePretty: String {
         restDate?.string(
-            withFormat: .readableMilitary
+            withFormat: .readable
         ) ?? ""
     }
     
