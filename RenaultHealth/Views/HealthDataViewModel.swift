@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import Combine
 
 struct HRVEntryTableValue: Hashable {
     var date: String = ""
@@ -27,7 +26,6 @@ class HealthDataViewModel: ObservableObject {
     
     let sleepColor: Color = .mint
     let heartColor: Color = Color(red: 255/255, green: 89/255, blue: 94/255)
-    private var cancellables = Set<AnyCancellable>()
 
     @Published var isRefreshing: Bool = true
 
@@ -60,11 +58,9 @@ class HealthDataViewModel: ObservableObject {
     
     func requestHKPermission() {
         authorizationManager.requestPermissions()
-        authorizationManager.requestAuthorizationDone
-            .sink { [weak self] _ in
-                self?.refreshSleepData()
-            }
-            .store(in: &cancellables)
+        authorizationManager.onRequestAuthorizationDone = { [weak self] in
+            self?.refreshSleepData()
+        }
     }
     
     //MARK: - Data

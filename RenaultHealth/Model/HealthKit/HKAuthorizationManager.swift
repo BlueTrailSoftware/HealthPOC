@@ -7,12 +7,11 @@
 
 import Foundation
 import HealthKit
-import Combine
 
 class HKAuthorizationManager: NSObject {
 
-    // Publisher
-    var requestAuthorizationDone = PassthroughSubject<Void, Never>()
+    // Closure
+    var onRequestAuthorizationDone:(() -> Void)?
 
     // Properties
     
@@ -67,8 +66,8 @@ class HKAuthorizationManager: NSObject {
         healthStore.requestAuthorization(
             toShare: nil,
             read: requestedTypes
-        ) { (success, error) in
-            
+        ) { [weak self] (success, error) in
+
             // Do not handle any success or error states
             
             if !success || error != nil {
@@ -78,7 +77,7 @@ class HKAuthorizationManager: NSObject {
             }
             // Success message
             print("HKAuthorizationManager: requestHKAuthorization success")
-            self.requestAuthorizationDone.send(())
+            self?.onRequestAuthorizationDone?()
         }
     }
 }
