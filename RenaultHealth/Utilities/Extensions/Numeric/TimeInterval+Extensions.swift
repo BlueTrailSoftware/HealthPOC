@@ -17,13 +17,13 @@ extension TimeInterval{
         var values: [(value: Int, singular: String, plural: String)] = [
             (
                 timeValues.hour,
-                "Hour".localized,
-                "Hours".localized
+                "Hr",
+                "Hrs"
             ),
             (
                 timeValues.minutes,
-                "Min".localized,
-                "Min".localized
+                "Min",
+                "Mins"
             ),
         ]
         
@@ -31,8 +31,8 @@ extension TimeInterval{
             values.append(
                 (
                     timeValues.seconds,
-                    "Sec".localized,
-                    "Sec".localized
+                    "Sec",
+                    "Secs"
                 )
             )
         }

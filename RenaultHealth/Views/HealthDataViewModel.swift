@@ -42,9 +42,9 @@ class HealthDataViewModel: ObservableObject {
     
     // Trip
     @Published var currentTrip: Trip = Trip()
-    @Published var tripMessage: String = "Start a new trip"
+    @Published var tripMessage: String = "New Trip"
     @Published var tripMessageColor: Color = .black.opacity(0.4)
-    @Published var tripActionButtonText: String = "Start trip"
+    @Published var tripActionButtonText: String = "Start"
     @Published var tripActionButtonBackground: Color = .mint
     @Published var tripValues: TripPrettyPrintValues = TripPrettyPrintValues()
     @Published var canStartTrip: Bool = false
@@ -147,9 +147,9 @@ class HealthDataViewModel: ObservableObject {
             tripMessageColor = .red
 
         case .idle:
-            tripActionButtonText = "Start Trip"
+            tripActionButtonText = "Start"
             tripActionButtonBackground = .mint
-            tripMessage = "Start a new trip"
+            tripMessage = "New Trip"
             tripMessageColor = .black.opacity(0.4)
         }
     }

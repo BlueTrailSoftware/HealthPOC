@@ -262,7 +262,8 @@ enum StringDateFormat: String {
     case yearMonthDayNumeric = "yyyyMMdd"
     case monthNameDayName = "MMM dd"
     case basic = "dd-MM-yyyy HH:mm:ss"
-    case readable = "E, d MMM, HH:mm:ss"
+    case readable = "E MMM d, h:mm a"
+    case readableMilitary = "E, d MMM, HH:mm:ss"
 }
 
 extension String {

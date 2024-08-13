@@ -44,7 +44,7 @@ class HKSleepDataSource {
         
         let lastSleep = sorted.first
         
-        print("HKSDS_lastSleepSession_lastSleep : \(lastSleep?.totalSleepDuration)")
+        print("HKSDS_lastSleepSession_lastSleep : \(String(describing: lastSleep?.totalSleepDuration))")
         
         return lastSleep
     }

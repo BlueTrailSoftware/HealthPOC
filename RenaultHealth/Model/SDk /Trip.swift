@@ -32,7 +32,7 @@ class Trip {
         
         let restDate = Calendar.current.date(byAdding: .second, value: Int(intervalUntilRest), to: startDate)
         
-        print("restDate : \(restDate)")
+        print("restDate : \(String(describing: restDate))")
         
         return restDate
         //return startDate.addingTimeInterval(intervalUntilRest)
@@ -41,19 +41,17 @@ class Trip {
     // MARK: - Pretty print
     
     var startDatePretty: String {
-        startDate.string(withFormat: .readable)
+        startDate.string(withFormat: .readableMilitary)
     }
     
     var restDatePretty: String {
         restDate?.string(
-            withFormat: .readable
+            withFormat: .readableMilitary
         ) ?? ""
     }
     
     var elapsedTimePretty: String {
-        elapsedTime.verboseTimeString(
-            includeSeconds: true
-        )
+        elapsedTime.verboseTimeString(includeSeconds: true)
     }
     
     var intervalUntilRestPretty: String {
@@ -61,9 +59,7 @@ class Trip {
     }
     
     var realTimeIntervalUntilRestPretty: String {
-        (intervalUntilRest - elapsedTime).verboseTimeString(
-            includeSeconds: true
-        )
+        (intervalUntilRest - elapsedTime).verboseTimeString(includeSeconds: true )
     }
     
     // MARK: - Setters

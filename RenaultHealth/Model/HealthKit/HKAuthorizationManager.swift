@@ -73,7 +73,7 @@ class HKAuthorizationManager: NSObject {
             
             if !success || error != nil {
                 // Error message
-                print("HKAuthorizationManager: requestHKAuthorization error : \(error)")
+                print("HKAuthorizationManager: requestHKAuthorization error : \(String(describing: error))")
                 return
             }
             // Success message
