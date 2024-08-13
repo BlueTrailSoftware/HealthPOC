@@ -131,7 +131,19 @@ class HealthDataViewModel: ObservableObject {
     }
     
     // MARK: - Trip
-    
+
+    private func refreshTripInfo() {
+        self.tripValues = TripPrettyPrintValues(
+            startDate: self.currentTrip.startDatePretty,
+            restDate: self.currentTrip.restDatePretty,
+            elapsedTime: self.currentTrip.elapsedTimePretty,
+            intervalUntilRest: self.currentTrip.intervalUntilRestPretty,
+            realTimeIntervalUntilRest: self.currentTrip.realTimeIntervalUntilRestPretty
+        )
+
+        refreshTripPublishedValues()
+    }
+
     func refreshTripPublishedValues() {
         switch currentTrip.activityStatus {
         case .running:
@@ -171,20 +183,12 @@ class HealthDataViewModel: ObservableObject {
         else {
             return
         }
-        
-        currentTrip.start(
-            lastSleepSession: lastSleepSession
-        ) {
-            
-            self.tripValues = TripPrettyPrintValues(
-                startDate: self.currentTrip.startDatePretty,
-                restDate: self.currentTrip.restDatePretty,
-                elapsedTime: self.currentTrip.elapsedTimePretty,
-                intervalUntilRest: self.currentTrip.intervalUntilRestPretty,
-                realTimeIntervalUntilRest: self.currentTrip.realTimeIntervalUntilRestPretty
-            )
-            
-            self.refreshTripPublishedValues()
+
+        currentTrip.start(lastSleepSession: lastSleepSession) { [weak self] _ in
+            self?.refreshTripInfo()
+
+        } restMustStart: { [weak self] in
+            self?.refreshTripInfo()
         }
     }
     
