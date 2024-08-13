@@ -140,7 +140,7 @@ class HealthDataViewModel: ObservableObject {
         refreshTripPublishedValues()
     }
 
-    func refreshTripPublishedValues() {
+    private func refreshTripPublishedValues() {
         switch currentTrip.activityStatus {
         case .running:
             tripActionButtonText = "Stop"
@@ -172,8 +172,7 @@ class HealthDataViewModel: ObservableObject {
         refreshTripPublishedValues()
     }
     
-    func startTrip() {
-        
+    private func startTrip() {
         guard 
             let lastSleepSession = sleepDataSource.lastSleepSession
         else {
@@ -188,7 +187,7 @@ class HealthDataViewModel: ObservableObject {
         }
     }
     
-    func stopTrip() {
+    private func stopTrip() {
         self.currentTrip.reset()
     }
 }
