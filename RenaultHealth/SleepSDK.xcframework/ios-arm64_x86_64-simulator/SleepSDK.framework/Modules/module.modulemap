@@ -1,0 +1,6 @@
+framework module SleepSDK {
+  umbrella header "SleepSDK.h"
+  export *
+
+  module * { export * }
+}

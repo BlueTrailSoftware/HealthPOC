@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import Combine
+import SleepSDK
 
 struct HRVEntryTableValue: Hashable {
     var date: String = ""
@@ -49,6 +51,10 @@ class HealthDataViewModel: ObservableObject {
     
     // Managers
     private var authorizationManager = HKAuthorizationManager()
+    private var healthProvider = HealthDataProviderQA()
+
+    // Combine
+    private var cancellables = Set<AnyCancellable>()
 
     // DataSources
     private var sleepDataSource = HKSleepDataSource()
@@ -57,10 +63,15 @@ class HealthDataViewModel: ObservableObject {
     // MARK: - Permissions
     
     func requestHKPermission() {
-        authorizationManager.requestPermissions()
-        authorizationManager.onRequestAuthorizationDone = { [weak self] in
-            self?.refreshSleepData()
-        }
+//        authorizationManager.requestPermissions()
+//        authorizationManager.onRequestAuthorizationDone = { [weak self] in
+//            self?.refreshSleepData()
+//        }
+        healthProvider.requestHealthKitPermission()
+        healthProvider.requestAuthorizationCompleted
+            .sink { _ in
+                self.refreshData()
+            }.store(in: &cancellables)
     }
     
     //MARK: - Data

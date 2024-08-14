@@ -32,6 +32,9 @@
 		4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */; };
 		4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */; };
 		4DF91DFB2C49AA3300C28E55 /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */; };
+		FFB550AC2C6D684500AFDCB8 /* SleepSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB550AA2C6D684500AFDCB8 /* SleepSDK.xcframework */; };
+		FFB550AD2C6D684D00AFDCB8 /* SleepSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB550AA2C6D684500AFDCB8 /* SleepSDK.xcframework */; };
+		FFB550AE2C6D684D00AFDCB8 /* SleepSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FFB550AA2C6D684500AFDCB8 /* SleepSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FFDE755E2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */; };
 		FFDE755F2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */; };
 		FFDE75602C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */; };
@@ -56,6 +59,20 @@
 			remoteInfo = RenaultHealth;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FFDE2FBF2C6D6696003A311E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FFB550AE2C6D684D00AFDCB8 /* SleepSDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4D1287022C6407CC00646015 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -87,6 +104,7 @@
 		4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataView.swift; sourceTree = "<group>"; };
 		4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataViewModel.swift; sourceTree = "<group>"; };
 		4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
+		FFB550AA2C6D684500AFDCB8 /* SleepSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SleepSDK.xcframework; sourceTree = "<group>"; };
 		FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAppButton.swift; sourceTree = "<group>"; };
 		FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateValues.swift; sourceTree = "<group>"; };
 		FFDE75622C6AA303005E90D0 /* ContentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCard.swift; sourceTree = "<group>"; };
@@ -97,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB550AD2C6D684D00AFDCB8 /* SleepSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB550AC2C6D684500AFDCB8 /* SleepSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +186,7 @@
 				4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */,
 				4DF91DA22C4835AF00C28E55 /* ContentView.swift */,
 				4DF91DA42C4835B000C28E55 /* Assets.xcassets */,
+				FFB550AA2C6D684500AFDCB8 /* SleepSDK.xcframework */,
 				4DF91DA62C4835B000C28E55 /* Preview Content */,
 			);
 			path = RenaultHealth;
@@ -326,6 +347,7 @@
 				4DF91D992C4835AF00C28E55 /* Sources */,
 				4DF91D9A2C4835AF00C28E55 /* Frameworks */,
 				4DF91D9B2C4835AF00C28E55 /* Resources */,
+				FFDE2FBF2C6D6696003A311E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
