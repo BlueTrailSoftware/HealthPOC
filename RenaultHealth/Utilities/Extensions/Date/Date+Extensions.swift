@@ -50,7 +50,7 @@ extension Date {
 
     func string(
         withFormat format: StringDateFormat = StringDateFormat.formatDay,
-        and timeZone: TimeZone = TimeZone(abbreviation: "UTC")!,
+        and timeZone: TimeZone = .current,
         locale: Locale = Locale(identifier: "en_US")
     ) -> String {
         Date.formatter.dateFormat = format.rawValue
@@ -262,7 +262,8 @@ enum StringDateFormat: String {
     case yearMonthDayNumeric = "yyyyMMdd"
     case monthNameDayName = "MMM dd"
     case basic = "dd-MM-yyyy HH:mm:ss"
-    case readable = "E, d MMM, HH:mm:ss"
+    case readable = "E MMM d, h:mm a"
+    case readableMilitary = "E, d MMM, HH:mm:ss"
 }
 
 extension String {

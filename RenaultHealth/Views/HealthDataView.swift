@@ -7,64 +7,23 @@
 
 import SwiftUI
 
-struct ContentCard<T: View>: View {
-    
-    let content: T
-    
-    var body: some View {
-        VStack {
-            content
-        }
-        .padding(16)
-        .frame(maxWidth: .infinity)
-        .background(.white)
-        .cornerRadius(16)
-    }
-}
-
 struct HealthDataView: View {
     
     @StateObject private var viewModel = HealthDataViewModel()
-    
+
     var body: some View {
         
         VStack {
-            
             if !viewModel.isRefreshing {
-                VStack{
-                    ScrollView(showsIndicators: false) {
-                        
-                        VStack {
-                            
-                            mainHeader()
-                            
-                            sectionHeader(title: "Last sleep")
-                            sleepDataCard(viewModel.lastSleepSessionValues)
-                            
-                            sectionHeader(title: "Longest sleep")
-                            sleepDataCard(viewModel.longestSleepSessionValues)
-                            
-                            sectionHeader(title: "All sleep sessions")
-                            ForEach(viewModel.allSleepSessionValues, id: \.self) {
-                                sleepDataCard($0)
-                            }
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(.clear)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.clear)
-                    .refreshable {
-                        viewModel.refreshData()
-                    }
+                if !viewModel.allSleepSessionValues.isEmpty {
+                    healthView()
+
+                } else {
+                    emptyStateView()
                 }
-                .background(.clear)
+
             } else {
-                ZStack {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                        .scaleEffect(1.5)
-                }
+               loadingView()
             }
             
             Spacer()
@@ -76,37 +35,113 @@ struct HealthDataView: View {
             viewModel.refreshData()
         }
         .background(
-            LinearGradient(gradient: Gradient(colors: [.purple.opacity(0.8), .white]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [.purple.opacity(0.9), .purple.opacity(0.8), .white]), startPoint: .top, endPoint: .bottom)
             )
     }
-    
+
+    // MARK: Main Views
+    @ViewBuilder
+    private func healthView() -> some View {
+        VStack {
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    mainHeader()
+
+                    sectionHeader(title: "Current Trip")
+                    tripInfoCard()
+
+                    sectionHeader(title: "Last sleep")
+                    sleepDataCard(viewModel.lastSleepSessionValues)
+
+                    sectionHeader(title: "Longest sleep")
+                    sleepDataCard(viewModel.longestSleepSessionValues)
+
+                    sectionHeader(title: "All sleep sessions")
+                    ForEach(viewModel.allSleepSessionValues, id: \.self) {
+                        sleepDataCard($0)
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.clear)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.clear)
+            .refreshable {
+                viewModel.refreshData()
+            }
+        }
+        .background(.clear)
+    }
+
+    @ViewBuilder
+    private func loadingView() -> some View {
+        ZStack {
+            ContentUnavailableView("Loading", systemImage: "lines.measurement.horizontal")
+                .imageScale(.small)
+                .symbolEffect(.variableColor)
+        }
+    }
+
+    @ViewBuilder
+    private func emptyStateView() -> some View {
+        ContentUnavailableView {
+            // Icon & Title
+            Label(EmptyStateValues.emptyTitle, systemImage: "heart")
+                .font(.largeTitle)
+                .symbolRenderingMode(.multicolor)
+                .symbolEffect(.pulse)
+        } description: {
+            // Instructions
+            Text(EmptyStateValues.emptyMessage)
+                .font(.footnote)
+        } actions: {
+            // Alternative Actions
+            VStack {
+                Button {
+                    viewModel.refreshData()
+                } label: {
+                    Label(EmptyStateValues.emptyButtonTry, systemImage: "arrow.circlepath")
+                }
+
+                HealthAppButton(type: .labeled)
+            }
+            .buttonStyle(.bordered)
+            .foregroundStyle(.indigo)
+        }
+        .padding()
+    }
+
+    // MARK: Headers
     @ViewBuilder
     private func mainHeader() -> some View {
         
         ZStack{
-            
-            Text(
-                "Health Data"
-            )
-            .foregroundColor(.white)
-            .font(.title2)
-            .fontWeight(.bold)
-            
-            HStack{
+            HStack {
+                Text(
+                    "Health Data"
+                )
+                .foregroundColor(.white)
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .padding(.leading, 8)
+
                 Spacer()
-                
+            }
+
+            HStack(spacing: 10) {
+                Spacer()
+
+                HealthAppButton(type: .iconic)
+
                 Button {
                     viewModel.refreshData()
                 } label: {
-                    Text(
-                        "Refresh"
-                    )
+                    Image(systemName: "arrow.triangle.2.circlepath")
+                        .imageScale(.large)
                 }
-                .foregroundColor(.white)
-                .background(.clear)
-                .frame(height: 44)
-                .padding(.horizontal, 16)
             }
+            .foregroundColor(.white)
+            .padding(.horizontal, 8)
         }
         .frame(maxWidth: .infinity)
         .frame(height: 52)
@@ -114,18 +149,18 @@ struct HealthDataView: View {
     
     @ViewBuilder
     private func sectionHeader(title: String) -> some View {
-        HStack{
+        HStack {
             Text (
                 title
             )
-            .font(.system(size: 32))
             .fontWeight(.bold)
-            .foregroundColor(.black.opacity(0.4))
+            .font(.title)
             
             Spacer()
         }
         .padding(.horizontal, 16)
         .frame(height: 52)
+        .foregroundColor(.black.opacity(0.4))
     }
     
     @ViewBuilder
@@ -138,57 +173,53 @@ struct HealthDataView: View {
             .font(.system(size: 24))
             .fontWeight(.light)
             .foregroundColor(color ?? .black.opacity(0.5))
-            .padding(.bottom, 24)
+            .padding(.bottom, 18)
     }
-    
+
+    // MARK: Cells
     @ViewBuilder
     private func sleepSegmentCell(
         _ value: SleepStageDisplayValues
     ) -> some View {
-        HStack{
-            
+        HStack {
+            VStack(spacing: 8) {
+                Text(
+                    value.start
+                )
+
+                Text(
+                    value.end
+                )
+            }
+            .font(.footnote)
+            .opacity(0.6)
+
+            Spacer()
+            Divider()
+                .background(viewModel.sleepColor)
+            Spacer()
+
             Text(
                 value.title
             )
             .font(.system(size: 18))
             .fontWeight(.bold)
             .opacity(0.6)
-            
-            Rectangle()
-                .frame(maxHeight: .infinity)
-                .frame(width: 1)
-                .foregroundColor(viewModel.sleepColor)
-                .padding(.horizontal, 8)
-            
-            VStack {
-                Text(
-                    value.start
-                )
-                .opacity(0.6)
-                
-                Spacer()
-                    .frame(height: 8)
-                
-                Text(
-                    value.end
-                )
-                .opacity(0.6)
-            }
-            
-            Rectangle()
-                .frame(maxHeight: .infinity)
-                .frame(width: 1)
-                .foregroundColor(viewModel.sleepColor)
-                .padding(.horizontal, 8)
-            
+
+            Spacer()
+            Divider()
+                .background(viewModel.sleepColor)
+            Spacer()
+
             Text(
                 value.duration
             )
             .font(.system(size: 16))
             .fontWeight(.bold)
             .opacity(0.6)
+
+            Spacer()
         }
-        .padding(.vertical, 8)
     }
     
     private func sleepValueCell(
@@ -215,7 +246,39 @@ struct HealthDataView: View {
             valueColor: viewModel.heartColor
         )
     }
-    
+
+    @ViewBuilder
+    private func titleValueCell(
+        title: String,
+        titleColor: Color? = Color.black.opacity(0.6),
+        value: String,
+        valueColor: Color? = Color.black.opacity(0.6),
+        highlighted: Bool? = false,
+        highlightedColor: Color? = Color.white
+    ) -> some View {
+
+        HStack{
+
+            Text(title)
+                .foregroundColor(titleColor)
+                .fontWeight(highlighted ?? false ? .bold : .regular)
+                .font(Font.system(size: 16))
+
+            Spacer()
+
+            Text(value)
+                .padding(8)
+                .font(Font.system(size: 14))
+                .fontWeight(.bold)
+                .foregroundColor(valueColor)
+                .background(highlighted ?? false ? highlightedColor : .white)
+                .cornerRadius(8)
+        }
+        .frame(height: 44)
+        .padding(.leading, 16)
+    }
+
+    // MARK: Cards
     @ViewBuilder
     private func sleepDataCard(
         _ values: SleepSessionDisplayValues
@@ -230,24 +293,16 @@ struct HealthDataView: View {
                         titleValueCell(title: "Wake up time", value: values.wakeUpTime, valueColor: viewModel.sleepColor, highlighted: true, highlightedColor: .white)
                         titleValueCell(title: "Duration", value: values.sleepDuration, valueColor: viewModel.sleepColor, highlighted: true, highlightedColor: .white)
                         
-                        Rectangle()
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 1)
-                            .padding(.vertical, 16)
-                            .foregroundColor(.black.opacity(0.1))
-                        
+                        Divider()
+
                         contentCardHeader("Summary")
                         
                         ForEach(values.sessionValues, id: \.self) { value in
                             sleepValueCell(value)
                         }
                         
-                        Rectangle()
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 1)
-                            .padding(.vertical, 16)
-                            .foregroundColor(.black.opacity(0.1))
-                        
+                        Divider()
+
                         contentCardHeader("Sleep Stages")
                         ForEach(values.stagesValues, id: \.self) { value in
                             sleepSegmentCell(value)
@@ -258,34 +313,119 @@ struct HealthDataView: View {
     }
     
     @ViewBuilder
-    private func titleValueCell(
-        title: String,
-        titleColor: Color? = Color.black.opacity(0.6),
-        value: String,
-        valueColor: Color? = Color.black.opacity(0.6),
-        highlighted: Bool? = false,
-        highlightedColor: Color? = Color.white
-    ) -> some View {
+    private func tripInfoCard() -> some View {
         
-        HStack{
-            
-            Text(title)
-                .foregroundColor(titleColor)
-                .fontWeight(highlighted ?? false ? .bold : .regular)
-                .font(Font.system(size: 16))
-            
-            Spacer()
-            
-            Text(value)
-                .padding(8)
-                .font(Font.system(size: 14))
-                .fontWeight(.bold)
-                .foregroundColor(valueColor)
-                .background(highlighted ?? false ? highlightedColor : .white)
-                .cornerRadius(8)
-        }
-        .frame(height: 44)
-        .padding(.leading, 16)
+        ContentCard(
+            content:
+                
+                VStack {
+                    
+                    if viewModel.canStartTrip {
+                        HStack {
+                            if viewModel.currentTrip.activityStatus == .running {
+                                Image(systemName: "car.fill")
+                            }
+
+                            Text(
+                                viewModel.tripMessage
+                            )
+                        }
+                        .font(.system(size: 22))
+                        .foregroundColor(viewModel.tripMessageColor)
+
+                        if viewModel.currentTrip.activityStatus != .idle {
+                            titleValueCell(
+                                title: "Trip start",
+                                value: viewModel.tripValues.startDate
+                            )
+                            
+                            Divider()
+
+                            titleValueCell(
+                                title: "Last sleep duration",
+                                value: viewModel.lastSleepSessionValues.sleepDuration
+                            )
+                            
+                            Divider()
+
+                            Text(
+                                "formula: last_sleep_duration / 60"
+                            )
+                            .opacity(0.4)
+                            
+                            titleValueCell(
+                                title: "",
+                                value: "\(viewModel.lastSleepSessionValues.sleepDuration) / 60 = \(viewModel.tripValues.intervalUntilRest)"
+                            )
+                            
+                            titleValueCell(
+                                title: "Driving time before rest",
+                                value: "\(viewModel.tripValues.intervalUntilRest)",
+                                valueColor: .white,
+                                highlighted: true,
+                                highlightedColor: .mint
+                            )
+                            
+                            Text(
+                                "Rest should start \(viewModel.tripValues.intervalUntilRest) after the trip started."
+                            )
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .multilineTextAlignment(.center)
+                            .padding(8)
+                            .fontWeight(.bold)
+                            .foregroundColor(.orange)
+                            
+                            
+                            Divider()
+
+                            titleValueCell(
+                                title: "Trip elapsed time",
+                                value: viewModel.tripValues.elapsedTime
+                            )
+
+                            titleValueCell(
+                                title: "Current date",
+                                value: Date().dateTimeString(withFormat: .readableMilitary)
+                            )
+
+                            Divider()
+
+                            titleValueCell(
+                                title: "Rest should start in",
+                                value: viewModel.tripValues.realTimeIntervalUntilRest
+                            )
+                            
+                            titleValueCell(
+                                title: "Rest date",
+                                value: viewModel.tripValues.restDate
+                            )
+                        }
+                        
+                        Button {
+                            viewModel.toggleTrip()
+                        } label: {
+                            Label(viewModel.tripActionButtonText, systemImage: viewModel.currentTrip.activityStatus == .running 
+                                  ? "stop.fill"
+                                  : viewModel.currentTrip.activityStatus == .completed ? "bed.double.fill" :  "play.fill")
+                        }
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 44)
+                        .background(viewModel.tripActionButtonBackground)
+                        .foregroundColor(.white)
+                        .clipShape(.capsule)
+
+                    } else {
+                        
+                        Text(
+                            "No sleep data available to start a new trip"
+                        )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                        .multilineTextAlignment(.center)
+                        .opacity(0.5)
+                    }
+                }
+        )
     }
 }
 

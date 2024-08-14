@@ -9,7 +9,10 @@ import Foundation
 import HealthKit
 
 class HKAuthorizationManager: NSObject {
-    
+
+    // Closure
+    var onRequestAuthorizationDone:(() -> Void)?
+
     // Properties
     
     /// An instance of HKHealthStore is used to interact with the HealthKit repository
@@ -63,17 +66,18 @@ class HKAuthorizationManager: NSObject {
         healthStore.requestAuthorization(
             toShare: nil,
             read: requestedTypes
-        ) { (success, error) in
-            
+        ) { [weak self] (success, error) in
+
             // Do not handle any success or error states
             
             if !success || error != nil {
                 // Error message
-                print("HKAuthorizationManager: requestHKAuthorization error : \(error)")
+                print("HKAuthorizationManager: requestHKAuthorization error : \(String(describing: error))")
                 return
             }
             // Success message
             print("HKAuthorizationManager: requestHKAuthorization success")
+            self?.onRequestAuthorizationDone?()
         }
     }
 }
