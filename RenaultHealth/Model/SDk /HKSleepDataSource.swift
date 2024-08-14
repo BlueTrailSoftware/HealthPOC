@@ -203,7 +203,7 @@ class HKSleepDataSource {
             
             var segmentsAreWithinOneHour: Bool = true
             if let lastEndingDate = currentSession.endDate {
-                segmentsAreWithinOneHour = segment.startDate.timeIntervalSince(lastEndingDate) <= 360
+                segmentsAreWithinOneHour = segment.startDate.timeIntervalSince(lastEndingDate) <= 3600
             }
             
             // add segment to curr session if it starts within the session's last ending date
