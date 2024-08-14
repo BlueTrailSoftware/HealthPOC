@@ -1,0 +1,103 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios16.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name SleepSDK
+import Combine
+import Foundation
+import HealthKit
+@_exported import SleepSDK
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct TripData {
+  public var startDate: Swift.String
+  public var restDate: Swift.String
+  public var elapsedTime: Swift.String
+  public var intervalUntilRest: Swift.String
+  public var realTimeIntervalUntilRest: Swift.String
+}
+public enum TripStatus {
+  case running
+  case completed
+  case idle
+  public static func == (a: SleepSDK.TripStatus, b: SleepSDK.TripStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public typealias SleepSessions = (longest: SleepSDK.HKSleepSession?, last: SleepSDK.HKSleepSession?, all: [SleepSDK.HKSleepSession])
+public struct HRVEntry : Swift.Hashable {
+  public var value: Swift.Double
+  public var startDate: Foundation.Date
+  public var endDate: Foundation.Date
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: SleepSDK.HRVEntry, b: SleepSDK.HRVEntry) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public func decode<T>(_ k: Swift.String, _ d: [Swift.String : Any]) throws -> T
+public func decodeOptional<T>(_ k: Swift.String, _ d: [Swift.String : Any]) throws -> T?
+precedencegroup DecoderPrecedence {
+  higherThan: CastingPrecedence
+}
+infix operator <- : DecoderPrecedence
+infix operator <~ : DecoderPrecedence
+public struct SleepSessionInfo : Swift.Hashable {
+  public var title: Swift.String?
+  public var value: Swift.String?
+  public var valueInHours: Swift.Double?
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: SleepSDK.SleepSessionInfo, b: SleepSDK.SleepSessionInfo) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class HKSleepSession : ObjectiveC.NSObject {
+  public var segments: [SleepSDK.HKSleepStage]
+  public var startingDate: Foundation.Date?
+  public var endDate: Foundation.Date?
+  public var totalSleepDuration: Swift.Double
+  public var info: [SleepSDK.SleepSessionInfo]
+  public var activeSleepStages: [HealthKit.HKCategoryValueSleepAnalysis] {
+    get
+  }
+  public func refreshProperties()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public class HealthDataProviderQA {
+  public var requestAuthorizationCompleted: Combine.PassthroughSubject<Swift.Void, Swift.Never>
+  public var isRefreshing: Combine.PassthroughSubject<Swift.Bool, Swift.Never>
+  public var sleepSessionData: Combine.PassthroughSubject<SleepSDK.SleepSessions, Swift.Never>
+  public var tripStatusChanged: Combine.PassthroughSubject<SleepSDK.TripStatus, Swift.Never>
+  public var pauseMustStart: Combine.PassthroughSubject<Swift.Void, Swift.Never>
+  public var currentTrip: Combine.PassthroughSubject<SleepSDK.TripData, Swift.Never>
+  public init()
+  public func requestHealthKitPermission()
+  public func refreshData()
+  public func toggleTrip()
+  @objc deinit
+}
+public struct SleepStageInfo : Swift.Hashable {
+  public var title: Swift.String
+  public var start: Swift.String
+  public var end: Swift.String
+  public var duration: Swift.String
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: SleepSDK.SleepStageInfo, b: SleepSDK.SleepStageInfo) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct HKSleepStage {
+  public var startDate: Foundation.Date
+  public var endDate: Foundation.Date
+  public var sleepAnalysis: HealthKit.HKCategoryValueSleepAnalysis?
+  public var info: SleepSDK.SleepStageInfo {
+    get
+  }
+}
+extension SleepSDK.TripStatus : Swift.Equatable {}
+extension SleepSDK.TripStatus : Swift.Hashable {}

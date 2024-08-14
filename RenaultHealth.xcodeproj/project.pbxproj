@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4D1287032C6407CC00646015 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287022C6407CC00646015 /* Trip.swift */; };
 		4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287082C6BDCF100646015 /* SDKEngine.swift */; };
+		4D1BAABE2C6D713A00B8B7A1 /* SleepSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1BAABC2C6D713100B8B7A1 /* SleepSDK.xcframework */; };
+		4D1BAABF2C6D713A00B8B7A1 /* SleepSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1BAABC2C6D713100B8B7A1 /* SleepSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4D9F82642C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */; };
 		4D9F82672C5C1B5B008E4C1D /* HKHeartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */; };
 		4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */; };
@@ -57,9 +59,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4D1BAAB92C6D706000B8B7A1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4D1BAABF2C6D713A00B8B7A1 /* SleepSDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4D1287022C6407CC00646015 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		4D1287082C6BDCF100646015 /* SDKEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKEngine.swift; sourceTree = "<group>"; };
+		4D1BAABC2C6D713100B8B7A1 /* SleepSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SleepSDK.xcframework; sourceTree = "<group>"; };
 		4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableHKIdentifiers.swift; sourceTree = "<group>"; };
 		4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKHeartDataSource.swift; sourceTree = "<group>"; };
 		4DF91D9D2C4835AF00C28E55 /* RenaultHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenaultHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1BAABE2C6D713A00B8B7A1 /* SleepSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				4DF91DCA2C48366E00C28E55 /* RenaultHealth.entitlements */,
+				4D1BAABC2C6D713100B8B7A1 /* SleepSDK.xcframework */,
 				4DF91DD72C48396C00C28E55 /* Utilities */,
 				4DF91DEE2C499C8C00C28E55 /* Views */,
 				4DF91DCB2C48381D00C28E55 /* Model */,
@@ -326,6 +345,7 @@
 				4DF91D992C4835AF00C28E55 /* Sources */,
 				4DF91D9A2C4835AF00C28E55 /* Frameworks */,
 				4DF91D9B2C4835AF00C28E55 /* Resources */,
+				4D1BAAB92C6D706000B8B7A1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

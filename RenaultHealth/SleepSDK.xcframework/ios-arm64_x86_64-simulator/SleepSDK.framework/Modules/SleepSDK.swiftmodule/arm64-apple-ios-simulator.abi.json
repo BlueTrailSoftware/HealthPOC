@@ -1,0 +1,4859 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "HealthKit",
+        "printedName": "HealthKit",
+        "declKind": "Import",
+        "moduleName": "SleepSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "HealthKit",
+        "printedName": "HealthKit",
+        "declKind": "Import",
+        "moduleName": "SleepSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TripData",
+        "printedName": "TripData",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "startDate",
+            "printedName": "startDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK8TripDataV9startDateSSvp",
+            "mangledName": "$s8SleepSDK8TripDataV9startDateSSvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV9startDateSSvg",
+                "mangledName": "$s8SleepSDK8TripDataV9startDateSSvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV9startDateSSvs",
+                "mangledName": "$s8SleepSDK8TripDataV9startDateSSvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV9startDateSSvM",
+                "mangledName": "$s8SleepSDK8TripDataV9startDateSSvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "restDate",
+            "printedName": "restDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK8TripDataV8restDateSSvp",
+            "mangledName": "$s8SleepSDK8TripDataV8restDateSSvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV8restDateSSvg",
+                "mangledName": "$s8SleepSDK8TripDataV8restDateSSvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV8restDateSSvs",
+                "mangledName": "$s8SleepSDK8TripDataV8restDateSSvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV8restDateSSvM",
+                "mangledName": "$s8SleepSDK8TripDataV8restDateSSvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "elapsedTime",
+            "printedName": "elapsedTime",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK8TripDataV11elapsedTimeSSvp",
+            "mangledName": "$s8SleepSDK8TripDataV11elapsedTimeSSvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV11elapsedTimeSSvg",
+                "mangledName": "$s8SleepSDK8TripDataV11elapsedTimeSSvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV11elapsedTimeSSvs",
+                "mangledName": "$s8SleepSDK8TripDataV11elapsedTimeSSvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV11elapsedTimeSSvM",
+                "mangledName": "$s8SleepSDK8TripDataV11elapsedTimeSSvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "intervalUntilRest",
+            "printedName": "intervalUntilRest",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK8TripDataV17intervalUntilRestSSvp",
+            "mangledName": "$s8SleepSDK8TripDataV17intervalUntilRestSSvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV17intervalUntilRestSSvg",
+                "mangledName": "$s8SleepSDK8TripDataV17intervalUntilRestSSvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV17intervalUntilRestSSvs",
+                "mangledName": "$s8SleepSDK8TripDataV17intervalUntilRestSSvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV17intervalUntilRestSSvM",
+                "mangledName": "$s8SleepSDK8TripDataV17intervalUntilRestSSvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "realTimeIntervalUntilRest",
+            "printedName": "realTimeIntervalUntilRest",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK8TripDataV25realTimeIntervalUntilRestSSvp",
+            "mangledName": "$s8SleepSDK8TripDataV25realTimeIntervalUntilRestSSvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV25realTimeIntervalUntilRestSSvg",
+                "mangledName": "$s8SleepSDK8TripDataV25realTimeIntervalUntilRestSSvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV25realTimeIntervalUntilRestSSvs",
+                "mangledName": "$s8SleepSDK8TripDataV25realTimeIntervalUntilRestSSvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8TripDataV25realTimeIntervalUntilRestSSvM",
+                "mangledName": "$s8SleepSDK8TripDataV25realTimeIntervalUntilRestSSvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8SleepSDK8TripDataV",
+        "mangledName": "$s8SleepSDK8TripDataV",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TripStatus",
+        "printedName": "TripStatus",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "running",
+            "printedName": "running",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SleepSDK.TripStatus.Type) -> SleepSDK.TripStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TripStatus",
+                    "printedName": "SleepSDK.TripStatus",
+                    "usr": "s:8SleepSDK10TripStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SleepSDK.TripStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TripStatus",
+                        "printedName": "SleepSDK.TripStatus",
+                        "usr": "s:8SleepSDK10TripStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8SleepSDK10TripStatusO7runningyA2CmF",
+            "mangledName": "$s8SleepSDK10TripStatusO7runningyA2CmF",
+            "moduleName": "SleepSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "completed",
+            "printedName": "completed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SleepSDK.TripStatus.Type) -> SleepSDK.TripStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TripStatus",
+                    "printedName": "SleepSDK.TripStatus",
+                    "usr": "s:8SleepSDK10TripStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SleepSDK.TripStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TripStatus",
+                        "printedName": "SleepSDK.TripStatus",
+                        "usr": "s:8SleepSDK10TripStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8SleepSDK10TripStatusO9completedyA2CmF",
+            "mangledName": "$s8SleepSDK10TripStatusO9completedyA2CmF",
+            "moduleName": "SleepSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "idle",
+            "printedName": "idle",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SleepSDK.TripStatus.Type) -> SleepSDK.TripStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TripStatus",
+                    "printedName": "SleepSDK.TripStatus",
+                    "usr": "s:8SleepSDK10TripStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SleepSDK.TripStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TripStatus",
+                        "printedName": "SleepSDK.TripStatus",
+                        "usr": "s:8SleepSDK10TripStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8SleepSDK10TripStatusO4idleyA2CmF",
+            "mangledName": "$s8SleepSDK10TripStatusO4idleyA2CmF",
+            "moduleName": "SleepSDK"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TripStatus",
+                "printedName": "SleepSDK.TripStatus",
+                "usr": "s:8SleepSDK10TripStatusO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TripStatus",
+                "printedName": "SleepSDK.TripStatus",
+                "usr": "s:8SleepSDK10TripStatusO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK10TripStatusO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s8SleepSDK10TripStatusO2eeoiySbAC_ACtFZ",
+            "moduleName": "SleepSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK10TripStatusO9hashValueSivp",
+            "mangledName": "$s8SleepSDK10TripStatusO9hashValueSivp",
+            "moduleName": "SleepSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK10TripStatusO9hashValueSivg",
+                "mangledName": "$s8SleepSDK10TripStatusO9hashValueSivg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK10TripStatusO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s8SleepSDK10TripStatusO4hash4intoys6HasherVz_tF",
+            "moduleName": "SleepSDK",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:8SleepSDK10TripStatusO",
+        "mangledName": "$s8SleepSDK10TripStatusO",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "HealthKit",
+        "printedName": "HealthKit",
+        "declKind": "Import",
+        "moduleName": "SleepSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "SleepSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HRVEntry",
+        "printedName": "HRVEntry",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "value",
+            "printedName": "value",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK8HRVEntryV5valueSdvp",
+            "mangledName": "$s8SleepSDK8HRVEntryV5valueSdvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8HRVEntryV5valueSdvg",
+                "mangledName": "$s8SleepSDK8HRVEntryV5valueSdvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8HRVEntryV5valueSdvs",
+                "mangledName": "$s8SleepSDK8HRVEntryV5valueSdvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8HRVEntryV5valueSdvM",
+                "mangledName": "$s8SleepSDK8HRVEntryV5valueSdvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "startDate",
+            "printedName": "startDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK8HRVEntryV9startDate10Foundation0E0Vvp",
+            "mangledName": "$s8SleepSDK8HRVEntryV9startDate10Foundation0E0Vvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8HRVEntryV9startDate10Foundation0E0Vvg",
+                "mangledName": "$s8SleepSDK8HRVEntryV9startDate10Foundation0E0Vvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8HRVEntryV9startDate10Foundation0E0Vvs",
+                "mangledName": "$s8SleepSDK8HRVEntryV9startDate10Foundation0E0Vvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8HRVEntryV9startDate10Foundation0E0VvM",
+                "mangledName": "$s8SleepSDK8HRVEntryV9startDate10Foundation0E0VvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "endDate",
+            "printedName": "endDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK8HRVEntryV7endDate10Foundation0E0Vvp",
+            "mangledName": "$s8SleepSDK8HRVEntryV7endDate10Foundation0E0Vvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8HRVEntryV7endDate10Foundation0E0Vvg",
+                "mangledName": "$s8SleepSDK8HRVEntryV7endDate10Foundation0E0Vvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8HRVEntryV7endDate10Foundation0E0Vvs",
+                "mangledName": "$s8SleepSDK8HRVEntryV7endDate10Foundation0E0Vvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8HRVEntryV7endDate10Foundation0E0VvM",
+                "mangledName": "$s8SleepSDK8HRVEntryV7endDate10Foundation0E0VvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK8HRVEntryV9hashValueSivp",
+            "mangledName": "$s8SleepSDK8HRVEntryV9hashValueSivp",
+            "moduleName": "SleepSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK8HRVEntryV9hashValueSivg",
+                "mangledName": "$s8SleepSDK8HRVEntryV9hashValueSivg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK8HRVEntryV4hash4intoys6HasherVz_tF",
+            "mangledName": "$s8SleepSDK8HRVEntryV4hash4intoys6HasherVz_tF",
+            "moduleName": "SleepSDK",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HRVEntry",
+                "printedName": "SleepSDK.HRVEntry",
+                "usr": "s:8SleepSDK8HRVEntryV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HRVEntry",
+                "printedName": "SleepSDK.HRVEntry",
+                "usr": "s:8SleepSDK8HRVEntryV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK8HRVEntryV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s8SleepSDK8HRVEntryV2eeoiySbAC_ACtFZ",
+            "moduleName": "SleepSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8SleepSDK8HRVEntryV",
+        "mangledName": "$s8SleepSDK8HRVEntryV",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Function",
+        "name": "decode",
+        "printedName": "decode(_:_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "GenericTypeParam",
+            "printedName": "τ_0_0"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Dictionary",
+            "printedName": "[Swift.String : Any]",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              }
+            ],
+            "usr": "s:SD"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:8SleepSDK6decodeyxSS_SDySSypGtKlF",
+        "mangledName": "$s8SleepSDK6decodeyxSS_SDySSypGtKlF",
+        "moduleName": "SleepSDK",
+        "genericSig": "<τ_0_0>",
+        "sugared_genericSig": "<T>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "throwing": true,
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "decodeOptional",
+        "printedName": "decodeOptional(_:_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Optional",
+            "printedName": "τ_0_0?",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "usr": "s:Sq"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Dictionary",
+            "printedName": "[Swift.String : Any]",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              }
+            ],
+            "usr": "s:SD"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:8SleepSDK14decodeOptionalyxSgSS_SDySSypGtKlF",
+        "mangledName": "$s8SleepSDK14decodeOptionalyxSgSS_SDySSypGtKlF",
+        "moduleName": "SleepSDK",
+        "genericSig": "<τ_0_0>",
+        "sugared_genericSig": "<T>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "throwing": true,
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "OperatorDecl",
+        "name": "<-",
+        "printedName": "<-",
+        "declKind": "InfixOperator",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "Infix"
+        ]
+      },
+      {
+        "kind": "OperatorDecl",
+        "name": "<~",
+        "printedName": "<~",
+        "declKind": "InfixOperator",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "Infix"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "HealthKit",
+        "printedName": "HealthKit",
+        "declKind": "Import",
+        "moduleName": "SleepSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "HealthKit",
+        "printedName": "HealthKit",
+        "declKind": "Import",
+        "moduleName": "SleepSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SleepSessionInfo",
+        "printedName": "SleepSessionInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "title",
+            "printedName": "title",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK0A11SessionInfoV5titleSSSgvp",
+            "mangledName": "$s8SleepSDK0A11SessionInfoV5titleSSSgvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A11SessionInfoV5titleSSSgvg",
+                "mangledName": "$s8SleepSDK0A11SessionInfoV5titleSSSgvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A11SessionInfoV5titleSSSgvs",
+                "mangledName": "$s8SleepSDK0A11SessionInfoV5titleSSSgvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A11SessionInfoV5titleSSSgvM",
+                "mangledName": "$s8SleepSDK0A11SessionInfoV5titleSSSgvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "value",
+            "printedName": "value",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK0A11SessionInfoV5valueSSSgvp",
+            "mangledName": "$s8SleepSDK0A11SessionInfoV5valueSSSgvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A11SessionInfoV5valueSSSgvg",
+                "mangledName": "$s8SleepSDK0A11SessionInfoV5valueSSSgvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A11SessionInfoV5valueSSSgvs",
+                "mangledName": "$s8SleepSDK0A11SessionInfoV5valueSSSgvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A11SessionInfoV5valueSSSgvM",
+                "mangledName": "$s8SleepSDK0A11SessionInfoV5valueSSSgvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "valueInHours",
+            "printedName": "valueInHours",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK0A11SessionInfoV12valueInHoursSdSgvp",
+            "mangledName": "$s8SleepSDK0A11SessionInfoV12valueInHoursSdSgvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A11SessionInfoV12valueInHoursSdSgvg",
+                "mangledName": "$s8SleepSDK0A11SessionInfoV12valueInHoursSdSgvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A11SessionInfoV12valueInHoursSdSgvs",
+                "mangledName": "$s8SleepSDK0A11SessionInfoV12valueInHoursSdSgvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A11SessionInfoV12valueInHoursSdSgvM",
+                "mangledName": "$s8SleepSDK0A11SessionInfoV12valueInHoursSdSgvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK0A11SessionInfoV9hashValueSivp",
+            "mangledName": "$s8SleepSDK0A11SessionInfoV9hashValueSivp",
+            "moduleName": "SleepSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A11SessionInfoV9hashValueSivg",
+                "mangledName": "$s8SleepSDK0A11SessionInfoV9hashValueSivg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK0A11SessionInfoV4hash4intoys6HasherVz_tF",
+            "mangledName": "$s8SleepSDK0A11SessionInfoV4hash4intoys6HasherVz_tF",
+            "moduleName": "SleepSDK",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SleepSessionInfo",
+                "printedName": "SleepSDK.SleepSessionInfo",
+                "usr": "s:8SleepSDK0A11SessionInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SleepSessionInfo",
+                "printedName": "SleepSDK.SleepSessionInfo",
+                "usr": "s:8SleepSDK0A11SessionInfoV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK0A11SessionInfoV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s8SleepSDK0A11SessionInfoV2eeoiySbAC_ACtFZ",
+            "moduleName": "SleepSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8SleepSDK0A11SessionInfoV",
+        "mangledName": "$s8SleepSDK0A11SessionInfoV",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HKSleepSession",
+        "printedName": "HKSleepSession",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "segments",
+            "printedName": "segments",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[SleepSDK.HKSleepStage]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HKSleepStage",
+                    "printedName": "SleepSDK.HKSleepStage",
+                    "usr": "s:8SleepSDK12HKSleepStageV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK14HKSleepSessionC8segmentsSayAA0C5StageVGvp",
+            "mangledName": "$s8SleepSDK14HKSleepSessionC8segmentsSayAA0C5StageVGvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[SleepSDK.HKSleepStage]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HKSleepStage",
+                        "printedName": "SleepSDK.HKSleepStage",
+                        "usr": "s:8SleepSDK12HKSleepStageV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC8segmentsSayAA0C5StageVGvg",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC8segmentsSayAA0C5StageVGvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[SleepSDK.HKSleepStage]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HKSleepStage",
+                        "printedName": "SleepSDK.HKSleepStage",
+                        "usr": "s:8SleepSDK12HKSleepStageV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC8segmentsSayAA0C5StageVGvs",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC8segmentsSayAA0C5StageVGvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC8segmentsSayAA0C5StageVGvM",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC8segmentsSayAA0C5StageVGvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "startingDate",
+            "printedName": "startingDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK14HKSleepSessionC12startingDate10Foundation0F0VSgvp",
+            "mangledName": "$s8SleepSDK14HKSleepSessionC12startingDate10Foundation0F0VSgvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC12startingDate10Foundation0F0VSgvg",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC12startingDate10Foundation0F0VSgvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC12startingDate10Foundation0F0VSgvs",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC12startingDate10Foundation0F0VSgvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC12startingDate10Foundation0F0VSgvM",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC12startingDate10Foundation0F0VSgvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "endDate",
+            "printedName": "endDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK14HKSleepSessionC7endDate10Foundation0F0VSgvp",
+            "mangledName": "$s8SleepSDK14HKSleepSessionC7endDate10Foundation0F0VSgvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC7endDate10Foundation0F0VSgvg",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC7endDate10Foundation0F0VSgvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC7endDate10Foundation0F0VSgvs",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC7endDate10Foundation0F0VSgvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC7endDate10Foundation0F0VSgvM",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC7endDate10Foundation0F0VSgvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "totalSleepDuration",
+            "printedName": "totalSleepDuration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK14HKSleepSessionC05totalA8DurationSdvp",
+            "mangledName": "$s8SleepSDK14HKSleepSessionC05totalA8DurationSdvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC05totalA8DurationSdvg",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC05totalA8DurationSdvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC05totalA8DurationSdvs",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC05totalA8DurationSdvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC05totalA8DurationSdvM",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC05totalA8DurationSdvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "info",
+            "printedName": "info",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[SleepSDK.SleepSessionInfo]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SleepSessionInfo",
+                    "printedName": "SleepSDK.SleepSessionInfo",
+                    "usr": "s:8SleepSDK0A11SessionInfoV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK14HKSleepSessionC4infoSayAA0aD4InfoVGvp",
+            "mangledName": "$s8SleepSDK14HKSleepSessionC4infoSayAA0aD4InfoVGvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[SleepSDK.SleepSessionInfo]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SleepSessionInfo",
+                        "printedName": "SleepSDK.SleepSessionInfo",
+                        "usr": "s:8SleepSDK0A11SessionInfoV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC4infoSayAA0aD4InfoVGvg",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC4infoSayAA0aD4InfoVGvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[SleepSDK.SleepSessionInfo]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SleepSessionInfo",
+                        "printedName": "SleepSDK.SleepSessionInfo",
+                        "usr": "s:8SleepSDK0A11SessionInfoV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC4infoSayAA0aD4InfoVGvs",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC4infoSayAA0aD4InfoVGvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC4infoSayAA0aD4InfoVGvM",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC4infoSayAA0aD4InfoVGvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "activeSleepStages",
+            "printedName": "activeSleepStages",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[HealthKit.HKCategoryValueSleepAnalysis]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HKCategoryValueSleepAnalysis",
+                    "printedName": "HealthKit.HKCategoryValueSleepAnalysis",
+                    "usr": "c:@E@HKCategoryValueSleepAnalysis"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK14HKSleepSessionC06activeA6StagesSaySo015HKCategoryValueA8AnalysisVGvp",
+            "mangledName": "$s8SleepSDK14HKSleepSessionC06activeA6StagesSaySo015HKCategoryValueA8AnalysisVGvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[HealthKit.HKCategoryValueSleepAnalysis]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HKCategoryValueSleepAnalysis",
+                        "printedName": "HealthKit.HKCategoryValueSleepAnalysis",
+                        "usr": "c:@E@HKCategoryValueSleepAnalysis"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK14HKSleepSessionC06activeA6StagesSaySo015HKCategoryValueA8AnalysisVGvg",
+                "mangledName": "$s8SleepSDK14HKSleepSessionC06activeA6StagesSaySo015HKCategoryValueA8AnalysisVGvg",
+                "moduleName": "SleepSDK",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "refreshProperties",
+            "printedName": "refreshProperties()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK14HKSleepSessionC17refreshPropertiesyyF",
+            "mangledName": "$s8SleepSDK14HKSleepSessionC17refreshPropertiesyyF",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HKSleepSession",
+                "printedName": "SleepSDK.HKSleepSession",
+                "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession(im)init",
+            "mangledName": "$s8SleepSDK14HKSleepSessionCACycfc",
+            "moduleName": "SleepSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession",
+        "mangledName": "$s8SleepSDK14HKSleepSessionC",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "SleepSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HealthDataProviderQA",
+        "printedName": "HealthDataProviderQA",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "requestAuthorizationCompleted",
+            "printedName": "requestAuthorizationCompleted",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PassthroughSubject",
+                "printedName": "Combine.PassthroughSubject<(), Swift.Never>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Never",
+                    "printedName": "Swift.Never",
+                    "usr": "s:s5NeverO"
+                  }
+                ],
+                "usr": "s:7Combine18PassthroughSubjectC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK20HealthDataProviderQAC29requestAuthorizationCompleted7Combine18PassthroughSubjectCyyts5NeverOGvp",
+            "mangledName": "$s8SleepSDK20HealthDataProviderQAC29requestAuthorizationCompleted7Combine18PassthroughSubjectCyyts5NeverOGvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<(), Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC29requestAuthorizationCompleted7Combine18PassthroughSubjectCyyts5NeverOGvg",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC29requestAuthorizationCompleted7Combine18PassthroughSubjectCyyts5NeverOGvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<(), Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC29requestAuthorizationCompleted7Combine18PassthroughSubjectCyyts5NeverOGvs",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC29requestAuthorizationCompleted7Combine18PassthroughSubjectCyyts5NeverOGvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC29requestAuthorizationCompleted7Combine18PassthroughSubjectCyyts5NeverOGvM",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC29requestAuthorizationCompleted7Combine18PassthroughSubjectCyyts5NeverOGvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isRefreshing",
+            "printedName": "isRefreshing",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PassthroughSubject",
+                "printedName": "Combine.PassthroughSubject<Swift.Bool, Swift.Never>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Never",
+                    "printedName": "Swift.Never",
+                    "usr": "s:s5NeverO"
+                  }
+                ],
+                "usr": "s:7Combine18PassthroughSubjectC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK20HealthDataProviderQAC12isRefreshing7Combine18PassthroughSubjectCySbs5NeverOGvp",
+            "mangledName": "$s8SleepSDK20HealthDataProviderQAC12isRefreshing7Combine18PassthroughSubjectCySbs5NeverOGvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<Swift.Bool, Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC12isRefreshing7Combine18PassthroughSubjectCySbs5NeverOGvg",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC12isRefreshing7Combine18PassthroughSubjectCySbs5NeverOGvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<Swift.Bool, Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC12isRefreshing7Combine18PassthroughSubjectCySbs5NeverOGvs",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC12isRefreshing7Combine18PassthroughSubjectCySbs5NeverOGvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC12isRefreshing7Combine18PassthroughSubjectCySbs5NeverOGvM",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC12isRefreshing7Combine18PassthroughSubjectCySbs5NeverOGvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sleepSessionData",
+            "printedName": "sleepSessionData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PassthroughSubject",
+                "printedName": "Combine.PassthroughSubject<(longest: SleepSDK.HKSleepSession?, last: SleepSDK.HKSleepSession?, all: [SleepSDK.HKSleepSession]), Swift.Never>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(longest: SleepSDK.HKSleepSession?, last: SleepSDK.HKSleepSession?, all: [SleepSDK.HKSleepSession])",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "SleepSDK.HKSleepSession?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "HKSleepSession",
+                            "printedName": "SleepSDK.HKSleepSession",
+                            "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "SleepSDK.HKSleepSession?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "HKSleepSession",
+                            "printedName": "SleepSDK.HKSleepSession",
+                            "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[SleepSDK.HKSleepSession]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "HKSleepSession",
+                            "printedName": "SleepSDK.HKSleepSession",
+                            "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Never",
+                    "printedName": "Swift.Never",
+                    "usr": "s:s5NeverO"
+                  }
+                ],
+                "usr": "s:7Combine18PassthroughSubjectC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK20HealthDataProviderQAC012sleepSessionD07Combine18PassthroughSubjectCyAA07HKSleepH0CSg7longest_AJ4lastSayAIG3allts5NeverOGvp",
+            "mangledName": "$s8SleepSDK20HealthDataProviderQAC012sleepSessionD07Combine18PassthroughSubjectCyAA07HKSleepH0CSg7longest_AJ4lastSayAIG3allts5NeverOGvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<(longest: SleepSDK.HKSleepSession?, last: SleepSDK.HKSleepSession?, all: [SleepSDK.HKSleepSession]), Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(longest: SleepSDK.HKSleepSession?, last: SleepSDK.HKSleepSession?, all: [SleepSDK.HKSleepSession])",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "SleepSDK.HKSleepSession?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "HKSleepSession",
+                                "printedName": "SleepSDK.HKSleepSession",
+                                "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "SleepSDK.HKSleepSession?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "HKSleepSession",
+                                "printedName": "SleepSDK.HKSleepSession",
+                                "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[SleepSDK.HKSleepSession]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "HKSleepSession",
+                                "printedName": "SleepSDK.HKSleepSession",
+                                "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC012sleepSessionD07Combine18PassthroughSubjectCyAA07HKSleepH0CSg7longest_AJ4lastSayAIG3allts5NeverOGvg",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC012sleepSessionD07Combine18PassthroughSubjectCyAA07HKSleepH0CSg7longest_AJ4lastSayAIG3allts5NeverOGvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<(longest: SleepSDK.HKSleepSession?, last: SleepSDK.HKSleepSession?, all: [SleepSDK.HKSleepSession]), Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(longest: SleepSDK.HKSleepSession?, last: SleepSDK.HKSleepSession?, all: [SleepSDK.HKSleepSession])",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "SleepSDK.HKSleepSession?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "HKSleepSession",
+                                "printedName": "SleepSDK.HKSleepSession",
+                                "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "SleepSDK.HKSleepSession?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "HKSleepSession",
+                                "printedName": "SleepSDK.HKSleepSession",
+                                "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[SleepSDK.HKSleepSession]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "HKSleepSession",
+                                "printedName": "SleepSDK.HKSleepSession",
+                                "usr": "c:@M@SleepSDK@objc(cs)HKSleepSession"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC012sleepSessionD07Combine18PassthroughSubjectCyAA07HKSleepH0CSg7longest_AJ4lastSayAIG3allts5NeverOGvs",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC012sleepSessionD07Combine18PassthroughSubjectCyAA07HKSleepH0CSg7longest_AJ4lastSayAIG3allts5NeverOGvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC012sleepSessionD07Combine18PassthroughSubjectCyAA07HKSleepH0CSg7longest_AJ4lastSayAIG3allts5NeverOGvM",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC012sleepSessionD07Combine18PassthroughSubjectCyAA07HKSleepH0CSg7longest_AJ4lastSayAIG3allts5NeverOGvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "tripStatusChanged",
+            "printedName": "tripStatusChanged",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PassthroughSubject",
+                "printedName": "Combine.PassthroughSubject<SleepSDK.TripStatus, Swift.Never>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TripStatus",
+                    "printedName": "SleepSDK.TripStatus",
+                    "usr": "s:8SleepSDK10TripStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Never",
+                    "printedName": "Swift.Never",
+                    "usr": "s:s5NeverO"
+                  }
+                ],
+                "usr": "s:7Combine18PassthroughSubjectC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK20HealthDataProviderQAC17tripStatusChanged7Combine18PassthroughSubjectCyAA04TripH0Os5NeverOGvp",
+            "mangledName": "$s8SleepSDK20HealthDataProviderQAC17tripStatusChanged7Combine18PassthroughSubjectCyAA04TripH0Os5NeverOGvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<SleepSDK.TripStatus, Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TripStatus",
+                        "printedName": "SleepSDK.TripStatus",
+                        "usr": "s:8SleepSDK10TripStatusO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC17tripStatusChanged7Combine18PassthroughSubjectCyAA04TripH0Os5NeverOGvg",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC17tripStatusChanged7Combine18PassthroughSubjectCyAA04TripH0Os5NeverOGvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<SleepSDK.TripStatus, Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TripStatus",
+                        "printedName": "SleepSDK.TripStatus",
+                        "usr": "s:8SleepSDK10TripStatusO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC17tripStatusChanged7Combine18PassthroughSubjectCyAA04TripH0Os5NeverOGvs",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC17tripStatusChanged7Combine18PassthroughSubjectCyAA04TripH0Os5NeverOGvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC17tripStatusChanged7Combine18PassthroughSubjectCyAA04TripH0Os5NeverOGvM",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC17tripStatusChanged7Combine18PassthroughSubjectCyAA04TripH0Os5NeverOGvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "pauseMustStart",
+            "printedName": "pauseMustStart",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PassthroughSubject",
+                "printedName": "Combine.PassthroughSubject<(), Swift.Never>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Never",
+                    "printedName": "Swift.Never",
+                    "usr": "s:s5NeverO"
+                  }
+                ],
+                "usr": "s:7Combine18PassthroughSubjectC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK20HealthDataProviderQAC14pauseMustStart7Combine18PassthroughSubjectCyyts5NeverOGvp",
+            "mangledName": "$s8SleepSDK20HealthDataProviderQAC14pauseMustStart7Combine18PassthroughSubjectCyyts5NeverOGvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<(), Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC14pauseMustStart7Combine18PassthroughSubjectCyyts5NeverOGvg",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC14pauseMustStart7Combine18PassthroughSubjectCyyts5NeverOGvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<(), Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC14pauseMustStart7Combine18PassthroughSubjectCyyts5NeverOGvs",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC14pauseMustStart7Combine18PassthroughSubjectCyyts5NeverOGvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC14pauseMustStart7Combine18PassthroughSubjectCyyts5NeverOGvM",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC14pauseMustStart7Combine18PassthroughSubjectCyyts5NeverOGvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "currentTrip",
+            "printedName": "currentTrip",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PassthroughSubject",
+                "printedName": "Combine.PassthroughSubject<SleepSDK.TripData, Swift.Never>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TripData",
+                    "printedName": "SleepSDK.TripData",
+                    "usr": "s:8SleepSDK8TripDataV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Never",
+                    "printedName": "Swift.Never",
+                    "usr": "s:s5NeverO"
+                  }
+                ],
+                "usr": "s:7Combine18PassthroughSubjectC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK20HealthDataProviderQAC11currentTrip7Combine18PassthroughSubjectCyAA0hD0Vs5NeverOGvp",
+            "mangledName": "$s8SleepSDK20HealthDataProviderQAC11currentTrip7Combine18PassthroughSubjectCyAA0hD0Vs5NeverOGvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<SleepSDK.TripData, Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TripData",
+                        "printedName": "SleepSDK.TripData",
+                        "usr": "s:8SleepSDK8TripDataV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC11currentTrip7Combine18PassthroughSubjectCyAA0hD0Vs5NeverOGvg",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC11currentTrip7Combine18PassthroughSubjectCyAA0hD0Vs5NeverOGvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassthroughSubject",
+                    "printedName": "Combine.PassthroughSubject<SleepSDK.TripData, Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TripData",
+                        "printedName": "SleepSDK.TripData",
+                        "usr": "s:8SleepSDK8TripDataV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:7Combine18PassthroughSubjectC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC11currentTrip7Combine18PassthroughSubjectCyAA0hD0Vs5NeverOGvs",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC11currentTrip7Combine18PassthroughSubjectCyAA0hD0Vs5NeverOGvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC11currentTrip7Combine18PassthroughSubjectCyAA0hD0Vs5NeverOGvM",
+                "mangledName": "$s8SleepSDK20HealthDataProviderQAC11currentTrip7Combine18PassthroughSubjectCyAA0hD0Vs5NeverOGvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HealthDataProviderQA",
+                "printedName": "SleepSDK.HealthDataProviderQA",
+                "usr": "s:8SleepSDK20HealthDataProviderQAC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8SleepSDK20HealthDataProviderQACACycfc",
+            "mangledName": "$s8SleepSDK20HealthDataProviderQACACycfc",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "requestHealthKitPermission",
+            "printedName": "requestHealthKitPermission()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK20HealthDataProviderQAC07requestC13KitPermissionyyF",
+            "mangledName": "$s8SleepSDK20HealthDataProviderQAC07requestC13KitPermissionyyF",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "refreshData",
+            "printedName": "refreshData()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK20HealthDataProviderQAC07refreshD0yyF",
+            "mangledName": "$s8SleepSDK20HealthDataProviderQAC07refreshD0yyF",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toggleTrip",
+            "printedName": "toggleTrip()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK20HealthDataProviderQAC10toggleTripyyF",
+            "mangledName": "$s8SleepSDK20HealthDataProviderQAC10toggleTripyyF",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:8SleepSDK20HealthDataProviderQAC",
+        "mangledName": "$s8SleepSDK20HealthDataProviderQAC",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "HealthKit",
+        "printedName": "HealthKit",
+        "declKind": "Import",
+        "moduleName": "SleepSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "HealthKit",
+        "printedName": "HealthKit",
+        "declKind": "Import",
+        "moduleName": "SleepSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SleepStageInfo",
+        "printedName": "SleepStageInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "title",
+            "printedName": "title",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK0A9StageInfoV5titleSSvp",
+            "mangledName": "$s8SleepSDK0A9StageInfoV5titleSSvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV5titleSSvg",
+                "mangledName": "$s8SleepSDK0A9StageInfoV5titleSSvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV5titleSSvs",
+                "mangledName": "$s8SleepSDK0A9StageInfoV5titleSSvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV5titleSSvM",
+                "mangledName": "$s8SleepSDK0A9StageInfoV5titleSSvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "start",
+            "printedName": "start",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK0A9StageInfoV5startSSvp",
+            "mangledName": "$s8SleepSDK0A9StageInfoV5startSSvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV5startSSvg",
+                "mangledName": "$s8SleepSDK0A9StageInfoV5startSSvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV5startSSvs",
+                "mangledName": "$s8SleepSDK0A9StageInfoV5startSSvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV5startSSvM",
+                "mangledName": "$s8SleepSDK0A9StageInfoV5startSSvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "end",
+            "printedName": "end",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK0A9StageInfoV3endSSvp",
+            "mangledName": "$s8SleepSDK0A9StageInfoV3endSSvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV3endSSvg",
+                "mangledName": "$s8SleepSDK0A9StageInfoV3endSSvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV3endSSvs",
+                "mangledName": "$s8SleepSDK0A9StageInfoV3endSSvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV3endSSvM",
+                "mangledName": "$s8SleepSDK0A9StageInfoV3endSSvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "duration",
+            "printedName": "duration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK0A9StageInfoV8durationSSvp",
+            "mangledName": "$s8SleepSDK0A9StageInfoV8durationSSvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV8durationSSvg",
+                "mangledName": "$s8SleepSDK0A9StageInfoV8durationSSvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV8durationSSvs",
+                "mangledName": "$s8SleepSDK0A9StageInfoV8durationSSvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV8durationSSvM",
+                "mangledName": "$s8SleepSDK0A9StageInfoV8durationSSvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK0A9StageInfoV9hashValueSivp",
+            "mangledName": "$s8SleepSDK0A9StageInfoV9hashValueSivp",
+            "moduleName": "SleepSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK0A9StageInfoV9hashValueSivg",
+                "mangledName": "$s8SleepSDK0A9StageInfoV9hashValueSivg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK0A9StageInfoV4hash4intoys6HasherVz_tF",
+            "mangledName": "$s8SleepSDK0A9StageInfoV4hash4intoys6HasherVz_tF",
+            "moduleName": "SleepSDK",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SleepStageInfo",
+                "printedName": "SleepSDK.SleepStageInfo",
+                "usr": "s:8SleepSDK0A9StageInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SleepStageInfo",
+                "printedName": "SleepSDK.SleepStageInfo",
+                "usr": "s:8SleepSDK0A9StageInfoV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8SleepSDK0A9StageInfoV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s8SleepSDK0A9StageInfoV2eeoiySbAC_ACtFZ",
+            "moduleName": "SleepSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8SleepSDK0A9StageInfoV",
+        "mangledName": "$s8SleepSDK0A9StageInfoV",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HKSleepStage",
+        "printedName": "HKSleepStage",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "startDate",
+            "printedName": "startDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK12HKSleepStageV9startDate10Foundation0F0Vvp",
+            "mangledName": "$s8SleepSDK12HKSleepStageV9startDate10Foundation0F0Vvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK12HKSleepStageV9startDate10Foundation0F0Vvg",
+                "mangledName": "$s8SleepSDK12HKSleepStageV9startDate10Foundation0F0Vvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK12HKSleepStageV9startDate10Foundation0F0Vvs",
+                "mangledName": "$s8SleepSDK12HKSleepStageV9startDate10Foundation0F0Vvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK12HKSleepStageV9startDate10Foundation0F0VvM",
+                "mangledName": "$s8SleepSDK12HKSleepStageV9startDate10Foundation0F0VvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "endDate",
+            "printedName": "endDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK12HKSleepStageV7endDate10Foundation0F0Vvp",
+            "mangledName": "$s8SleepSDK12HKSleepStageV7endDate10Foundation0F0Vvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK12HKSleepStageV7endDate10Foundation0F0Vvg",
+                "mangledName": "$s8SleepSDK12HKSleepStageV7endDate10Foundation0F0Vvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK12HKSleepStageV7endDate10Foundation0F0Vvs",
+                "mangledName": "$s8SleepSDK12HKSleepStageV7endDate10Foundation0F0Vvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK12HKSleepStageV7endDate10Foundation0F0VvM",
+                "mangledName": "$s8SleepSDK12HKSleepStageV7endDate10Foundation0F0VvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sleepAnalysis",
+            "printedName": "sleepAnalysis",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "HealthKit.HKCategoryValueSleepAnalysis?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HKCategoryValueSleepAnalysis",
+                    "printedName": "HealthKit.HKCategoryValueSleepAnalysis",
+                    "usr": "c:@E@HKCategoryValueSleepAnalysis"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK12HKSleepStageV13sleepAnalysisSo015HKCategoryValueaF0VSgvp",
+            "mangledName": "$s8SleepSDK12HKSleepStageV13sleepAnalysisSo015HKCategoryValueaF0VSgvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "HealthKit.HKCategoryValueSleepAnalysis?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HKCategoryValueSleepAnalysis",
+                        "printedName": "HealthKit.HKCategoryValueSleepAnalysis",
+                        "usr": "c:@E@HKCategoryValueSleepAnalysis"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK12HKSleepStageV13sleepAnalysisSo015HKCategoryValueaF0VSgvg",
+                "mangledName": "$s8SleepSDK12HKSleepStageV13sleepAnalysisSo015HKCategoryValueaF0VSgvg",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "HealthKit.HKCategoryValueSleepAnalysis?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HKCategoryValueSleepAnalysis",
+                        "printedName": "HealthKit.HKCategoryValueSleepAnalysis",
+                        "usr": "c:@E@HKCategoryValueSleepAnalysis"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK12HKSleepStageV13sleepAnalysisSo015HKCategoryValueaF0VSgvs",
+                "mangledName": "$s8SleepSDK12HKSleepStageV13sleepAnalysisSo015HKCategoryValueaF0VSgvs",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK12HKSleepStageV13sleepAnalysisSo015HKCategoryValueaF0VSgvM",
+                "mangledName": "$s8SleepSDK12HKSleepStageV13sleepAnalysisSo015HKCategoryValueaF0VSgvM",
+                "moduleName": "SleepSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "info",
+            "printedName": "info",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SleepStageInfo",
+                "printedName": "SleepSDK.SleepStageInfo",
+                "usr": "s:8SleepSDK0A9StageInfoV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8SleepSDK12HKSleepStageV4infoAA0aD4InfoVvp",
+            "mangledName": "$s8SleepSDK12HKSleepStageV4infoAA0aD4InfoVvp",
+            "moduleName": "SleepSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SleepStageInfo",
+                    "printedName": "SleepSDK.SleepStageInfo",
+                    "usr": "s:8SleepSDK0A9StageInfoV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SleepSDK12HKSleepStageV4infoAA0aD4InfoVvg",
+                "mangledName": "$s8SleepSDK12HKSleepStageV4infoAA0aD4InfoVvg",
+                "moduleName": "SleepSDK",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8SleepSDK12HKSleepStageV",
+        "mangledName": "$s8SleepSDK12HKSleepStageV",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SleepSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "HealthKit",
+        "printedName": "HealthKit",
+        "declKind": "Import",
+        "moduleName": "SleepSDK"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Trip\/Entities\/TripData.swift",
+      "kind": "StringLiteral",
+      "offset": 121,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Trip\/Entities\/TripData.swift",
+      "kind": "StringLiteral",
+      "offset": 158,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Trip\/Entities\/TripData.swift",
+      "kind": "StringLiteral",
+      "offset": 199,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Trip\/Entities\/TripData.swift",
+      "kind": "StringLiteral",
+      "offset": 237,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Trip\/Entities\/TripData.swift",
+      "kind": "StringLiteral",
+      "offset": 283,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 160,
+      "length": 26,
+      "value": "\"yyyy-MM-dd'T'HH:mm:ss'Z'\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 220,
+      "length": 30,
+      "value": "\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 274,
+      "length": 12,
+      "value": "\"MM\/dd\/yyyy\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 313,
+      "length": 26,
+      "value": "\"yyyy-MM-dd'T'00:00:00'Z'\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 364,
+      "length": 26,
+      "value": "\"yyyy-MM-dd'T'23:59:59'Z'\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 421,
+      "length": 5,
+      "value": "\"MMM\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 456,
+      "length": 8,
+      "value": "\"h:mm a\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 486,
+      "length": 26,
+      "value": "\"yyyy-MM-dd'T'hh:mm:ss'Z'\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 547,
+      "length": 14,
+      "value": "\"MMM dd, yyyy\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 600,
+      "length": 20,
+      "value": "\"MMM dd, yyyy HH:mm\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 659,
+      "length": 24,
+      "value": "\"EEE, MMM d, yyyy HH:mm\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 715,
+      "length": 10,
+      "value": "\"yyyyMMdd\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 754,
+      "length": 8,
+      "value": "\"MMM dd\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 780,
+      "length": 21,
+      "value": "\"dd-MM-yyyy HH:mm:ss\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 822,
+      "length": 17,
+      "value": "\"E MMM d, h:mm a\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 868,
+      "length": 20,
+      "value": "\"E, d MMM, HH:mm:ss\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 160,
+      "length": 26,
+      "value": "\"yyyy-MM-dd'T'HH:mm:ss'Z'\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 220,
+      "length": 30,
+      "value": "\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 274,
+      "length": 12,
+      "value": "\"MM\/dd\/yyyy\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 313,
+      "length": 26,
+      "value": "\"yyyy-MM-dd'T'00:00:00'Z'\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 364,
+      "length": 26,
+      "value": "\"yyyy-MM-dd'T'23:59:59'Z'\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 421,
+      "length": 5,
+      "value": "\"MMM\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 456,
+      "length": 8,
+      "value": "\"h:mm a\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 486,
+      "length": 26,
+      "value": "\"yyyy-MM-dd'T'hh:mm:ss'Z'\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 547,
+      "length": 14,
+      "value": "\"MMM dd, yyyy\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 600,
+      "length": 20,
+      "value": "\"MMM dd, yyyy HH:mm\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 659,
+      "length": 24,
+      "value": "\"EEE, MMM d, yyyy HH:mm\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 715,
+      "length": 10,
+      "value": "\"yyyyMMdd\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 754,
+      "length": 8,
+      "value": "\"MMM dd\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 780,
+      "length": 21,
+      "value": "\"dd-MM-yyyy HH:mm:ss\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 822,
+      "length": 17,
+      "value": "\"E MMM d, h:mm a\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Enums\/StringDateFormat.swift",
+      "kind": "StringLiteral",
+      "offset": 868,
+      "length": 20,
+      "value": "\"E, d MMM, HH:mm:ss\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 1502,
+      "length": 5,
+      "value": "\"UTC\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 1555,
+      "length": 7,
+      "value": "\"en_US\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6374,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6398,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6424,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6450,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 7064,
+      "length": 21,
+      "value": "\"MM\/dd\/yyyy HH:mm:ss\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 7142,
+      "length": 5,
+      "value": "\"UTC\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 7199,
+      "length": 7,
+      "value": "\"en_US\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 7405,
+      "length": 21,
+      "value": "\"MM\/dd\/yyyy HH:mm:ss\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 7527,
+      "length": 7,
+      "value": "\"en_US\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Trip\/TripManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 230,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Trip\/TripManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 354,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/String+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 238,
+      "length": 5,
+      "value": "\"UTC\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/HealthKit\/Entities\/Sleep\/HKSleepSession.swift",
+      "kind": "Array",
+      "offset": 489,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/HealthKit\/Entities\/Sleep\/HKSleepSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 607,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/HealthKit\/Entities\/Sleep\/HKSleepSession.swift",
+      "kind": "Array",
+      "offset": 651,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/HealthKit\/Entities\/Sleep\/HKSleepStage.swift",
+      "kind": "StringLiteral",
+      "offset": 154,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/HealthKit\/Entities\/Sleep\/HKSleepStage.swift",
+      "kind": "StringLiteral",
+      "offset": 188,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/HealthKit\/Entities\/Sleep\/HKSleepStage.swift",
+      "kind": "StringLiteral",
+      "offset": 220,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/HealthKit\/Entities\/Sleep\/HKSleepStage.swift",
+      "kind": "StringLiteral",
+      "offset": 257,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/TimeInterval+Extensions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 212,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/HealthKit\/DataSources\/HKSleepDataSource.swift",
+      "kind": "Array",
+      "offset": 176,
+      "length": 2,
+      "value": "[]"
+    }
+  ]
+}

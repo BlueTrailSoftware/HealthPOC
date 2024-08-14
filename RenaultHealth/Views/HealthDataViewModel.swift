@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import SleepSDK
+import Combine
 
 struct HRVEntryTableValue: Hashable {
     var date: String = ""
@@ -54,23 +56,38 @@ class HealthDataViewModel: ObservableObject {
     private var sleepDataSource = HKSleepDataSource()
     private var heartDataSource = HKHeartDataSource()
     
+    private let healthDataProvider = HealthDataProviderQA()
+    private var cancellables = Set<AnyCancellable>()
+    
     // MARK: - Permissions
     
     func requestHKPermission() {
-        authorizationManager.requestPermissions()
-        authorizationManager.onRequestAuthorizationDone = { [weak self] in
-            self?.refreshSleepData()
-        }
+        healthDataProvider.requestHealthKitPermission()
+        
+        healthDataProvider.requestAuthorizationCompleted
+                .sink { _ in
+                        print("healthDataProvider.requestAuthorizationCompleted")
+                }.store(in: &cancellables)
     }
     
     //MARK: - Data
     
     func refreshData() {
-        refreshSleepData()
+        healthDataProvider.sleepSessionData
+                .sink { data in
+                    self.parseSleepSessions(data)
+                }.store(in: &cancellables)
+        healthDataProvider.isRefreshing
+                .sink { loading in
+                    // Aqui lo que quieras hacer con el estado del loading
+                    self.isRefreshing = loading
+                }.store(in: &cancellables)
+        
+        healthDataProvider.refreshData()
     }
     
     // MARK: - Sleep
-    
+    /*
     private func refreshSleepData() {
         
         DispatchQueue.main.async {
@@ -95,6 +112,42 @@ class HealthDataViewModel: ObservableObject {
                     self.isRefreshing = false
                 }
             }
+        }
+    }
+     */
+    
+    private func parseSleepSessions(
+        _ data: SleepSessions
+    ) {
+        
+        if let longest = data.longest {
+            self.longestSleepSessionValues = SleepSessionDisplayValues(
+                sessionValues: longest.info.compactMap {
+                    SleepSessionSummaryValue(
+                        titleString: $0.title,
+                        valueString: $0.value,
+                        highlightValue: false
+                    )
+                },
+                stagesValues: [],
+                sleepDuration: longest.totalSleepDuration.verboseTimeString(),
+                wakeUpTime: longest.endDate?.string(withFormat: .readable) ?? ""
+            )
+        }
+        
+        if let last = data.last {
+            self.lastSleepSessionValues = SleepSessionDisplayValues(
+                sessionValues: last.info.compactMap {
+                    SleepSessionSummaryValue(
+                        titleString: $0.title,
+                        valueString: $0.value,
+                        highlightValue: false
+                    )
+                },
+                stagesValues: [],
+                sleepDuration: last.totalSleepDuration.verboseTimeString(),
+                wakeUpTime: last.endDate?.string(withFormat: .readable) ?? ""
+            )
         }
     }
     
