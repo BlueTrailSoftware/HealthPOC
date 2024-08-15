@@ -14,7 +14,7 @@ struct ContentCard<T: View>: View {
             content
         }
         .padding(16)
-        .frame(maxWidth: .infinity)
+        .padding(.bottom, 16)        .frame(maxWidth: .infinity)
         .background(.white)
         .cornerRadius(16)
     }
