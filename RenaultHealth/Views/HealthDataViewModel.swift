@@ -190,7 +190,9 @@ class HealthDataViewModel: ObservableObject {
                     title: $0.info.title,
                     start: $0.info.start,
                     end: $0.info.end,
-                    duration: $0.info.duration)
+                    duration: $0.info.duration,
+                    highlight: $0.info.title == "REM" || $0.info.title == "Deep" || $0.info.title == "Core" 
+                )
             },
             sleepDuration: session.totalSleepDuration.verboseTimeString(),
             wakeUpTime: session.endDate?.string(withFormat: .readable) ?? "none"

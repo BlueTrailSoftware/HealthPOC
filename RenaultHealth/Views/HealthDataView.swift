@@ -195,7 +195,7 @@ struct HealthDataView: View {
 
             Spacer()
             Divider()
-                .background(viewModel.sleepColor)
+                .background(.black.opacity(0.5))
             Spacer()
 
             Text(
@@ -203,11 +203,11 @@ struct HealthDataView: View {
             )
             .font(.system(size: 18))
             .fontWeight(.bold)
-            .opacity(0.6)
+            .opacity(value.highlight ? 0.6 : 0.3)
 
             Spacer()
             Divider()
-                .background(viewModel.sleepColor)
+                .background(.black.opacity(0.5))
             Spacer()
 
             Text(
@@ -215,10 +215,13 @@ struct HealthDataView: View {
             )
             .font(.system(size: 16))
             .fontWeight(.bold)
-            .opacity(0.6)
+            .opacity(0.3)
 
             Spacer()
         }
+        .padding(8)
+        .background(.black.opacity(0.05))
+        .cornerRadius(8)
     }
     
     private func sleepValueCell(
@@ -293,6 +296,7 @@ struct HealthDataView: View {
                         titleValueCell(title: "Duration", value: values.sleepDuration, valueColor: viewModel.sleepColor, highlighted: true, highlightedColor: .white)
                         
                         Divider()
+                            .padding(.vertical, 8)
 
                         contentCardHeader("Summary")
                         
@@ -301,6 +305,7 @@ struct HealthDataView: View {
                         }
                         
                         Divider()
+                            .padding(.vertical, 8)
 
                         contentCardHeader("Sleep Stages")
                         ForEach(values.stagesValues, id: \.self) { value in
