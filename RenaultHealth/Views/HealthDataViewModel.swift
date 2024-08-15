@@ -82,6 +82,7 @@ class HealthDataViewModel: ObservableObject {
         healthDataProvider.sleepSessionData
             .sink { data in
                 self.parseSleepSessions(data)
+                self.canStartTrip = data.lastSession != nil
 
             }.store(in: &cancellables)
 
@@ -172,6 +173,27 @@ class HealthDataViewModel: ObservableObject {
         }
 
         // * All sessions
+        self.allSleepSessionValues = data.allSessions.compactMap { session in
+            SleepSessionDisplayValues(
+                sessionValues: session.summaryInfo.compactMap {
+                    SleepSessionSummaryValue(
+                        titleString: $0.title,
+                        valueString: $0.value,
+                        highlightValue: $0.highlightValue,
+                        highlightAll: $0.highlightAll
+                    )
+                },
+                stagesValues: session.segments.map {
+                    SleepStageDisplayValues(
+                        title: $0.info.title,
+                        start: $0.info.start,
+                        end: $0.info.end,
+                        duration: $0.info.duration)
+                },
+                sleepDuration: session.totalSleepDuration.verboseTimeString(),
+                wakeUpTime: session.endDate?.string(withFormat: .readable) ?? "none"
+            )
+        }
     }
     
     // MARK: - Heart
