@@ -150,72 +150,40 @@ class HealthDataViewModel: ObservableObject {
     private func parseSleepSessions(_ data: SleepSessions) {
         // * Longest session
         if let longest = data.longestSession {
-            self.longestSleepSessionValues = SleepSessionDisplayValues(
-                sessionValues: longest.summaryInfo.compactMap {
-                    SleepSessionSummaryValue(
-                        titleString: $0.title,
-                        valueString: $0.value,
-                        highlightValue: $0.highlightValue,
-                        highlightAll: $0.highlightAll
-                    )
-                },
-                stagesValues: longest.segments.map {
-                    SleepStageDisplayValues(
-                        title: $0.info.title,
-                        start: $0.info.start,
-                        end: $0.info.end,
-                        duration: $0.info.duration)
-                },
-                sleepDuration: longest.totalSleepDuration.verboseTimeString(),
-                wakeUpTime: longest.endDate?.string(withFormat: .readable) ?? "none"
-            )
+            self.longestSleepSessionValues = self.displayValues(for: longest)
         }
         
         // * Last session
         if let latest = data.lastSession {
-            self.lastSleepSessionValues = SleepSessionDisplayValues(
-                sessionValues: latest.summaryInfo.compactMap {
-                    SleepSessionSummaryValue(
-                        titleString: $0.title,
-                        valueString: $0.value,
-                        highlightValue: $0.highlightValue,
-                        highlightAll: $0.highlightAll
-                    )
-                },
-                stagesValues: latest.segments.map {
-                    SleepStageDisplayValues(
-                        title: $0.info.title,
-                        start: $0.info.start,
-                        end: $0.info.end,
-                        duration: $0.info.duration)
-                },
-                sleepDuration: latest.totalSleepDuration.verboseTimeString(),
-                wakeUpTime: latest.endDate?.string(withFormat: .readable) ?? "none"
-            )
+            self.lastSleepSessionValues =  self.displayValues(for: latest)
         }
 
         // * All sessions
         self.allSleepSessionValues = data.allSessions.compactMap { session in
-            SleepSessionDisplayValues(
-                sessionValues: session.summaryInfo.compactMap {
-                    SleepSessionSummaryValue(
-                        titleString: $0.title,
-                        valueString: $0.value,
-                        highlightValue: $0.highlightValue,
-                        highlightAll: $0.highlightAll
-                    )
-                },
-                stagesValues: session.segments.map {
-                    SleepStageDisplayValues(
-                        title: $0.info.title,
-                        start: $0.info.start,
-                        end: $0.info.end,
-                        duration: $0.info.duration)
-                },
-                sleepDuration: session.totalSleepDuration.verboseTimeString(),
-                wakeUpTime: session.endDate?.string(withFormat: .readable) ?? "none"
-            )
+            self.displayValues(for: session)
         }
+    }
+    
+    private func displayValues(for session: SleepSDK.HKSleepSession) -> SleepSessionDisplayValues {
+        return SleepSessionDisplayValues(
+            sessionValues: session.summaryInfo.compactMap {
+                SleepSessionSummaryValue(
+                    titleString: $0.title,
+                    valueString: $0.value,
+                    highlightValue: $0.highlightValue,
+                    highlightAll: $0.highlightAll
+                )
+            },
+            stagesValues: session.segments.map {
+                SleepStageDisplayValues(
+                    title: $0.info.title,
+                    start: $0.info.start,
+                    end: $0.info.end,
+                    duration: $0.info.duration)
+            },
+            sleepDuration: session.totalSleepDuration.verboseTimeString(),
+            wakeUpTime: session.endDate?.string(withFormat: .readable) ?? "none"
+        )
     }
     
     // MARK: - Heart

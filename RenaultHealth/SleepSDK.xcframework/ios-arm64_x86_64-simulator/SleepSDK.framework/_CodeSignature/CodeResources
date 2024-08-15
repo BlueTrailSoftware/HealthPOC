@@ -14,7 +14,7 @@
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		9rETCSylZlS2KBNggdwMh6k/zX4=
+		fgZjnjtO78djJwHD6Emfpue/TZg=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		U1xAyUcNwGrnK9zVUcwcmR0X7CM=
+		aYn8M/b2X81p0FNjwX0vvEISAPI=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		9rETCSylZlS2KBNggdwMh6k/zX4=
+		fgZjnjtO78djJwHD6Emfpue/TZg=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4D3eHFLt0VugNB/IFL3ucqlADLo=
+		leCNTYwI7tlVjznepOjcj65CvbM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,7 +70,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r+IatS4Fi/cB3zzMS+ZhyJeO/b6EW1u27FyjoA6zj/Y=
+			FtlyKzGOhvNSNK/7pLlRmRypH0S0F3rMgWGCo/+Lsv8=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -98,14 +98,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VhTHn6Av900kLC1Uq3RrfMjQlG2b18N1NABgY/eMfPQ=
+			R/7Uh7sG0QJmfwARttxQA1wh3JrMITa7KIjLFsKhXn8=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r+IatS4Fi/cB3zzMS+ZhyJeO/b6EW1u27FyjoA6zj/Y=
+			FtlyKzGOhvNSNK/7pLlRmRypH0S0F3rMgWGCo/+Lsv8=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -133,7 +133,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			q7vwIssv+d8JcGhtmjVZ2uJ6umNO4K15iNXpGBZwN0c=
+			N3OlgmDL5rRdNfMlks8vkzmfgrVEiiKGcuEw5jv1y24=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

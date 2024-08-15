@@ -5027,77 +5027,70 @@
     {
       "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 1502,
-      "length": 5,
-      "value": "\"UTC\""
-    },
-    {
-      "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
-      "kind": "StringLiteral",
-      "offset": 1555,
+      "offset": 1533,
       "length": 7,
       "value": "\"en_US\""
     },
     {
       "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 6374,
+      "offset": 6352,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 6398,
+      "offset": 6376,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 6424,
+      "offset": 6402,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 6450,
+      "offset": 6428,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 7064,
+      "offset": 7042,
       "length": 21,
       "value": "\"MM\/dd\/yyyy HH:mm:ss\""
     },
     {
       "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 7142,
+      "offset": 7120,
       "length": 5,
       "value": "\"UTC\""
     },
     {
       "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 7199,
+      "offset": 7177,
       "length": 7,
       "value": "\"en_US\""
     },
     {
       "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 7405,
+      "offset": 7383,
       "length": 21,
       "value": "\"MM\/dd\/yyyy HH:mm:ss\""
     },
     {
       "filePath": "\/Users\/manuelsalinas\/sdk-health\/SleepSDK\/SleepSDK\/Utils\/Extensions\/Date+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 7527,
+      "offset": 7497,
       "length": 7,
       "value": "\"en_US\""
     },
