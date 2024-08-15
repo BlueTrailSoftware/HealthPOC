@@ -14,23 +14,23 @@
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		aeYdW4K0MiqCxKKfv3bjNUrhzgY=
+		9rETCSylZlS2KBNggdwMh6k/zX4=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		koKCenSO4admaKuaBAXtkTgIGZg=
+		HJvwg2lSEOTFlQ1VsdJupXCM6tk=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		p2APSin8YxnruNCprXEyLMB9kPQ=
+		ff1OVMUzlbXUgU0PRWdFuoJ/t1E=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		koKCenSO4admaKuaBAXtkTgIGZg=
+		HJvwg2lSEOTFlQ1VsdJupXCM6tk=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		7qH8yKPbmT2rfB3v8H95tL9tptw=
+		IwcDTxfLnjlMyJ0iprvenCD7xpY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,35 +50,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iUR/tponTrGvD5NStcHzvipxn71t9BwGBNQP2Mx2G80=
+			r+IatS4Fi/cB3zzMS+ZhyJeO/b6EW1u27FyjoA6zj/Y=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8/g3vmyJLdn3AZJIwRst+d3c/DmaoWcVKVjEGh3kTPI=
+			S4F4cwKL2LlYd3z/cAiVdgLr6Bc+ohFRIl2DMDZ2u3Y=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ri1bBac4z7a+DfloAYloRxB3/OBvIZdBQlvQEPsiAcE=
+			Mw3zRsLNI9hd3xEc/ogGS3SIykifSY1+is8H+U0G7eg=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8/g3vmyJLdn3AZJIwRst+d3c/DmaoWcVKVjEGh3kTPI=
+			S4F4cwKL2LlYd3z/cAiVdgLr6Bc+ohFRIl2DMDZ2u3Y=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vjAsyuaOfyud+38O9zQ1mD4IRfEcg0B3xcQCc6WvlhI=
+			+HRj5vzEHJVK/FQPN6nteZIckZkpO8Us6mZ04BQmi8A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

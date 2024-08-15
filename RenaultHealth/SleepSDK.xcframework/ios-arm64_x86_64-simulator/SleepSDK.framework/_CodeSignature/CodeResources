@@ -14,43 +14,43 @@
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		aeYdW4K0MiqCxKKfv3bjNUrhzgY=
+		9rETCSylZlS2KBNggdwMh6k/zX4=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		wQ/EG1uzjgolWkVuGwSKx3sseuE=
+		+KrcImOYh8q5QMkXJx88zAO92to=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ujKv9nVeOqEkm9xLZm2MKwAPUvA=
+		jQFByLJ0PvcmI6jY7cyne1RLYp8=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		wQ/EG1uzjgolWkVuGwSKx3sseuE=
+		+KrcImOYh8q5QMkXJx88zAO92to=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ItPDOeCJkffSB9s53re96bUzoao=
+		U1xAyUcNwGrnK9zVUcwcmR0X7CM=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		aeYdW4K0MiqCxKKfv3bjNUrhzgY=
+		9rETCSylZlS2KBNggdwMh6k/zX4=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		T18vWLeH3tuEAk9sFxrID4lLiKc=
+		6XrMDb+SwbU0VK4e8dm1JEKsHXU=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		OGJVHVRWUHMBVKKHtnuijgZffWQ=
+		nJdhrOycw/7R87CXj8CYUuU1oHY=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		T18vWLeH3tuEAk9sFxrID4lLiKc=
+		6XrMDb+SwbU0VK4e8dm1JEKsHXU=
 		</data>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5P8YrM8lgjcjy2SA5p8jkpul6RU=
+		4D3eHFLt0VugNB/IFL3ucqlADLo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,70 +70,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iUR/tponTrGvD5NStcHzvipxn71t9BwGBNQP2Mx2G80=
+			r+IatS4Fi/cB3zzMS+ZhyJeO/b6EW1u27FyjoA6zj/Y=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5g0mkY9UFSB0e2JEH9NFYf4vnfiH93LtRj3gQo9IgaY=
+			WvWBCBNx+KsCRBglVv08AAYmSkxBvYJi911cO7D8gHw=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l3RITcm9fHgjOw7fj798Xz1lPQbOxc181fl57X4QxrU=
+			FHGFJAmt0tk+gz+kJ+3H0YOzmSZoVQgk07z7T/NSiw4=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5g0mkY9UFSB0e2JEH9NFYf4vnfiH93LtRj3gQo9IgaY=
+			WvWBCBNx+KsCRBglVv08AAYmSkxBvYJi911cO7D8gHw=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o6CvVbvG4zhVE39H1gvQ9rJwK/yEbqKMd8/B5ICaSM4=
+			VhTHn6Av900kLC1Uq3RrfMjQlG2b18N1NABgY/eMfPQ=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iUR/tponTrGvD5NStcHzvipxn71t9BwGBNQP2Mx2G80=
+			r+IatS4Fi/cB3zzMS+ZhyJeO/b6EW1u27FyjoA6zj/Y=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M2kfTCb0l7qh7NLVc5PrdGhJhjXuAlWjsTvRI+0zptk=
+			FWAMvxI2uJ0y0dxAOxn8Ey4ZA1j8Mwcw/huM79sAQYA=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0UoSUqIEmRgzjcg1gSnKUtE56IRkTZx7P3jnBo9yyrE=
+			fSmgfCbseWtqlxV4bmnx6xTYWAW0T4lXM1RQtqEDykw=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M2kfTCb0l7qh7NLVc5PrdGhJhjXuAlWjsTvRI+0zptk=
+			FWAMvxI2uJ0y0dxAOxn8Ey4ZA1j8Mwcw/huM79sAQYA=
 			</data>
 		</dict>
 		<key>Modules/SleepSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EH1zIFY//quKnSZU2hObCQ8xwPQNv4hGHt4m5GlnwPs=
+			q7vwIssv+d8JcGhtmjVZ2uJ6umNO4K15iNXpGBZwN0c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

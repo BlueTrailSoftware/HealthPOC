@@ -26,7 +26,11 @@ public enum TripStatus {
     get
   }
 }
-public typealias SleepSessions = (longest: SleepSDK.HKSleepSession?, last: SleepSDK.HKSleepSession?, all: [SleepSDK.HKSleepSession])
+public struct SleepSessions {
+  public var longestSession: SleepSDK.HKSleepSession?
+  public var lastSession: SleepSDK.HKSleepSession?
+  public var allSessions: [SleepSDK.HKSleepSession]
+}
 public struct HRVEntry : Swift.Hashable {
   public var value: Swift.Double
   public var startDate: Foundation.Date
