@@ -191,7 +191,7 @@ class HealthDataViewModel: ObservableObject {
                     start: $0.info.start,
                     end: $0.info.end,
                     duration: $0.info.duration,
-                    highlight: $0.info.title == "REM" || $0.info.title == "Deep" || $0.info.title == "Core" 
+                    highlight: $0.info.title == "REM" || $0.info.title == "Deep" || $0.info.title == "Core" || $0.info.title == "Core" || $0.info.title == "Unspecified"
                 )
             },
             sleepDuration: session.totalSleepDuration.verboseTimeString(),
