@@ -48,6 +48,8 @@ public struct SleepSessionInfo : Swift.Hashable {
   public var title: Swift.String?
   public var value: Swift.String?
   public var valueInHours: Swift.Double?
+  public var highlightValue: Swift.Bool
+  public var highlightAll: Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: SleepSDK.SleepSessionInfo, b: SleepSDK.SleepSessionInfo) -> Swift.Bool
   public var hashValue: Swift.Int {
@@ -59,10 +61,7 @@ public struct SleepSessionInfo : Swift.Hashable {
   public var startingDate: Foundation.Date?
   public var endDate: Foundation.Date?
   public var totalSleepDuration: Swift.Double
-  public var info: [SleepSDK.SleepSessionInfo]
-  public var activeSleepStages: [HealthKit.HKCategoryValueSleepAnalysis] {
-    get
-  }
+  public var summaryInfo: [SleepSDK.SleepSessionInfo]
   public func refreshProperties()
   @objc override dynamic public init()
   @objc deinit
