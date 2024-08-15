@@ -66,7 +66,8 @@ class HealthDataViewModel: ObservableObject {
         healthDataProvider.requestAuthorizationCompleted
             .sink { _ in
                 self.setupSleepBinding()
-                print("Sleep binding enabled!")
+                self.setupTripBindings()
+                print("Bindings enabled!")
 
             }.store(in: &cancellables)
     }
@@ -81,8 +82,8 @@ class HealthDataViewModel: ObservableObject {
     private func setupSleepBinding() {
         healthDataProvider.sleepSessionData
             .sink { data in
-                self.parseSleepSessions(data)
                 self.canStartTrip = data.lastSession != nil
+                self.parseSleepSessions(data)
 
             }.store(in: &cancellables)
 
@@ -94,7 +95,28 @@ class HealthDataViewModel: ObservableObject {
 
         healthDataProvider.refreshData()
     }
-    
+
+    private func setupTripBindings() {
+        // Todo lo necesario para manejar la UI del trip va aqui 
+        healthDataProvider.tripStatusChanged
+            .sink { status in
+                // Aqui va lo que maneja refreshTripPublishedValues() y cuando cambia el estatus en toggleTrip() para inciaar o parar el viaje
+
+            }.store(in: &cancellables)
+
+        healthDataProvider.currentTrip
+            .sink { trip in
+                // Aqui va lo que maneja refreshTripInfo()
+
+            }.store(in: &cancellables)
+
+        healthDataProvider.pauseMustStart
+            .sink {
+                // Aqui se lanza cuando el tiempo de descanso debe pasar, es el euivalente a startTrip() : closure -> restMustStart:
+
+            }.store(in: &cancellables)
+    }
+
     // MARK: - Sleep
     /*
     private func refreshSleepData() {
