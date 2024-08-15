@@ -321,7 +321,7 @@ struct HealthDataView: View {
                     
                     if viewModel.canStartTrip {
                         HStack {
-                            if viewModel.currentTrip.activityStatus == .running {
+                            if viewModel.currentTripStatus == .running {
                                 Image(systemName: "car.fill")
                             }
 
@@ -332,7 +332,7 @@ struct HealthDataView: View {
                         .font(.system(size: 22))
                         .foregroundColor(viewModel.tripMessageColor)
 
-                        if viewModel.currentTrip.activityStatus != .idle {
+                        if viewModel.currentTripStatus != .idle {
                             titleValueCell(
                                 title: "Trip start",
                                 value: viewModel.tripValues.startDate
@@ -403,9 +403,13 @@ struct HealthDataView: View {
                         Button {
                             viewModel.toggleTrip()
                         } label: {
-                            Label(viewModel.tripActionButtonText, systemImage: viewModel.currentTrip.activityStatus == .running 
+                            Label(
+                                viewModel.tripActionButtonText,
+                                systemImage: viewModel.currentTripStatus == .running
                                   ? "stop.fill"
-                                  : viewModel.currentTrip.activityStatus == .completed ? "bed.double.fill" :  "play.fill")
+                                  : viewModel.currentTripStatus == .completed ? "bed.double.fill" :  "play.fill"
+                            )
+                            .frame(maxWidth: .infinity)
                         }
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity)

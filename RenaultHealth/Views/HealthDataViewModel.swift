@@ -41,7 +41,8 @@ class HealthDataViewModel: ObservableObject {
     @Published var hrvAverage: Double = 0
     
     // Trip
-    @Published var currentTrip: Trip = Trip()
+    //@Published var currentTrip: Trip = Trip()
+    @Published var currentTripStatus: SleepSDK.TripStatus = .idle
     @Published var tripMessage: String = "New Trip"
     @Published var tripMessageColor: Color = .black.opacity(0.4)
     @Published var tripActionButtonText: String = "Start"
@@ -53,8 +54,8 @@ class HealthDataViewModel: ObservableObject {
     private var authorizationManager = HKAuthorizationManager()
 
     // DataSources
-    private var sleepDataSource = HKSleepDataSource()
-    private var heartDataSource = HKHeartDataSource()
+    //private var sleepDataSource = HKSleepDataSource()
+    //private var heartDataSource = HKHeartDataSource()
     
     private let healthDataProvider = HealthDataProviderQA()
     private var cancellables = Set<AnyCancellable>()
@@ -101,19 +102,29 @@ class HealthDataViewModel: ObservableObject {
         healthDataProvider.tripStatusChanged
             .sink { status in
                 // Aqui va lo que maneja refreshTripPublishedValues() y cuando cambia el estatus en toggleTrip() para inciaar o parar el viaje
-
+                self.currentTripStatus = status
+                self.refreshTripPublishedValues()
+                
             }.store(in: &cancellables)
 
         healthDataProvider.currentTrip
             .sink { trip in
                 // Aqui va lo que maneja refreshTripInfo()
+                self.tripValues = TripPrettyPrintValues(
+                    startDate: trip.startDate,
+                    restDate: trip.restDate,
+                    elapsedTime: trip.elapsedTime,
+                    intervalUntilRest: trip.intervalUntilRest,
+                    realTimeIntervalUntilRest: trip.realTimeIntervalUntilRest
+                )
+                self.refreshTripPublishedValues()
 
             }.store(in: &cancellables)
 
         healthDataProvider.pauseMustStart
             .sink {
                 // Aqui se lanza cuando el tiempo de descanso debe pasar, es el euivalente a startTrip() : closure -> restMustStart:
-
+                self.refreshTripPublishedValues()
             }.store(in: &cancellables)
     }
 
@@ -187,7 +198,7 @@ class HealthDataViewModel: ObservableObject {
     }
     
     // MARK: - Heart
-    
+    /*
     private func fetchHRV() {
         heartDataSource.fetchHRV(
             from: Date().startOfDay,
@@ -213,9 +224,10 @@ class HealthDataViewModel: ObservableObject {
             }
         }
     }
+     */
     
     // MARK: - Trip
-
+    /*
     private func refreshTripInfo() {
         self.tripValues = TripPrettyPrintValues(
             startDate: self.currentTrip.startDatePretty,
@@ -227,9 +239,10 @@ class HealthDataViewModel: ObservableObject {
 
         refreshTripPublishedValues()
     }
+    */
 
     private func refreshTripPublishedValues() {
-        switch currentTrip.activityStatus {
+        switch currentTripStatus {
         case .running:
             tripActionButtonText = "Stop"
             tripActionButtonBackground = .red
@@ -247,19 +260,25 @@ class HealthDataViewModel: ObservableObject {
             tripActionButtonBackground = .mint
             tripMessage = "New Trip"
             tripMessageColor = .black.opacity(0.4)
+        @unknown default:
+            print("refreshTripPublishedValues: Unknown trip status")
+            break
         }
     }
     
     func toggleTrip() {
-        if currentTrip.activityStatus == .idle {
+        /*
+        if currentTripStatus == .idle {
             startTrip()
         } else {
             stopTrip()
         }
-        
+         */
+        healthDataProvider.toggleTrip()
         refreshTripPublishedValues()
     }
     
+    /*
     private func startTrip() {
         guard 
             let lastSleepSession = sleepDataSource.lastSleepSession
@@ -267,6 +286,8 @@ class HealthDataViewModel: ObservableObject {
             return
         }
 
+        healthDataProvider.toggleTrip()
+        
         currentTrip.start(lastSleepSession: lastSleepSession) { [weak self] _ in
             self?.refreshTripInfo()
 
@@ -278,4 +299,5 @@ class HealthDataViewModel: ObservableObject {
     private func stopTrip() {
         self.currentTrip.reset()
     }
+    */
 }
