@@ -34,8 +34,14 @@ struct HealthDataView: View {
             viewModel.requestHKPermission()
         }
         .background(
-            LinearGradient(gradient: Gradient(colors: [.purple.opacity(0.9), .purple.opacity(0.8), .white]), startPoint: .top, endPoint: .bottom)
-            )
+            LinearGradient(gradient: Gradient(colors: [
+                .purple.opacity(0.9),
+                .purple.opacity(0.8),
+                .purple.opacity(0.7),
+                .purple.opacity(0.6),
+                .white
+            ]), startPoint: .top, endPoint: .bottom)
+        )
     }
 
     // MARK: Main Views
