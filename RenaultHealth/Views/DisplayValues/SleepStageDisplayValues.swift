@@ -11,4 +11,5 @@ struct SleepStageDisplayValues: Hashable {
     var start: String = ""
     var end: String = ""
     var duration: String = ""
+    var highlight: Bool = false
 }
