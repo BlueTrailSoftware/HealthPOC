@@ -13,6 +13,7 @@ struct SleepStageDisplayValues: Hashable {
     var start: String = ""
     var end: String = ""
     var duration: String = ""
+    var highlight: Bool = false
 }
 
 /// Represents a sleep stage (HKCategoryValueSleepAnalysis) with their start and end dates
@@ -35,7 +36,8 @@ struct HKSleepStage: JSONDecodable {
                         end: endDate
                     )
                 ]
-            ).verboseTimeString()
+            ).verboseTimeString(),
+            highlight: sleepAnalysis == .asleepCore || sleepAnalysis == .asleepREM || sleepAnalysis == .asleepDeep
         )
     }
 
