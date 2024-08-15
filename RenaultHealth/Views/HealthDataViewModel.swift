@@ -63,26 +63,34 @@ class HealthDataViewModel: ObservableObject {
     
     func requestHKPermission() {
         healthDataProvider.requestHealthKitPermission()
-        
         healthDataProvider.requestAuthorizationCompleted
-                .sink { _ in
-                        print("healthDataProvider.requestAuthorizationCompleted")
-                }.store(in: &cancellables)
+            .sink { _ in
+                self.setupSleepBinding()
+                print("Sleep binding enabled!")
+
+            }.store(in: &cancellables)
     }
     
-    //MARK: - Data
-    
+
+    // MARK: - Data
     func refreshData() {
+        healthDataProvider.refreshData()
+    }
+
+    // MARK: - Bindings
+    private func setupSleepBinding() {
         healthDataProvider.sleepSessionData
-                .sink { data in
-                    self.parseSleepSessions(data)
-                }.store(in: &cancellables)
+            .sink { data in
+                self.parseSleepSessions(data)
+
+            }.store(in: &cancellables)
+
         healthDataProvider.isRefreshing
-                .sink { loading in
-                    // Aqui lo que quieras hacer con el estado del loading
-                    self.isRefreshing = loading
-                }.store(in: &cancellables)
-        
+            .sink { loading in
+                self.isRefreshing = loading
+
+            }.store(in: &cancellables)
+
         healthDataProvider.refreshData()
     }
     
@@ -116,10 +124,8 @@ class HealthDataViewModel: ObservableObject {
     }
      */
     
-    private func parseSleepSessions(
-        _ data: SleepSessions
-    ) {
-        
+    private func parseSleepSessions(_ data: SleepSessions) {
+        // * Longest session
         if let longest = data.longest {
             self.longestSleepSessionValues = SleepSessionDisplayValues(
                 sessionValues: longest.info.compactMap {
@@ -135,9 +141,10 @@ class HealthDataViewModel: ObservableObject {
             )
         }
         
-        if let last = data.last {
+        // * Last session
+        if let lastest = data.last {
             self.lastSleepSessionValues = SleepSessionDisplayValues(
-                sessionValues: last.info.compactMap {
+                sessionValues: lastest.info.compactMap {
                     SleepSessionSummaryValue(
                         titleString: $0.title,
                         valueString: $0.value,
@@ -145,10 +152,12 @@ class HealthDataViewModel: ObservableObject {
                     )
                 },
                 stagesValues: [],
-                sleepDuration: last.totalSleepDuration.verboseTimeString(),
-                wakeUpTime: last.endDate?.string(withFormat: .readable) ?? ""
+                sleepDuration: lastest.totalSleepDuration.verboseTimeString(),
+                wakeUpTime: lastest.endDate?.string(withFormat: .readable) ?? ""
             )
         }
+
+        // * All sessions
     }
     
     // MARK: - Heart

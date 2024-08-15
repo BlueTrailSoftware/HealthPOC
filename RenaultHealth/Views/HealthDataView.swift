@@ -32,7 +32,6 @@ struct HealthDataView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .onAppear {
             viewModel.requestHKPermission()
-            viewModel.refreshData()
         }
         .background(
             LinearGradient(gradient: Gradient(colors: [.purple.opacity(0.9), .purple.opacity(0.8), .white]), startPoint: .top, endPoint: .bottom)

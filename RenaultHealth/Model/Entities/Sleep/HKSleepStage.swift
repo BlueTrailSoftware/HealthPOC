@@ -8,13 +8,6 @@
 import Foundation
 import HealthKit
 
-struct SleepStageDisplayValues: Hashable {
-    var title: String = ""
-    var start: String = ""
-    var end: String = ""
-    var duration: String = ""
-}
-
 /// Represents a sleep stage (HKCategoryValueSleepAnalysis) with their start and end dates
 struct HKSleepStage: JSONDecodable {
     var startDate: Date = Date()

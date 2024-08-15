@@ -8,23 +8,6 @@
 import Foundation
 import HealthKit
 
-
-struct SleepSessionDisplayValues: Hashable {
-    var sessionValues: [SleepSessionSummaryValue] = []
-    var stagesValues: [SleepStageDisplayValues] = []
-    var sleepDuration: String = "0"
-    var wakeUpTime: String = "none"
-}
-
-/// Values that should be displayed in the sleep table
-/// This is to avoid calculatiions during the table cells setUp
-struct SleepSessionSummaryValue: Hashable {
-    var titleString: String?
-    var valueString: String?
-    var highlightValue: Bool = false
-    var highlightAll: Bool = false
-}
-
 /// Represents a period on which a sleep occurred
 /// It contains all the sleep stages and their duration
 class HKSleepSession: NSObject {

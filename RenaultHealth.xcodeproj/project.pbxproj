@@ -34,6 +34,9 @@
 		4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */; };
 		4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */; };
 		4DF91DFB2C49AA3300C28E55 /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */; };
+		FF9B61B32C6E52EB0021B007 /* SleepStageDisplayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B61B22C6E52EB0021B007 /* SleepStageDisplayValues.swift */; };
+		FF9B61B52C6E53250021B007 /* SleepSessionDisplayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B61B42C6E53250021B007 /* SleepSessionDisplayValues.swift */; };
+		FF9B61B72C6E53470021B007 /* SleepSessionSummaryValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B61B62C6E53470021B007 /* SleepSessionSummaryValue.swift */; };
 		FFDE755E2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */; };
 		FFDE755F2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */; };
 		FFDE75602C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */; };
@@ -104,6 +107,9 @@
 		4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataView.swift; sourceTree = "<group>"; };
 		4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataViewModel.swift; sourceTree = "<group>"; };
 		4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
+		FF9B61B22C6E52EB0021B007 /* SleepStageDisplayValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStageDisplayValues.swift; sourceTree = "<group>"; };
+		FF9B61B42C6E53250021B007 /* SleepSessionDisplayValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSessionDisplayValues.swift; sourceTree = "<group>"; };
+		FF9B61B62C6E53470021B007 /* SleepSessionSummaryValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSessionSummaryValue.swift; sourceTree = "<group>"; };
 		FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAppButton.swift; sourceTree = "<group>"; };
 		FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateValues.swift; sourceTree = "<group>"; };
 		FFDE75622C6AA303005E90D0 /* ContentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCard.swift; sourceTree = "<group>"; };
@@ -229,8 +235,8 @@
 		4DF91DCF2C4838A400C28E55 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */,
 				4DF91DD02C4838B100C28E55 /* Sleep */,
+				4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 		4DF91DEE2C499C8C00C28E55 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF9B61B12C6E52D90021B007 /* DisplayValues */,
 				4DF91DF72C49AA1700C28E55 /* Cells */,
 				4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */,
 				4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */,
@@ -316,6 +323,16 @@
 				4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FF9B61B12C6E52D90021B007 /* DisplayValues */ = {
+			isa = PBXGroup;
+			children = (
+				FF9B61B22C6E52EB0021B007 /* SleepStageDisplayValues.swift */,
+				FF9B61B42C6E53250021B007 /* SleepSessionDisplayValues.swift */,
+				FF9B61B62C6E53470021B007 /* SleepSessionSummaryValue.swift */,
+			);
+			path = DisplayValues;
 			sourceTree = "<group>";
 		};
 		FFDE755B2C6A9E80005E90D0 /* Components */ = {
@@ -469,6 +486,9 @@
 				4DF91DA32C4835AF00C28E55 /* ContentView.swift in Sources */,
 				4DF91DD62C48390E00C28E55 /* HKSleepProperties.swift in Sources */,
 				4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */,
+				FF9B61B72C6E53470021B007 /* SleepSessionSummaryValue.swift in Sources */,
+				FF9B61B32C6E52EB0021B007 /* SleepStageDisplayValues.swift in Sources */,
+				FF9B61B52C6E53250021B007 /* SleepSessionDisplayValues.swift in Sources */,
 				FFDE755E2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */,
 				4DF91DD92C48397B00C28E55 /* JSONDecodable.swift in Sources */,
 				4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */,
