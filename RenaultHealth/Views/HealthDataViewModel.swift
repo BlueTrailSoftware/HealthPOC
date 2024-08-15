@@ -126,34 +126,48 @@ class HealthDataViewModel: ObservableObject {
     
     private func parseSleepSessions(_ data: SleepSessions) {
         // * Longest session
-        if let longest = data.longest {
+        if let longest = data.longestSession {
             self.longestSleepSessionValues = SleepSessionDisplayValues(
-                sessionValues: longest.info.compactMap {
+                sessionValues: longest.summaryInfo.compactMap {
                     SleepSessionSummaryValue(
                         titleString: $0.title,
                         valueString: $0.value,
-                        highlightValue: false
+                        highlightValue: $0.highlightValue,
+                        highlightAll: $0.highlightAll
                     )
                 },
-                stagesValues: [],
+                stagesValues: longest.segments.map {
+                    SleepStageDisplayValues(
+                        title: $0.info.title,
+                        start: $0.info.start,
+                        end: $0.info.end,
+                        duration: $0.info.duration)
+                },
                 sleepDuration: longest.totalSleepDuration.verboseTimeString(),
-                wakeUpTime: longest.endDate?.string(withFormat: .readable) ?? ""
+                wakeUpTime: longest.endDate?.string(withFormat: .readable) ?? "none"
             )
         }
         
         // * Last session
-        if let lastest = data.last {
+        if let latest = data.lastSession {
             self.lastSleepSessionValues = SleepSessionDisplayValues(
-                sessionValues: lastest.info.compactMap {
+                sessionValues: latest.summaryInfo.compactMap {
                     SleepSessionSummaryValue(
                         titleString: $0.title,
                         valueString: $0.value,
-                        highlightValue: false
+                        highlightValue: $0.highlightValue,
+                        highlightAll: $0.highlightAll
                     )
                 },
-                stagesValues: [],
-                sleepDuration: lastest.totalSleepDuration.verboseTimeString(),
-                wakeUpTime: lastest.endDate?.string(withFormat: .readable) ?? ""
+                stagesValues: latest.segments.map {
+                    SleepStageDisplayValues(
+                        title: $0.info.title,
+                        start: $0.info.start,
+                        end: $0.info.end,
+                        duration: $0.info.duration)
+                },
+                sleepDuration: latest.totalSleepDuration.verboseTimeString(),
+                wakeUpTime: latest.endDate?.string(withFormat: .readable) ?? "none"
             )
         }
 
