@@ -208,7 +208,7 @@ struct HealthDataView: View {
 
             Spacer()
             Divider()
-                .background(viewModel.sleepColor)
+                .background(.black.opacity(0.5))
             Spacer()
 
             Text(
