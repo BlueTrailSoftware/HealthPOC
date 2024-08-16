@@ -19,5 +19,9 @@ struct ContentCard<T: View>: View {
         .background(.white)
         .cornerRadius(16)
         .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
+        .scrollTransition { content, phase in
+            content
+                .scaleEffect(phase.isIdentity ? 1 : 0.9)
+        }
     }
 }
