@@ -28,20 +28,21 @@ struct HealthDataView: View {
             
             Spacer()
         }
-        .padding(.horizontal,8)
+        .padding(.horizontal, 8)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .onAppear {
             viewModel.requestHKPermission()
         }
-        .background(
+        .background (
             LinearGradient(gradient: Gradient(colors: [
-                .purple.opacity(0.9),
-                .purple.opacity(0.8),
-                .purple.opacity(0.7),
-                .purple.opacity(0.6),
+                .deepPurple,
+                .deepPurple.opacity(0.9),
+                .deepPurple.opacity(0.8),
+                .deepPurple.opacity(0.7),
                 .white
             ]), startPoint: .top, endPoint: .bottom)
         )
+        .ignoresSafeArea(edges: .bottom)
     }
 
     // MARK: Main Views
@@ -84,6 +85,7 @@ struct HealthDataView: View {
             ContentUnavailableView("Loading", systemImage: "lines.measurement.horizontal")
                 .imageScale(.small)
                 .symbolEffect(.variableColor)
+                .foregroundColor(Color.softPurple)
         }
     }
 
@@ -95,10 +97,12 @@ struct HealthDataView: View {
                 .font(.largeTitle)
                 .symbolRenderingMode(.multicolor)
                 .symbolEffect(.pulse)
+                .foregroundStyle(Color.softPurple)
         } description: {
             // Instructions
             Text(EmptyStateValues.emptyMessage)
                 .font(.footnote)
+                .foregroundStyle(Color.softPurple)
         } actions: {
             // Alternative Actions
             VStack {
@@ -111,7 +115,8 @@ struct HealthDataView: View {
                 HealthAppButton(type: .labeled)
             }
             .buttonStyle(.bordered)
-            .foregroundStyle(.indigo)
+            .foregroundStyle(Color.softPurple)
+            .tint(Color.deepPurple)
         }
         .padding()
     }
@@ -145,7 +150,7 @@ struct HealthDataView: View {
                         .imageScale(.large)
                 }
             }
-            .foregroundColor(.white)
+            .foregroundColor(.purple)
             .padding(.horizontal, 8)
         }
         .frame(maxWidth: .infinity)
@@ -165,7 +170,7 @@ struct HealthDataView: View {
         }
         .padding(.horizontal, 16)
         .frame(height: 52)
-        .foregroundColor(.black.opacity(0.4))
+        .foregroundColor(Color.softPurple)
     }
     
     @ViewBuilder
@@ -196,12 +201,13 @@ struct HealthDataView: View {
                     value.end
                 )
             }
+            .foregroundStyle(Color.deepPurple)
             .font(.footnote)
             .opacity(0.6)
 
             Spacer()
             Divider()
-                .background(.black.opacity(0.5))
+                .background(Color.deepPurple)
             Spacer()
 
             Text(
@@ -210,10 +216,11 @@ struct HealthDataView: View {
             .font(.system(size: 18))
             .fontWeight(.bold)
             .opacity(value.highlight ? 0.6 : 0.3)
+            .foregroundStyle(Color.deepPurple)
 
             Spacer()
             Divider()
-                .background(.black.opacity(0.5))
+                .background(Color.deepPurple)
             Spacer()
 
             Text(
@@ -222,11 +229,12 @@ struct HealthDataView: View {
             .font(.system(size: 16))
             .fontWeight(.bold)
             .opacity(0.3)
+            .foregroundStyle(Color.deepPurple)
 
             Spacer()
         }
         .padding(8)
-        .background(.black.opacity(0.05))
+        .background(Color.lightPurple)
         .cornerRadius(8)
     }
     

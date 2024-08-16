@@ -34,6 +34,7 @@
 		4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */; };
 		4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */; };
 		4DF91DFB2C49AA3300C28E55 /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */; };
+		FF34597D2C6FC0080019A068 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF34597C2C6FC0080019A068 /* Color+Extensions.swift */; };
 		FF9B61B32C6E52EB0021B007 /* SleepStageDisplayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B61B22C6E52EB0021B007 /* SleepStageDisplayValues.swift */; };
 		FF9B61B52C6E53250021B007 /* SleepSessionDisplayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B61B42C6E53250021B007 /* SleepSessionDisplayValues.swift */; };
 		FF9B61B72C6E53470021B007 /* SleepSessionSummaryValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B61B62C6E53470021B007 /* SleepSessionSummaryValue.swift */; };
@@ -107,6 +108,7 @@
 		4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataView.swift; sourceTree = "<group>"; };
 		4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataViewModel.swift; sourceTree = "<group>"; };
 		4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
+		FF34597C2C6FC0080019A068 /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		FF9B61B22C6E52EB0021B007 /* SleepStageDisplayValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStageDisplayValues.swift; sourceTree = "<group>"; };
 		FF9B61B42C6E53250021B007 /* SleepSessionDisplayValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSessionDisplayValues.swift; sourceTree = "<group>"; };
 		FF9B61B62C6E53470021B007 /* SleepSessionSummaryValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSessionSummaryValue.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		4DF91DDF2C483A7100C28E55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF34597C2C6FC0080019A068 /* Color+Extensions.swift */,
 				4DF91DE62C483AFD00C28E55 /* String */,
 				4DF91DE32C483AD300C28E55 /* Numeric */,
 				4DF91DE02C483A7800C28E55 /* Date */,
@@ -485,6 +488,7 @@
 			files = (
 				4DF91DA32C4835AF00C28E55 /* ContentView.swift in Sources */,
 				4DF91DD62C48390E00C28E55 /* HKSleepProperties.swift in Sources */,
+				FF34597D2C6FC0080019A068 /* Color+Extensions.swift in Sources */,
 				4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */,
 				FF9B61B72C6E53470021B007 /* SleepSessionSummaryValue.swift in Sources */,
 				FF9B61B32C6E52EB0021B007 /* SleepStageDisplayValues.swift in Sources */,
