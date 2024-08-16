@@ -16,7 +16,7 @@ struct ContentCard<T: View>: View {
         .padding(16)
         .frame(maxWidth: .infinity)
         .background(.white)
-        .cornerRadius(16)
+        .cornerRadius(20)
         .scrollTransition { content, phase in
             content
                 .scaleEffect(phase.isIdentity ? 1 : 0.9)
