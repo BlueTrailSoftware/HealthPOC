@@ -14,14 +14,13 @@ struct ContentCard<T: View>: View {
             content
         }
         .padding(16)
-        .padding(.bottom, 16)
         .frame(maxWidth: .infinity)
         .background(.white)
         .cornerRadius(16)
-        .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
         .scrollTransition { content, phase in
             content
                 .scaleEffect(phase.isIdentity ? 1 : 0.9)
+                .offset(x: phase.isIdentity ? 0 : 10)
         }
     }
 }
