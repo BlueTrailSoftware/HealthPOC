@@ -24,7 +24,7 @@ struct TripPrettyPrintValues {
 
 class HealthDataViewModel: ObservableObject {
     
-    let sleepColor: Color = .mint
+    let sleepColor: Color = .vibrantPurple
     let heartColor: Color = Color(red: 255/255, green: 89/255, blue: 94/255)
 
     @Published var isRefreshing: Bool = true
@@ -43,7 +43,7 @@ class HealthDataViewModel: ObservableObject {
     @Published var tripMessage: String = "New Trip"
     @Published var tripMessageColor: Color = .black.opacity(0.4)
     @Published var tripActionButtonText: String = "Start"
-    @Published var tripActionButtonBackground: Color = .mint
+    @Published var tripActionButtonBackground: Color = .teal
     @Published var tripValues: TripPrettyPrintValues = TripPrettyPrintValues()
     @Published var canStartTrip: Bool = false
     
@@ -156,7 +156,7 @@ class HealthDataViewModel: ObservableObject {
 
         case .idle:
             tripActionButtonText = "Start"
-            tripActionButtonBackground = .mint
+            tripActionButtonBackground = .teal
             tripMessage = "New Trip"
             tripMessageColor = .black.opacity(0.4)
         }
