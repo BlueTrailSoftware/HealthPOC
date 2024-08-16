@@ -36,10 +36,10 @@ struct HealthDataView: View {
         }
         .background (
             LinearGradient(gradient: Gradient(colors: [
-                .deepPurple,
-                .deepPurple.opacity(0.9),
-                .deepPurple.opacity(0.8),
-                .deepPurple.opacity(0.7),
+                .vibrantPurple,
+                .vibrantPurple.opacity(0.9),
+                .vibrantPurple.opacity(0.8),
+                .vibrantPurple.opacity(0.7),
                 .white
             ]), startPoint: .top, endPoint: .bottom)
         )
@@ -279,14 +279,14 @@ struct HealthDataView: View {
             Text(title)
                 .foregroundColor(titleColor)
                 .fontWeight(highlighted ?? false ? .bold : .regular)
-                .font(Font.system(size: 16))
+                .font(.body)
 
             Spacer()
 
             Text(value)
                 .padding(8)
-                .font(Font.system(size: 14))
-                .fontWeight(.bold)
+                .font(.subheadline)
+                .fontWeight(.semibold)
                 .foregroundColor(valueColor)
                 .background(highlighted ?? false ? highlightedColor : .white)
                 .cornerRadius(8)
@@ -349,7 +349,8 @@ struct HealthDataView: View {
                                 viewModel.tripMessage
                             )
                         }
-                        .font(.system(size: 22))
+                        .font(.title3)
+                        .fontWeight(.semibold)
                         .foregroundColor(viewModel.tripMessageColor)
 
                         if viewModel.currentTrip.activityStatus != .idle {
@@ -382,7 +383,7 @@ struct HealthDataView: View {
                                 value: "\(viewModel.tripValues.intervalUntilRest)",
                                 valueColor: .white,
                                 highlighted: true,
-                                highlightedColor: .mint
+                                highlightedColor: .teal
                             )
                             
                             Text(
@@ -420,26 +421,29 @@ struct HealthDataView: View {
                             )
                         }
                         
-                        Button {
-                            viewModel.toggleTrip()
-                        } label: {
-                            Label(
-                                viewModel.tripActionButtonText, 
-                                systemImage: viewModel.currentTrip.activityStatus == .running
-                                  ? "stop.fill"
-                                  : viewModel.currentTrip.activityStatus == .completed ? "bed.double.fill" :  "play.fill"
-                            )
+                        HStack {
+                            Spacer()
+
+                            Button {
+                                viewModel.toggleTrip()
+                            } label: {
+                                Label(
+                                    viewModel.tripActionButtonText,
+                                    systemImage: viewModel.currentTrip.activityStatus == .running
+                                    ? "stop.fill"
+                                    : viewModel.currentTrip.activityStatus == .completed ? "bed.double.fill" :  "play.fill"
+                                )
+                                .padding()
+                            }
+                            .fontWeight(.bold)
                             .frame(maxWidth: .infinity)
-                            .padding()
+                            .frame(height: 50)
+                            .background(viewModel.tripActionButtonBackground)
+                            .foregroundColor(.white)
+                            .clipShape(.capsule)
+
+                            Spacer()
                         }
-                        .fontWeight(.bold)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 44)
-                        .background(viewModel.tripActionButtonBackground)
-                        .foregroundColor(.white)
-                        .contentShape(Rectangle())
-                        .clipShape(.capsule)
-                        
 
                     } else {
                         
