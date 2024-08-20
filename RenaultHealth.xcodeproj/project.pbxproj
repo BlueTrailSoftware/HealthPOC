@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D1287032C6407CC00646015 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287022C6407CC00646015 /* Trip.swift */; };
 		4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287082C6BDCF100646015 /* SDKEngine.swift */; };
+		4D6DAF0B2C751D04008B8FE5 /* LightFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */; };
 		4D9F82642C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */; };
 		4D9F82672C5C1B5B008E4C1D /* HKHeartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */; };
 		4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		4D1287022C6407CC00646015 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		4D1287082C6BDCF100646015 /* SDKEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKEngine.swift; sourceTree = "<group>"; };
+		4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormula.swift; sourceTree = "<group>"; };
 		4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableHKIdentifiers.swift; sourceTree = "<group>"; };
 		4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKHeartDataSource.swift; sourceTree = "<group>"; };
 		4DF91D9D2C4835AF00C28E55 /* RenaultHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenaultHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 				4D1287082C6BDCF100646015 /* SDKEngine.swift */,
 				4D1287022C6407CC00646015 /* Trip.swift */,
 				4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */,
+				4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */,
 			);
 			path = "SDk ";
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				FF34597F2C6FC07D0019A068 /* Color+Extensions.swift in Sources */,
 				FFDE75602C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */,
 				4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */,
+				4D6DAF0B2C751D04008B8FE5 /* LightFormula.swift in Sources */,
 				4D1287032C6407CC00646015 /* Trip.swift in Sources */,
 				4DF91DEB2C483D1000C28E55 /* HKQueryManager.swift in Sources */,
 				4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */,
