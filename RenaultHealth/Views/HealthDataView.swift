@@ -428,9 +428,9 @@ struct HealthDataView: View {
                             } label: {
                                 Label(
                                     viewModel.tripActionButtonText,
-                                    systemImage: viewModel.currentTrip.activityStatus == .running
+                                    systemImage: viewModel.currentTripStatus == .running
                                     ? "stop.fill"
-                                    : viewModel.currentTrip.activityStatus == .completed ? "bed.double.fill" :  "play.fill"
+                                    : viewModel.currentTripStatus == .completed ? "bed.double.fill" :  "play.fill"
                                 )
                                 .padding()
                             }
