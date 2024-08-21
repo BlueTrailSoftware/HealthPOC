@@ -159,11 +159,11 @@ class LightFormula {
     }
     
     // Example function to display a heatmap (conceptual, plotting not implemented)
-    func runDemonstration() {
+    func runDemonstration() -> [String: [Int: Double]] {
         let sleepDataSets = testSleepDataSet()
         print("sleepDataSets : \(sleepDataSets as AnyObject)")
         
-        var results = [String: [Int: Double]]()
+        var results: [String: [Int: Double]] = [:]
         
         for (label, sleepData) in sleepDataSets {
             let drivingCalc = calculateSafeDriving(startTimes: tripStartTimes, sleepData: sleepData)
@@ -175,6 +175,8 @@ class LightFormula {
         // libraries or frameworks to visualize the results.
         
         print("runDemonstration results: \(results as AnyObject)")
+        
+        return results
     }
     
     // Main entry point
