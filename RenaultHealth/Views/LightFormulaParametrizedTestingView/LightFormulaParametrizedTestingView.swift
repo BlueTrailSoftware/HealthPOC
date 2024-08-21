@@ -11,15 +11,38 @@ struct LightFormulaParametrizedTestingView: View {
     
     @StateObject private var viewModel = LightFormulaParametrizedTestingViewModel()
     
+    @FocusState var keyboardIsDisplayed: Bool
+    
     var body: some View {
         VStack {
             
             ScrollView (showsIndicators: true) {
                 VStack {
+                    
+                    Button {
+                        viewModel.calculateLightFormula()
+                    } label: {
+                        Text("Run demonstration")
+                    }
+                    .frame(height: 44)
+                    
                     constantsSection()
                     sleepVarsSection()
                 }
                 .padding(.horizontal, 16)
+            }
+        }
+        .onAppear {
+            viewModel.resetAllValues()
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                    .frame(maxWidth: .infinity)
+                Button("Done") {
+                    print("Clicked")
+                    keyboardIsDisplayed = false
+                }
             }
         }
     }
@@ -29,6 +52,7 @@ struct LightFormulaParametrizedTestingView: View {
     @ViewBuilder
     private func constantsSection() -> some View {
         VStack {
+            
             sectionHeader(title: "Constants")
             
             labeledValueTextField(
@@ -47,7 +71,7 @@ struct LightFormulaParametrizedTestingView: View {
             )
             
             Button {
-                
+                viewModel.resetConstants()
             } label: {
                 Text("Reset constants to default")
             }
@@ -86,7 +110,7 @@ struct LightFormulaParametrizedTestingView: View {
             )
             
             Button {
-                
+                viewModel.resetSleepVars()
             } label: {
                 Text("Reset sleep vars to default")
             }
@@ -125,8 +149,9 @@ struct LightFormulaParametrizedTestingView: View {
                 text: value
             )
             .textFieldStyle(RoundedTextFieldStyle())
-            .keyboardType(.numbersAndPunctuation)
+            .keyboardType(.decimalPad)
             .numbersOnly(value, includeDecimal: true)
+            .focused($keyboardIsDisplayed)
             .onSubmit {
                 onSubmit?()
             }

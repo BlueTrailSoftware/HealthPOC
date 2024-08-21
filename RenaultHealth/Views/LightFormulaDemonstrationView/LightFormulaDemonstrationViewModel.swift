@@ -39,7 +39,7 @@ class LightFormulaDemonstrationViewModel: ObservableObject {
     
     func runDemonstration() {
         
-        let results = LightFormula().runDemonstration()
+        let results = LightFormula(parameters: LightFormulaParameters()).runDemonstration()
         
         self.formulaResults = results.map { k, v in
             LightFormulaDemonstrationResultItem(

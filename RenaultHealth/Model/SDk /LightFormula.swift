@@ -8,22 +8,44 @@
 import Foundation
 import SwiftUI
 
+struct LightFormulaParameters {
+    var decayConstant: Double = 0.1
+    var lowAsymptote: Double = 2.4
+    var decayConstantDriving: Double = 0.3
+    
+    var initialSleepPressure: Double = 14
+    var circadianAmplitude: Double = 2.5
+    var circadianAcrophase: Double = 16.48
+    var maxSafetyTime: Double = 8
+    
+    var wakeupHourToday: Double = 7
+}
+
 class LightFormula {
     
+    let parameters: LightFormulaParameters
+    
     // Constants
-    let DECAY_CONSTANT = 0.1
-    let LOW_ASYMPTOTE = 2.4
-    let DECAY_CONSTANT_DRIVING = 0.3
+    //let DECAY_CONSTANT = 0.1
+    //let LOW_ASYMPTOTE = 2.4
+    //let DECAY_CONSTANT_DRIVING = 0.3
     
     // Global vars
-    let initialSleepPressure = 14
-    let circadianAmplitude = 2.5
-    let circadianAcrophase = 16.48
-    let maxSafetyTime = 8
+    //let initialSleepPressure = 14
+    //let circadianAmplitude = 2.5
+    //let circadianAcrophase = 16.48
+    //let maxSafetyTime = 8
 
-    let vWakeupHourToday = 7
+    //let vWakeupHourToday = 7
+     
     let sleepDebtSmooth: [Double] = [1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
     let tripStartTimes: [Int] = [7, 9, 11, 13, 15, 17, 19, 21, 23]
+
+    // MARK: - Init
+    
+    init(parameters: LightFormulaParameters) {
+        self.parameters = parameters
+    }
     
     // MARK: - Calculation
     
@@ -115,8 +137,8 @@ class LightFormula {
         sleepDebt: Double,
         currentHour: Double
     ) -> Double {
-        let sProcess = (Double(initialSleepPressure) - LOW_ASYMPTOTE) * exp(-DECAY_CONSTANT * hoursAwake) + LOW_ASYMPTOTE
-        let circadian = circadianAmplitude * cos(2 * .pi * (currentHour - circadianAcrophase) / 24)
+        let sProcess = (Double(parameters.initialSleepPressure) - parameters.lowAsymptote) * exp(-parameters.decayConstant * hoursAwake) + parameters.lowAsymptote
+        let circadian = parameters.circadianAmplitude * cos(2 * .pi * (currentHour - parameters.circadianAcrophase) / 24)
         return sProcess + circadian - sleepDebt
     }
     
@@ -125,8 +147,8 @@ class LightFormula {
         if alertnessLevel <= threshold {
             return 0
         }
-        let remainingTime = (alertnessLevel - threshold) / DECAY_CONSTANT_DRIVING
-        return min(max(remainingTime, 0), Double(maxSafetyTime))
+        let remainingTime = (alertnessLevel - threshold) / parameters.decayConstantDriving
+        return min(max(remainingTime, 0), Double(parameters.maxSafetyTime))
     }
     
     // Function to calculate safe driving
@@ -151,7 +173,7 @@ class LightFormula {
             */
             drivingCalc[currentTime] = calculateSafeDrivingTime(
                 lastSleepHours: sleepData,
-                hoursAwake: currentTime - vWakeupHourToday,
+                hoursAwake: currentTime - Int(parameters.wakeupHourToday),
                 currentHour: currentTime
             )
         }
