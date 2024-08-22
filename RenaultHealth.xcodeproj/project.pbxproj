@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D1287032C6407CC00646015 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287022C6407CC00646015 /* Trip.swift */; };
 		4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287082C6BDCF100646015 /* SDKEngine.swift */; };
+		4D148ABB2C7801C80097916E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148ABA2C7801C80097916E /* MainMenuView.swift */; };
 		4D6DAF0B2C751D04008B8FE5 /* LightFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */; };
 		4D6DAF0E2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0D2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift */; };
 		4D6DAF102C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0F2C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift */; };
@@ -69,6 +70,7 @@
 /* Begin PBXFileReference section */
 		4D1287022C6407CC00646015 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		4D1287082C6BDCF100646015 /* SDKEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKEngine.swift; sourceTree = "<group>"; };
+		4D148ABA2C7801C80097916E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormula.swift; sourceTree = "<group>"; };
 		4D6DAF0D2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormulaDemonstrationView.swift; sourceTree = "<group>"; };
 		4D6DAF0F2C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormulaDemonstrationViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 				4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */,
 			);
 			path = "SDk ";
+			sourceTree = "<group>";
+		};
+		4D148AB72C7801AC0097916E /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4D148ABA2C7801C80097916E /* MainMenuView.swift */,
+			);
+			path = MainMenu;
 			sourceTree = "<group>";
 		};
 		4D6DAF0C2C755C89008B8FE5 /* LightFormulaDemonstrationView */ = {
@@ -341,6 +351,7 @@
 		4DF91DEE2C499C8C00C28E55 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4D148AB72C7801AC0097916E /* MainMenu */,
 				4D6DAF112C765C8E008B8FE5 /* LightFormulaParametrizedTestingView */,
 				4D6DAF0C2C755C89008B8FE5 /* LightFormulaDemonstrationView */,
 				4DF91DF72C49AA1700C28E55 /* Cells */,
@@ -517,6 +528,7 @@
 				4D6DAF152C765CCA008B8FE5 /* LightFormulaParametrizedTestingViewModel.swift in Sources */,
 				4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */,
 				4DF91DCE2C48388500C28E55 /* HKSleepDataSource.swift in Sources */,
+				4D148ABB2C7801C80097916E /* MainMenuView.swift in Sources */,
 				4D9F82642C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift in Sources */,
 				4DF91DD42C4838EA00C28E55 /* HKSleepStage.swift in Sources */,
 				FF34597F2C6FC07D0019A068 /* Color+Extensions.swift in Sources */,
