@@ -19,6 +19,10 @@ struct LightFormulaParametrizedTestingView: View {
             ScrollView (showsIndicators: true) {
                 VStack {
                     
+                    constantsSection()
+                    sleepVarsSection()
+                    resultsSection()
+                    
                     Button {
                         viewModel.calculateLightFormula()
                     } label: {
@@ -26,14 +30,15 @@ struct LightFormulaParametrizedTestingView: View {
                     }
                     .frame(height: 44)
                     
-                    constantsSection()
-                    sleepVarsSection()
+                    Spacer()
+                        .frame(height: 44)
                 }
                 .padding(.horizontal, 16)
             }
         }
         .onAppear {
             viewModel.resetAllValues()
+            viewModel.calculateLightFormula()
         }
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
@@ -116,6 +121,44 @@ struct LightFormulaParametrizedTestingView: View {
             }
             .frame(height: 44)
         }
+    }
+    
+    @ViewBuilder
+    private func resultsSection() -> some View {
+        
+        VStack {
+            
+            sectionHeader(title: "Results")
+            
+            ForEach(viewModel.results, id: \.self) { value in
+                HStack {
+                    Text (
+                        value.title
+                    )
+                    .font(.system(size: 16))
+                    .fontWeight(.bold)
+                    .opacity(0.4)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    
+                    Circle()
+                        .frame(width: 22)
+                        .foregroundColor(value.color)
+                    
+                    Text (
+                        value.value
+                    )
+                    .font(.system(size: 16))
+                    
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(height: 32)
+                    .foregroundColor(.black.opacity(0.5))
+                }
+                .frame(maxWidth: .infinity)
+                .cornerRadius(4)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 8)
     }
     
     // MARK: - Utils

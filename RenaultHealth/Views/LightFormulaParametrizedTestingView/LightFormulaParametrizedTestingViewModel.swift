@@ -8,6 +8,13 @@
 import Foundation
 import SwiftUI
 
+struct LightFormulaParametrizedResultItem: Hashable {
+    var dayNumber: Int
+    var title: String
+    var value: String
+    var color: Color
+}
+
 class LightFormulaParametrizedTestingViewModel: ObservableObject {
     @Published var test: String = ""
     
@@ -21,6 +28,8 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
     @Published var maxSafetyTime: String = ""
     
     @Published var wakeupHourToday: String = ""
+    
+    @Published var results: [LightFormulaParametrizedResultItem] = []
 
     // MARK: - Values
     
@@ -50,20 +59,41 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
     
     func calculateLightFormula() {
         
-        let formula = LightFormula(
-            parameters:
-                LightFormulaParameters(
-                    decayConstant: Double(decayConstant) ?? 0,
-                    lowAsymptote: Double(lowAsymptote) ?? 0,
-                    decayConstantDriving: Double(decayConstantDriving) ?? 0,
-                    initialSleepPressure: Double(initialSleepPressure) ?? 0,
-                    circadianAmplitude: Double(circadianAmplitude) ?? 0,
-                    circadianAcrophase: Double(circadianAcrophase) ?? 0,
-                    maxSafetyTime: Double(maxSafetyTime) ?? 0,
-                    wakeupHourToday: Double(wakeupHourToday) ?? 0
-                )
+        let params = LightFormulaParameters(
+            decayConstant: Double(decayConstant) ?? 0,
+            lowAsymptote: Double(lowAsymptote) ?? 0,
+            decayConstantDriving: Double(decayConstantDriving) ?? 0,
+            initialSleepPressure: Double(initialSleepPressure) ?? 0,
+            circadianAmplitude: Double(circadianAmplitude) ?? 0,
+            circadianAcrophase: Double(circadianAcrophase) ?? 0,
+            maxSafetyTime: Double(maxSafetyTime) ?? 0,
+            wakeupHourToday: Double(wakeupHourToday) ?? 0
         )
-        let res = formula.runDemonstration()
+        
+        // Start times
+        let startTimes: [Int] = [7, 9, 11, 13, 15, 17, 19, 21, 23].filter { i in
+            i >= Int(params.wakeupHourToday)
+        }
+        
+        // calculateSafeDriving
+        let res = LightFormula(
+            parameters: params
+        ).calculateSafeDriving(
+            startTimes: startTimes,
+            sleepData: [8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0]
+        )
+        
+        // Parse results for display
+        self.results = res.map{ key, value in
+            LightFormulaParametrizedResultItem(
+                dayNumber: key,
+                title: "\(key)",
+                value: String(format: "%.2f", value),
+                color: value > 6 ? .green : value > 4 ? .orange : value == 0 ? .red : .yellow
+            )
+        }.sorted(by: { $0.dayNumber < $1.dayNumber })
+        
         print("calculateLightFormula results: \(res as AnyObject)")
+        print("calculateLightFormula results: \(results as AnyObject)")
     }
 }
