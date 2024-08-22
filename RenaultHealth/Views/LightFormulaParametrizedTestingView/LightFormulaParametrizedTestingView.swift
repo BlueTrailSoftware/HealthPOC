@@ -11,6 +11,8 @@ struct LightFormulaParametrizedTestingView: View {
     
     @StateObject private var viewModel = LightFormulaParametrizedTestingViewModel()
     
+    @State var pickerValues: [Int] = [0]
+    
     @FocusState var keyboardIsDisplayed: Bool
     
     var body: some View {
@@ -21,12 +23,13 @@ struct LightFormulaParametrizedTestingView: View {
                     
                     constantsSection()
                     sleepVarsSection()
+                    weekSleepSection()
                     resultsSection()
                     
                     Button {
                         viewModel.calculateLightFormula()
                     } label: {
-                        Text("Run demonstration")
+                        Text("Run calculation")
                     }
                     .frame(height: 44)
                     
@@ -124,11 +127,75 @@ struct LightFormulaParametrizedTestingView: View {
     }
     
     @ViewBuilder
+    private func weekSleepSection() -> some View {
+        
+        VStack {
+            
+            sectionHeader(
+                title: "Sleep History",
+                subtitle: "Hours of sleep for the last 7 days"
+            )
+            
+            HStack {
+                
+                Spacer()
+                
+                Text("Sleep hours")
+                    .fontWeight(.bold)
+                
+                Spacer()
+                    .frame(width: 22)
+                
+                Rectangle()
+                    .frame(width: 1)
+                    .padding(.vertical, 22)
+                
+                VStack {
+                    
+                    ForEach(0 ..< viewModel.sleepHoursInTheLastDays.count, id: \.self) { i in
+                        
+                        HStack {
+                            
+                            Text("\(i) nights ago:")
+                                .padding(.leading, 16)
+                                .opacity(0.6)
+                            
+                            hourPicker(
+                                value: $viewModel.sleepHoursInTheLastDays[i],
+                                text:"\(viewModel.sleepHoursInTheLastDays[i])"
+                            )
+                            .frame(width: 64)
+                        }
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+            
+            Button {
+                viewModel.resetSleepHistory()
+            } label: {
+                Text("Reset sleep history to optimal hours")
+            }
+            .frame(height: 44)
+            
+            Button {
+                viewModel.resetAllSleepHistoryTo(value: 0)
+            } label: {
+                Text("Reset sleep history to 0 hours")
+            }
+            .frame(height: 44)
+        }
+    }
+    
+    @ViewBuilder
     private func resultsSection() -> some View {
         
         VStack {
             
-            sectionHeader(title: "Results")
+            sectionHeader(
+                title: "Results",
+                subtitle: "Showing the safe driving time for every two hours after the wake up hour."
+            )
             
             ForEach(viewModel.results, id: \.self) { value in
                 HStack {
@@ -158,25 +225,38 @@ struct LightFormulaParametrizedTestingView: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, 8)
     }
     
     // MARK: - Utils
     
     @ViewBuilder
-    private func sectionHeader(title: String) -> some View {
-        HStack {
+    private func sectionHeader(
+        title: String,
+        subtitle: String = ""
+    ) -> some View {
+        VStack {
             Text (
                 title
             )
+            .frame(maxWidth: .infinity, alignment: .leading)
             .fontWeight(.bold)
             .font(.title)
             .opacity(0.3)
             
-            Spacer()
+            if !subtitle.isEmpty {
+                Spacer()
+                    .frame(height: 4)
+                Text(
+                    subtitle
+                )
+                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundColor(.gray)
+                .font(.system(size: 14))
+            }
         }
-        .frame(height: 52)
-        .padding(.bottom, 8)
+        .padding(.vertical, 8)
     }
     
     @ViewBuilder
@@ -187,22 +267,59 @@ struct LightFormulaParametrizedTestingView: View {
     ) -> some View {
         
         LabeledContent {
-            TextField(
-                title,
-                text: value
+            blueTextField(
+                title: title,
+                value: value,
+                onSubmit: onSubmit
             )
-            .textFieldStyle(RoundedTextFieldStyle())
-            .keyboardType(.decimalPad)
-            .numbersOnly(value, includeDecimal: true)
-            .focused($keyboardIsDisplayed)
-            .onSubmit {
-                onSubmit?()
-            }
-            
+            .frame(width: 88)
         } label: {
             Text(title)
                 .fontWeight(.bold)
         }
+    }
+    
+    @ViewBuilder
+    private func blueTextField(
+        title: String,
+        value: Binding<String>,
+        onSubmit: (() -> Void)? = nil
+    ) -> some View {
+        
+        TextField(
+            title,
+            text: value
+        )
+        .textFieldStyle(RoundedTextFieldStyle())
+        .keyboardType(.decimalPad)
+        .numbersOnly(value, includeDecimal: true)
+        .focused($keyboardIsDisplayed)
+        .onSubmit {
+            onSubmit?()
+        }
+    }
+    
+    @ViewBuilder
+    private func hourPicker(
+        value: Binding<Int>,
+        text: String
+    ) -> some View {
+        
+        Menu {
+            Picker(selection: value) {
+                ForEach(0 ... 12, id: \.self) { sec in
+                    Text("\(sec)").tag("\(sec)")
+                }
+            } label: {}
+        } label: {
+            Text(text)
+                .font(.system(size: 24))
+                .foregroundColor(.black)
+        }
+        .frame(height: 44)
+        .frame(maxWidth: .infinity)
+        .background(.blue.opacity(0.1))
+        .cornerRadius(4)
     }
 }
 

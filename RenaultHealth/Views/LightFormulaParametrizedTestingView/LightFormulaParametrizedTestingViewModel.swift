@@ -28,9 +28,10 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
     @Published var maxSafetyTime: String = ""
     
     @Published var wakeupHourToday: String = ""
+    @Published var sleepHoursInTheLastDays: [Int] = [8, 8, 8, 8, 8, 8, 8]
     
     @Published var results: [LightFormulaParametrizedResultItem] = []
-
+    
     // MARK: - Values
     
     func resetAllValues() {
@@ -57,6 +58,17 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
         self.wakeupHourToday = "\(defaultValues.wakeupHourToday)"
     }
     
+    func resetSleepHistory() {
+        resetAllSleepHistoryTo(value: 8)
+    }
+    
+    func resetAllSleepHistoryTo(value: Int) {
+        
+        for i in 0 ..< sleepHoursInTheLastDays.count {
+            sleepHoursInTheLastDays[i] = value
+        }
+    }
+    
     func calculateLightFormula() {
         
         let params = LightFormulaParameters(
@@ -80,7 +92,7 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
             parameters: params
         ).calculateSafeDriving(
             startTimes: startTimes,
-            sleepData: [8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0]
+            sleepData: sleepHoursInTheLastDays.map{ Double($0) }
         )
         
         // Parse results for display
