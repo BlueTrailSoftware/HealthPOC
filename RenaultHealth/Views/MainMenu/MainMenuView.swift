@@ -24,7 +24,7 @@ struct MainMenuView: View {
                             }
                         } label: {
                             Text(item)
-                                .padding()
+                                .multilineTextAlignment(.center)
                                 .font(.largeTitle)
                                 .fontWeight(.medium)
                                 .frame(width: geometry.size.width, height: geometry.size.height / 2)
@@ -36,8 +36,8 @@ struct MainMenuView: View {
                                         index == 0 ? .deepPurple : .blue
                                     ]), startPoint: .top, endPoint: .center)
                                 )
-
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
             }
