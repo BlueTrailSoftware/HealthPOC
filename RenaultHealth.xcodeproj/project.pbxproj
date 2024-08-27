@@ -10,6 +10,7 @@
 		4D1287032C6407CC00646015 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287022C6407CC00646015 /* Trip.swift */; };
 		4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287082C6BDCF100646015 /* SDKEngine.swift */; };
 		4D148ABB2C7801C80097916E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148ABA2C7801C80097916E /* MainMenuView.swift */; };
+		4D58DA6E2C7E6C3400D278CA /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */; };
 		4D6DAF0B2C751D04008B8FE5 /* LightFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */; };
 		4D6DAF0E2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0D2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift */; };
 		4D6DAF102C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0F2C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift */; };
@@ -74,6 +75,7 @@
 		4D1287022C6407CC00646015 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		4D1287082C6BDCF100646015 /* SDKEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKEngine.swift; sourceTree = "<group>"; };
 		4D148ABA2C7801C80097916E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormula.swift; sourceTree = "<group>"; };
 		4D6DAF0D2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormulaDemonstrationView.swift; sourceTree = "<group>"; };
 		4D6DAF0F2C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormulaDemonstrationViewModel.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				4D6DAF172C76636F008B8FE5 /* RoundedTextFieldStyle.swift */,
 				FF68E0ED2C7D63EF00573536 /* ButtonCapsuleStyle.swift */,
+				4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				FF34597F2C6FC07D0019A068 /* Color+Extensions.swift in Sources */,
 				FFDE75602C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */,
 				4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */,
+				4D58DA6E2C7E6C3400D278CA /* CornerRadiusStyle.swift in Sources */,
 				4D6DAF1A2C767EE1008B8FE5 /* ViewModifiers.swift in Sources */,
 				4D6DAF1D2C767F13008B8FE5 /* View+Extension.swift in Sources */,
 				4D6DAF0B2C751D04008B8FE5 /* LightFormula.swift in Sources */,

@@ -8,6 +8,12 @@
 import Foundation
 import SwiftUI
 
+
+enum SleepHistorySource {
+    case custom
+    case healthkit
+}
+
 struct LightFormulaParametrizedResultItem: Hashable {
     var dayNumber: Int
     var title: String
@@ -27,6 +33,7 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
     @Published var circadianAcrophase: String = ""
     @Published var maxSafetyTime: String = ""
     
+    @Published var sleepHistorySource: SleepHistorySource = .custom
     @Published var wakeupHourToday: String = ""
     @Published var sleepHoursInTheLastDays: [Int] = [8, 8, 8, 8, 8, 8, 8]
     
