@@ -29,10 +29,10 @@ struct LightFormulaParametrizedTestingView: View {
                     Button {
                         viewModel.calculateLightFormula()
                     } label: {
-                        Text("Run calculation")
+                        Label("Run Calculation", systemImage: "sum")
                     }
-                    .frame(height: 44)
-                    
+                    .modifier(ButtonCapsuleStyle())
+
                     Spacer()
                         .frame(height: 44)
                 }
@@ -81,9 +81,9 @@ struct LightFormulaParametrizedTestingView: View {
             Button {
                 viewModel.resetConstants()
             } label: {
-                Text("Reset constants to default")
+                Label("Reset constants to default", systemImage: "arrow.circlepath")
             }
-            .frame(height: 44)
+            .modifier(ButtonCapsuleStyle(backgroundColor: .cyan))
         }
     }
     
@@ -120,9 +120,9 @@ struct LightFormulaParametrizedTestingView: View {
             Button {
                 viewModel.resetSleepVars()
             } label: {
-                Text("Reset sleep vars to default")
+                Label("Reset sleep vars to default", systemImage: "arrow.circlepath")
             }
-            .frame(height: 44)
+            .modifier(ButtonCapsuleStyle(backgroundColor: .cyan))
         }
     }
     
@@ -174,16 +174,16 @@ struct LightFormulaParametrizedTestingView: View {
             Button {
                 viewModel.resetSleepHistory()
             } label: {
-                Text("Reset sleep history to optimal hours")
+                Label("Reset sleep history to optimal hours", systemImage: "clock.arrow.2.circlepath")
             }
-            .frame(height: 44)
-            
+            .modifier(ButtonCapsuleStyle(backgroundColor: .cyan))
+
             Button {
                 viewModel.resetAllSleepHistoryTo(value: 0)
             } label: {
-                Text("Reset sleep history to 0 hours")
+                Label("Reset sleep history to 0 hours", systemImage: "trash")
             }
-            .frame(height: 44)
+            .modifier(ButtonCapsuleStyle(backgroundColor: .mint))
         }
     }
     
