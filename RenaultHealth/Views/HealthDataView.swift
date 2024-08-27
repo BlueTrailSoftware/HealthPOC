@@ -19,11 +19,11 @@ struct HealthDataView: View {
                     healthView()
 
                 } else {
-                    emptyStateView()
+                    EmptyStateView(viewModel: viewModel)
                 }
 
             } else {
-               loadingView()
+               LoadingView()
             }
             
             Spacer()
@@ -78,48 +78,6 @@ struct HealthDataView: View {
             }
         }
         .background(.clear)
-    }
-
-    @ViewBuilder
-    private func loadingView() -> some View {
-        ZStack {
-            ContentUnavailableView("Loading", systemImage: "lines.measurement.horizontal")
-                .imageScale(.small)
-                .symbolEffect(.variableColor)
-                .foregroundColor(Color.softPurple)
-        }
-    }
-
-    @ViewBuilder
-    private func emptyStateView() -> some View {
-        ContentUnavailableView {
-            // Icon & Title
-            Label(EmptyStateValues.emptyTitle, systemImage: "heart")
-                .font(.largeTitle)
-                .symbolRenderingMode(.multicolor)
-                .symbolEffect(.pulse)
-                .foregroundStyle(Color.softPurple)
-        } description: {
-            // Instructions
-            Text(EmptyStateValues.emptyMessage)
-                .font(.footnote)
-                .foregroundStyle(Color.softPurple)
-        } actions: {
-            // Alternative Actions
-            VStack {
-                Button {
-                    viewModel.refreshData()
-                } label: {
-                    Label(EmptyStateValues.emptyButtonTry, systemImage: "arrow.circlepath")
-                }
-
-                HealthAppButton(type: .labeled)
-            }
-            .buttonStyle(.bordered)
-            .foregroundStyle(Color.softPurple)
-            .tint(Color.deepPurple)
-        }
-        .padding()
     }
 
     // MARK: Headers
@@ -431,16 +389,12 @@ struct HealthDataView: View {
                                     viewModel.tripActionButtonText,
                                     systemImage: viewModel.currentTrip.activityStatus == .running
                                     ? "stop.fill"
-                                    : viewModel.currentTrip.activityStatus == .completed ? "bed.double.fill" :  "play.fill"
+                                    : viewModel.currentTrip.activityStatus == .completed 
+                                    ? "bed.double.fill" : "play.fill"
                                 )
                                 .padding()
                             }
-                            .fontWeight(.bold)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 50)
-                            .background(viewModel.tripActionButtonBackground)
-                            .foregroundColor(.white)
-                            .clipShape(.capsule)
+                            .modifier(ButtonCapsuleStyle(backgroundColor: viewModel.tripActionButtonBackground))
 
                             Spacer()
                         }
@@ -459,9 +413,5 @@ struct HealthDataView: View {
 }
 
 #Preview {
-    ContentCard(
-        content:
-                    HStack{}
-        .frame(height: 100)
-    )
+   HealthDataView()
 }
