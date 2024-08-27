@@ -33,11 +33,18 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
     @Published var circadianAcrophase: String = ""
     @Published var maxSafetyTime: String = ""
     
-    @Published var sleepHistorySource: SleepHistorySource = .custom
+    @Published var sleepHistorySource: SleepHistorySource = .custom {
+        didSet {
+            refreshSleepHistory()
+        }
+    }
     @Published var wakeupHourToday: String = ""
     @Published var sleepHoursInTheLastDays: [Int] = [8, 8, 8, 8, 8, 8, 8]
     
     @Published var results: [LightFormulaParametrizedResultItem] = []
+    
+    // HealthKit
+    private var sleepDataSource = HKSleepDataSource()
     
     // MARK: - Values
     
@@ -75,6 +82,38 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
             sleepHoursInTheLastDays[i] = value
         }
     }
+    
+    // MARK: - Health kit data
+    
+    private func refreshSleepHistory() {
+        
+        switch sleepHistorySource {
+        case .custom:
+            resetSleepHistory()
+        case .healthkit:
+            fetchSleepHistoryFromHK()
+        }
+    }
+    
+    private func fetchSleepHistoryFromHK() {
+        sleepDataSource.fetchSleepSessions(
+            forPastDays: 7
+        ) {
+                
+            DispatchQueue.main.async {
+                
+                let durations = self.sleepDataSource.lastSleepSessions(sessionCount: 7).map { Int($0.totalSleepDuration / 3600)
+                }
+                
+                for i in 0 ..< self.sleepHoursInTheLastDays.count {   
+                    let newValue = durations.count > i ? durations[i] : 0
+                    self.sleepHoursInTheLastDays[self.sleepHoursInTheLastDays.count - 1 - i] = newValue
+                }
+            }
+        }
+    }
+    
+    // MARK: - Calculations
     
     func calculateLightFormula() {
         

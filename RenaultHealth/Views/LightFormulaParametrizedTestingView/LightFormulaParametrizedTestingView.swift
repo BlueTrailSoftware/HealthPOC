@@ -27,6 +27,9 @@ struct LightFormulaParametrizedTestingView: View {
                     weekSleepSection()
                     resultsSection()
                     
+                    Spacer()
+                        .frame(height: 44)
+                    
                     Button {
                         viewModel.calculateLightFormula()
                     } label: {

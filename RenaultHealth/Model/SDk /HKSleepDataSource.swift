@@ -29,27 +29,19 @@ class HKSleepDataSource {
     }
     
     var lastSleepSession: HKSleepSession? {
-        let endDates = sleepSessions.map { $0.endDate }
-
-        print("HKSDS_lastSleepSession_sessions : \(endDates)")
-       
-        let sorted = sleepSessions.sorted(
-            by: { $0.endDate ?? Date() > $1.endDate ?? Date() }
-        )
-        
-        print("HKSDS_lastSleepSession_sorted : \(sorted)")
-        
-        let sorted_endDates = sorted.map { $0.endDate }
-        print("HKSDS_lastSleepSession_sessions_sorted_endDates : \(sorted_endDates)")
-        
-        let lastSleep = sorted.first
-        
-        print("HKSDS_lastSleepSession_lastSleep : \(String(describing: lastSleep?.totalSleepDuration))")
-        
-        return lastSleep
+        return lastSleepSessions().first
     }
     
     // MARK: - Queries
+    
+    func lastSleepSessions(
+        sessionCount: Int = 1
+    ) -> [HKSleepSession] {
+        let sorted = sleepSessions.sorted(
+            by: { $0.endDate ?? Date() > $1.endDate ?? Date() }
+        )
+        return Array(sorted.prefix(sessionCount))
+    }
     
     // MARK: Sleep stages
     
@@ -129,7 +121,7 @@ class HKSleepDataSource {
         }
     }
     
-    // MARK: Sleep sessions
+    // MARK: Fetch sleep sessions
     
     private func fetchSleepSessions(
         from startDate: Date,
@@ -154,12 +146,23 @@ class HKSleepDataSource {
         }
     }
     
+    func fetchSleepSessions(
+        forPastDays: Int,
+        completion: (() -> Void)?
+    ) {
+        
+        fetchSleepSessions(
+            from: Date().startOfDay.modifyDateBy(days: -forPastDays),
+            to: Date(),
+            completion: completion
+        )
+    }
+    
     func refreshSleepSessions(
         for targetDay: Date,
         completion: (() -> Void)?
     ) {
-        
-        
+
         let firstDate: Date = targetDay.startOfDay.modifyDateBy(days: -1)
         /*
            // get last date
