@@ -16,9 +16,13 @@ struct LightFormulaParametrizedTestingView: View {
     
     @FocusState var keyboardIsDisplayed: Bool
 
+    // Collapsables
     @State private var showConstants = true
     @State private var showVariables = true
     @State private var showHistory = true
+
+    // Sheet Results info
+    @State private var showingSheet = false
 
     var body: some View {
         VStack {
@@ -266,13 +270,32 @@ struct LightFormulaParametrizedTestingView: View {
     
     @ViewBuilder
     private func resultsSection() -> some View {
-        
+
         VStack {
-            
-            sectionHeader(
-                title: "Results",
-                subtitle: "Showing the safe driving time for every two hours after the wake up hour."
-            )
+            HStack {
+                sectionHeader(
+                    title: "Results",
+                    subtitle: "Showing the safe driving time for every two hours after the wake up hour."
+                )
+
+#warning("Descomentar si se quiere usar un sheet y meter explicacion de detalles en una SUI View por separado.")
+                /*
+                 Button {
+                    showingSheet.toggle()
+                } label: {
+                    Image(systemName: "info.circle.fill")
+                        .font(.title2)
+                        .foregroundStyle(.blue.opacity(0.9))
+                }
+                .sheet(isPresented: $showingSheet) {
+                    Text("Aqui **Leo** pondra la explicacion de la formula en una View Separada")
+                        .presentationDetents([.medium, .large])
+                        .presentationCornerRadius(20)
+                        .presentationBackground(.thinMaterial)
+                        .padding()
+                }
+                */
+            }
             
             ForEach(viewModel.results, id: \.self) { value in
                 HStack {
