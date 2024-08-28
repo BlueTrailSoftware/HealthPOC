@@ -46,6 +46,7 @@
 		FF68E0EA2C7D5F2F00573536 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68E0E92C7D5F2F00573536 /* LoadingView.swift */; };
 		FF68E0EC2C7D615400573536 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68E0EB2C7D615400573536 /* EmptyStateView.swift */; };
 		FF68E0EE2C7D63EF00573536 /* ButtonCapsuleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68E0ED2C7D63EF00573536 /* ButtonCapsuleStyle.swift */; };
+		FF6BA42F2C7F826C006CCA49 /* CollapseAnimationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6BA42E2C7F826C006CCA49 /* CollapseAnimationStyle.swift */; };
 		FFDE755E2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */; };
 		FFDE755F2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */; };
 		FFDE75602C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */; };
@@ -115,6 +116,7 @@
 		FF68E0E92C7D5F2F00573536 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FF68E0EB2C7D615400573536 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		FF68E0ED2C7D63EF00573536 /* ButtonCapsuleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCapsuleStyle.swift; sourceTree = "<group>"; };
+		FF6BA42E2C7F826C006CCA49 /* CollapseAnimationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapseAnimationStyle.swift; sourceTree = "<group>"; };
 		FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAppButton.swift; sourceTree = "<group>"; };
 		FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateValues.swift; sourceTree = "<group>"; };
 		FFDE75622C6AA303005E90D0 /* ContentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCard.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				4D6DAF172C76636F008B8FE5 /* RoundedTextFieldStyle.swift */,
 				FF68E0ED2C7D63EF00573536 /* ButtonCapsuleStyle.swift */,
 				4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */,
+				FF6BA42E2C7F826C006CCA49 /* CollapseAnimationStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D6DAF0E2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift in Sources */,
+				FF6BA42F2C7F826C006CCA49 /* CollapseAnimationStyle.swift in Sources */,
 				4DF91DA32C4835AF00C28E55 /* ContentView.swift in Sources */,
 				4DF91DD62C48390E00C28E55 /* HKSleepProperties.swift in Sources */,
 				4D6DAF132C765CC1008B8FE5 /* LightFormulaParametrizedTestingView.swift in Sources */,

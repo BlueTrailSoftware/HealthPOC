@@ -29,6 +29,7 @@ struct LightFormulaParametrizedTestingView: View {
                         isExpanded: $showConstants,
                         content: {
                             constantsSection()
+                                .animatedVisibility(showConstants)
                         },
                         label: {
                             sectionHeader(title: "Constants")
@@ -39,6 +40,7 @@ struct LightFormulaParametrizedTestingView: View {
                         isExpanded: $showVariables,
                         content: {
                             sleepVarsSection()
+                                .animatedVisibility(showVariables)
                         },
                         label: {
                             sectionHeader(title: "Sleep Vars")
@@ -49,6 +51,7 @@ struct LightFormulaParametrizedTestingView: View {
                         isExpanded: $showHistory,
                         content: {
                             weekSleepSection()
+                                .animatedVisibility(showHistory)
                         },
                         label: {
                             sectionHeader(
@@ -60,6 +63,7 @@ struct LightFormulaParametrizedTestingView: View {
                     )
 
                     resultsSection()
+                        .animation(.easeInOut(duration: 0.5), value: viewModel.results)
 
                     Spacer()
                         .frame(height: 44)
@@ -348,7 +352,7 @@ struct LightFormulaParametrizedTestingView: View {
             .frame(width: 88)
         } label: {
             Text(title)
-                .fontWeight(.bold)
+                .fontWeight(.semibold)
         }
     }
     
@@ -363,6 +367,7 @@ struct LightFormulaParametrizedTestingView: View {
             title,
             text: value
         )
+        .font(.title3)
         .textFieldStyle(RoundedTextFieldStyle())
         .keyboardType(.decimalPad)
         .numbersOnly(value, includeDecimal: true)
@@ -386,7 +391,7 @@ struct LightFormulaParametrizedTestingView: View {
             } label: {}
         } label: {
             Text(text)
-                .font(.system(size: 24))
+                .font(.title3)
                 .foregroundColor(.black)
         }
         .frame(height: 44)
