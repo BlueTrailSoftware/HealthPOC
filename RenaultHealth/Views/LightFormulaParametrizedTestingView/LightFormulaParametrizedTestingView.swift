@@ -15,18 +15,52 @@ struct LightFormulaParametrizedTestingView: View {
     @State var toggleVal: Bool = false
     
     @FocusState var keyboardIsDisplayed: Bool
-    
+
+    @State private var showConstants = true
+    @State private var showVariables = true
+    @State private var showHistory = true
+
     var body: some View {
         VStack {
             
             ScrollView (showsIndicators: true) {
                 VStack {
-                    
-                    constantsSection()
-                    sleepVarsSection()
-                    weekSleepSection()
+                    DisclosureGroup(
+                        isExpanded: $showConstants,
+                        content: {
+                            constantsSection()
+                        },
+                        label: {
+                            sectionHeader(title: "Constants")
+                        }
+                    )
+
+                    DisclosureGroup(
+                        isExpanded: $showVariables,
+                        content: {
+                            sleepVarsSection()
+                        },
+                        label: {
+                            sectionHeader(title: "Sleep Vars")
+                        }
+                    )
+
+                    DisclosureGroup(
+                        isExpanded: $showHistory,
+                        content: {
+                            weekSleepSection()
+                        },
+                        label: {
+                            sectionHeader(
+                                title: "Sleep History",
+                                subtitle: "Hours of sleep for the last 7 days"
+                            )
+                            .foregroundStyle(.black)
+                        }
+                    )
+
                     resultsSection()
-                    
+
                     Spacer()
                         .frame(height: 44)
                     
@@ -47,6 +81,13 @@ struct LightFormulaParametrizedTestingView: View {
             viewModel.resetAllValues()
             viewModel.calculateLightFormula()
         }
+        .background (
+            LinearGradient(gradient: Gradient(colors: [
+                .blue.opacity(0.2),
+                .blue.opacity(0.1)
+            ]), startPoint: .top, endPoint: .bottom)
+        )
+        .toolbarBackground(.hidden, for: .navigationBar)
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
@@ -64,8 +105,6 @@ struct LightFormulaParametrizedTestingView: View {
     @ViewBuilder
     private func constantsSection() -> some View {
         VStack {
-            
-            sectionHeader(title: "Constants")
             
             labeledValueTextField(
                 title: "Decay constant",
@@ -94,8 +133,6 @@ struct LightFormulaParametrizedTestingView: View {
     @ViewBuilder
     private func sleepVarsSection() -> some View {
         VStack {
-            sectionHeader(title: "Sleep Vars")
-            
             labeledValueTextField(
                 title: "Initial sleep pressure",
                 value: $viewModel.initialSleepPressure
@@ -134,19 +171,14 @@ struct LightFormulaParametrizedTestingView: View {
     private func weekSleepSection() -> some View {
         
         VStack {
-            
-            sectionHeader(
-                title: "Sleep History",
-                subtitle: "Hours of sleep for the last 7 days"
-            )
-            
             HStack {
                 
                 Button {
                     viewModel.sleepHistorySource = .custom
                 } label: {
                     
-                    Label("Custom values", systemImage: "square.and.pencil")
+                    Label("Custom Values", systemImage: "square.and.pencil")
+                        .fontWeight(viewModel.sleepHistorySource == .custom ? .bold : .regular)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(.blue.opacity(viewModel.sleepHistorySource == .custom ? 0.1 : 0))
@@ -155,7 +187,8 @@ struct LightFormulaParametrizedTestingView: View {
                 Button {
                     viewModel.sleepHistorySource = .healthkit
                 } label: {
-                    Label("Healthkit Data", systemImage: "heart")
+                    Label("Healthkit Data", systemImage: viewModel.sleepHistorySource == .custom ? "heart" : "heart.fill")
+                        .fontWeight(viewModel.sleepHistorySource == .custom ? .regular : .bold)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(.purple.opacity(viewModel.sleepHistorySource == .healthkit ? 0.1 : 0))
@@ -281,8 +314,8 @@ struct LightFormulaParametrizedTestingView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .fontWeight(.bold)
             .font(.title)
-            .opacity(0.3)
-            
+            .opacity(0.9)
+
             if !subtitle.isEmpty {
                 Spacer()
                     .frame(height: 4)
@@ -292,7 +325,7 @@ struct LightFormulaParametrizedTestingView: View {
                 .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundColor(.gray)
+                .foregroundColor(.black.opacity(0.6))
                 .font(.system(size: 14))
             }
         }

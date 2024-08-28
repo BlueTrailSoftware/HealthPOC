@@ -34,6 +34,7 @@ struct HealthDataView: View {
             viewModel.requestHKPermission()
             viewModel.refreshData()
         }
+        .toolbarBackground(.hidden, for: .navigationBar)
         .background (
             LinearGradient(gradient: Gradient(colors: [
                 .vibrantPurple,
