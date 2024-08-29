@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D1287032C6407CC00646015 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287022C6407CC00646015 /* Trip.swift */; };
-		4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287082C6BDCF100646015 /* SDKEngine.swift */; };
+		4D1287092C6BDCF100646015 /* TripDurationCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287082C6BDCF100646015 /* TripDurationCalculator.swift */; };
 		4D148ABB2C7801C80097916E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148ABA2C7801C80097916E /* MainMenuView.swift */; };
 		4D58DA6E2C7E6C3400D278CA /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */; };
 		4D6DAF0B2C751D04008B8FE5 /* LightFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */; };
@@ -74,7 +74,7 @@
 
 /* Begin PBXFileReference section */
 		4D1287022C6407CC00646015 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		4D1287082C6BDCF100646015 /* SDKEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKEngine.swift; sourceTree = "<group>"; };
+		4D1287082C6BDCF100646015 /* TripDurationCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDurationCalculator.swift; sourceTree = "<group>"; };
 		4D148ABA2C7801C80097916E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormula.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		4D1287072C6BDCE500646015 /* SDk  */ = {
 			isa = PBXGroup;
 			children = (
-				4D1287082C6BDCF100646015 /* SDKEngine.swift */,
+				4D1287082C6BDCF100646015 /* TripDurationCalculator.swift */,
 				4D1287022C6407CC00646015 /* Trip.swift */,
 				4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */,
 				4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */,
@@ -539,7 +539,7 @@
 				4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */,
 				FFDE755E2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */,
 				4DF91DD92C48397B00C28E55 /* JSONDecodable.swift in Sources */,
-				4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */,
+				4D1287092C6BDCF100646015 /* TripDurationCalculator.swift in Sources */,
 				4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */,
 				4D6DAF152C765CCA008B8FE5 /* LightFormulaParametrizedTestingViewModel.swift in Sources */,
 				4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */,

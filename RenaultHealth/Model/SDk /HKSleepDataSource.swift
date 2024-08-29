@@ -148,12 +148,13 @@ class HKSleepDataSource {
     
     func fetchSleepSessions(
         forPastDays: Int,
+        since: Date = Date(),
         completion: (() -> Void)?
     ) {
         
         fetchSleepSessions(
-            from: Date().startOfDay.modifyDateBy(days: -forPastDays),
-            to: Date(),
+            from: since.startOfDay.modifyDateBy(days: -forPastDays),
+            to: since,
             completion: completion
         )
     }
