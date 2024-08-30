@@ -10,10 +10,7 @@ import SwiftUI
 struct LightFormulaParametrizedTestingView: View {
     
     @StateObject private var viewModel = LightFormulaParametrizedTestingViewModel()
-    
-    @State var pickerValues: [Int] = [0]
-    @State var toggleVal: Bool = false
-    
+       
     @FocusState var keyboardIsDisplayed: Bool
 
     // Collapsables
@@ -67,7 +64,6 @@ struct LightFormulaParametrizedTestingView: View {
                     )
 
                     resultsSection()
-                        .animation(.easeInOut(duration: 0.5), value: viewModel.results)
 
                     Spacer()
                         .frame(height: 44)
@@ -76,6 +72,7 @@ struct LightFormulaParametrizedTestingView: View {
                         viewModel.calculateLightFormula()
                     } label: {
                         Label("Run Calculation", systemImage: "sum")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                     .modifier(ButtonCapsuleStyle())
 
@@ -278,24 +275,6 @@ struct LightFormulaParametrizedTestingView: View {
                     title: "Results",
                     subtitle: "Showing the safe driving time for every two hours after the wake up hour."
                 )
-
-#warning("Descomentar si se quiere usar un sheet y meter explicacion de detalles en una SUI View por separado.")
-                /*
-                 Button {
-                    showingSheet.toggle()
-                } label: {
-                    Image(systemName: "info.circle.fill")
-                        .font(.title2)
-                        .foregroundStyle(.blue.opacity(0.9))
-                }
-                .sheet(isPresented: $showingSheet) {
-                    Text("Aqui **Leo** pondra la explicacion de la formula en una View Separada")
-                        .presentationDetents([.medium, .large])
-                        .presentationCornerRadius(20)
-                        .presentationBackground(.thinMaterial)
-                        .padding()
-                }
-                */
             }
             
             ForEach(viewModel.results, id: \.self) { value in
@@ -415,9 +394,11 @@ struct LightFormulaParametrizedTestingView: View {
             } label: {}
         } label: {
             Text(text)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .font(.title3)
                 .foregroundColor(.black)
         }
+        .contentShape(Rectangle())
         .frame(height: 44)
         .frame(maxWidth: .infinity)
         .background(.white)
