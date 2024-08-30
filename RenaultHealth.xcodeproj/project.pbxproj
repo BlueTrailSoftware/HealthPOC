@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4D1287032C6407CC00646015 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287022C6407CC00646015 /* Trip.swift */; };
-		4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287082C6BDCF100646015 /* SDKEngine.swift */; };
+		4D1287092C6BDCF100646015 /* TripDurationCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287082C6BDCF100646015 /* TripDurationCalculator.swift */; };
 		4D148ABB2C7801C80097916E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148ABA2C7801C80097916E /* MainMenuView.swift */; };
+		4D58DA6E2C7E6C3400D278CA /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */; };
 		4D6DAF0B2C751D04008B8FE5 /* LightFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */; };
 		4D6DAF0E2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0D2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift */; };
 		4D6DAF102C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0F2C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift */; };
@@ -45,6 +46,7 @@
 		FF68E0EA2C7D5F2F00573536 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68E0E92C7D5F2F00573536 /* LoadingView.swift */; };
 		FF68E0EC2C7D615400573536 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68E0EB2C7D615400573536 /* EmptyStateView.swift */; };
 		FF68E0EE2C7D63EF00573536 /* ButtonCapsuleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68E0ED2C7D63EF00573536 /* ButtonCapsuleStyle.swift */; };
+		FF6BA42F2C7F826C006CCA49 /* CollapseAnimationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6BA42E2C7F826C006CCA49 /* CollapseAnimationStyle.swift */; };
 		FFDE755E2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */; };
 		FFDE755F2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */; };
 		FFDE75602C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */; };
@@ -72,8 +74,9 @@
 
 /* Begin PBXFileReference section */
 		4D1287022C6407CC00646015 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		4D1287082C6BDCF100646015 /* SDKEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKEngine.swift; sourceTree = "<group>"; };
+		4D1287082C6BDCF100646015 /* TripDurationCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDurationCalculator.swift; sourceTree = "<group>"; };
 		4D148ABA2C7801C80097916E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormula.swift; sourceTree = "<group>"; };
 		4D6DAF0D2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormulaDemonstrationView.swift; sourceTree = "<group>"; };
 		4D6DAF0F2C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormulaDemonstrationViewModel.swift; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 		FF68E0E92C7D5F2F00573536 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FF68E0EB2C7D615400573536 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		FF68E0ED2C7D63EF00573536 /* ButtonCapsuleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCapsuleStyle.swift; sourceTree = "<group>"; };
+		FF6BA42E2C7F826C006CCA49 /* CollapseAnimationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapseAnimationStyle.swift; sourceTree = "<group>"; };
 		FFDE755A2C6A9E80005E90D0 /* HealthAppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAppButton.swift; sourceTree = "<group>"; };
 		FFDE755C2C6A9E80005E90D0 /* EmptyStateValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateValues.swift; sourceTree = "<group>"; };
 		FFDE75622C6AA303005E90D0 /* ContentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCard.swift; sourceTree = "<group>"; };
@@ -146,7 +150,7 @@
 		4D1287072C6BDCE500646015 /* SDk  */ = {
 			isa = PBXGroup;
 			children = (
-				4D1287082C6BDCF100646015 /* SDKEngine.swift */,
+				4D1287082C6BDCF100646015 /* TripDurationCalculator.swift */,
 				4D1287022C6407CC00646015 /* Trip.swift */,
 				4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */,
 				4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */,
@@ -185,6 +189,8 @@
 			children = (
 				4D6DAF172C76636F008B8FE5 /* RoundedTextFieldStyle.swift */,
 				FF68E0ED2C7D63EF00573536 /* ButtonCapsuleStyle.swift */,
+				4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */,
+				FF6BA42E2C7F826C006CCA49 /* CollapseAnimationStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -526,13 +532,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D6DAF0E2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift in Sources */,
+				FF6BA42F2C7F826C006CCA49 /* CollapseAnimationStyle.swift in Sources */,
 				4DF91DA32C4835AF00C28E55 /* ContentView.swift in Sources */,
 				4DF91DD62C48390E00C28E55 /* HKSleepProperties.swift in Sources */,
 				4D6DAF132C765CC1008B8FE5 /* LightFormulaParametrizedTestingView.swift in Sources */,
 				4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */,
 				FFDE755E2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */,
 				4DF91DD92C48397B00C28E55 /* JSONDecodable.swift in Sources */,
-				4D1287092C6BDCF100646015 /* SDKEngine.swift in Sources */,
+				4D1287092C6BDCF100646015 /* TripDurationCalculator.swift in Sources */,
 				4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */,
 				4D6DAF152C765CCA008B8FE5 /* LightFormulaParametrizedTestingViewModel.swift in Sources */,
 				4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */,
@@ -544,6 +551,7 @@
 				FF34597F2C6FC07D0019A068 /* Color+Extensions.swift in Sources */,
 				FFDE75602C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */,
 				4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */,
+				4D58DA6E2C7E6C3400D278CA /* CornerRadiusStyle.swift in Sources */,
 				4D6DAF1A2C767EE1008B8FE5 /* ViewModifiers.swift in Sources */,
 				4D6DAF1D2C767F13008B8FE5 /* View+Extension.swift in Sources */,
 				4D6DAF0B2C751D04008B8FE5 /* LightFormula.swift in Sources */,
