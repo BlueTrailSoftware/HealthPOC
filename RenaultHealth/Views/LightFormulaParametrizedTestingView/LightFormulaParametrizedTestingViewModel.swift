@@ -69,7 +69,6 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
         self.circadianAmplitude = "\(defaultValues.circadianAmplitude)"
         self.circadianAcrophase = "\(defaultValues.circadianAcrophase)"
         self.maxSafetyTime = "\(defaultValues.maxSafetyTime)"
-        self.wakeupHourToday = "\(defaultValues.wakeupHourToday)"
     }
     
     func resetSleepHistory() {
@@ -96,6 +95,7 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
     }
     
     private func fetchSleepHistoryFromHK() {
+        
         sleepDataSource.fetchSleepSessions(
             forPastDays: 7
         ) {
@@ -124,22 +124,26 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
             initialSleepPressure: Double(initialSleepPressure) ?? 0,
             circadianAmplitude: Double(circadianAmplitude) ?? 0,
             circadianAcrophase: Double(circadianAcrophase) ?? 0,
-            maxSafetyTime: Double(maxSafetyTime) ?? 0,
-            wakeupHourToday: Double(wakeupHourToday) ?? 0
+            maxSafetyTime: Double(maxSafetyTime) ?? 0
         )
         
         // Start times
+        let wakeUpHour = Int(wakeupHourToday) ?? 7
         let startTimes: [Int] = [7, 9, 11, 13, 15, 17, 19, 21, 23].filter { i in
-            i >= Int(params.wakeupHourToday)
+            i >= wakeUpHour
         }
         
         // calculateSafeDriving
-        let res = LightFormula(
-            parameters: params
-        ).calculateSafeDriving(
-            startTimes: startTimes,
-            sleepData: sleepHoursInTheLastDays.map{ Double($0) }
-        )
+        let lightFormula = LightFormula(parameters: params)
+        
+        var res: [Int: Double] = [:]
+        for currentTime in startTimes {
+            res[currentTime] = lightFormula.calculateSafeDrivingTime(
+                lastSleepHours: sleepHoursInTheLastDays.map{ Double($0) },
+                hoursAwake: currentTime - wakeUpHour,
+                currentHour: currentTime
+            )
+        }
         
         // Parse results for display
         self.results = res.map{ key, value in
