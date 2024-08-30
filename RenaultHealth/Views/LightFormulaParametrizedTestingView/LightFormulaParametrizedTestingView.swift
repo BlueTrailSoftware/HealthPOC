@@ -95,7 +95,8 @@ struct LightFormulaParametrizedTestingView: View {
                 .blue.opacity(0.1)
             ]), startPoint: .top, endPoint: .bottom)
         )
-        .toolbarBackground(.hidden, for: .navigationBar)
+        .navigationTitle("Formula Calculation")
+        .toolbarBackground(.white, for: .navigationBar)
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
