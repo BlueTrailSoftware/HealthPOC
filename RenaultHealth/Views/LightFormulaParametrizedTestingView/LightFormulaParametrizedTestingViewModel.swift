@@ -150,7 +150,7 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
             LightFormulaParametrizedResultItem(
                 dayNumber: key,
                 title: "\(key)",
-                value: String(format: "%.2f", value),
+                value: String(format: "%.2f", value / 3600),
                 color: value > 6 ? .green : value > 4 ? .orange : value == 0 ? .red : .yellow
             )
         }.sorted(by: { $0.dayNumber < $1.dayNumber })

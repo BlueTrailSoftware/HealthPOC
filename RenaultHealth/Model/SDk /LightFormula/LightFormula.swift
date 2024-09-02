@@ -86,6 +86,7 @@ class LightFormula {
     }
     
     // time before a rest is needed
+    // Result is resturned in seconds
     func timeBeforeTired(
         alertnessLevel: Double,
         threshold: Double = 7
@@ -94,6 +95,6 @@ class LightFormula {
             return 0
         }
         let remainingTime = (alertnessLevel - threshold) / parameters.decayConstantDriving
-        return min(max(remainingTime, 0), Double(parameters.maxSafetyTime))
+        return min(max(remainingTime, 0), Double(parameters.maxSafetyTime)) * 3600
     }
 }
