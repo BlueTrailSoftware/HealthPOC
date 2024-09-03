@@ -137,6 +137,7 @@ class HKSleepDataSource {
                 let sleepSegments = sleepSegments,
                 !sleepSegments.isEmpty
             else {
+                self.sleepSessions = []
                 completion?()
                 return
             }

@@ -12,9 +12,6 @@ class HKQueryManager: NSObject {
 
     // Properties
     
-    /// An instance of HKHealthStore is used to interact with the HealthKit repository
-    private let healthStore: HKHealthStore = HKHealthStore()
-    
     /// This method will perform a query into the HK data
     func performQuery(
         sampleType: HKSampleType,
@@ -47,7 +44,7 @@ class HKQueryManager: NSObject {
         }
         
         // Execute the query
-        healthStore.execute(query)
+        HKHealthStore().execute(query)
     }
 }
 
