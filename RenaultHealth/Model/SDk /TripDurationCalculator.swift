@@ -8,7 +8,9 @@
 import Foundation
 
 enum TripDurationCalculatorError {
-    case notEnoughDataToCalculate
+    case emptyDataOrPermissionsNotGranted
+    case notEnoughSleepHistoryToCalculate
+    case errorCalculatingTripDuration
 }
 
 class TripDurationCalculator {
@@ -26,18 +28,24 @@ class TripDurationCalculator {
         // 1. Sleep for the previous weeks
         fetchSleepHistoryFromHK { sleepHistory in
             
-            /*
-            if sleepHistory.count != 7 {
-                onError?(.notEnoughDataToCalculate)
+            // No sleep data could be fetched
+            // NOTE: This could mean no HealthKit permissions have been granted so the HK data is unacessible.
+            if sleepHistory.isEmpty {
+                onError?(.emptyDataOrPermissionsNotGranted)
                 return
             }
-            */
+            
+            // Not enough sleep sessions available
+            if sleepHistory.count != 7 {
+                onError?(.notEnoughSleepHistoryToCalculate)
+                return
+            }
             
             guard let lightFormulaResult = self.calculateLightFormula(
                 startDate: Date(),
                 sleepHistory: sleepHistory
             ) else {
-                onError?(.notEnoughDataToCalculate)
+                onError?(.errorCalculatingTripDuration)
                 return
             }
             
