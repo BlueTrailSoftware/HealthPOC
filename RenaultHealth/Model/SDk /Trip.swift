@@ -124,7 +124,8 @@ class Trip {
     }
     
     @objc private func timerTasks(timer: Timer) {
-        self.elapsedTime = Date().timeIntervalSince(startDate)
+        
+        self.elapsedTime += 1
         print("elapsedTime : \(elapsedTime) ::: \(intervalUntilRest) ::: \(elapsedTimePretty) ::: \(intervalUntilRestPretty)")
         
         if elapsedTime >= intervalUntilRest {
