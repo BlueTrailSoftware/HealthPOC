@@ -83,8 +83,10 @@ struct LightFormulaParametrizedTestingView: View {
             }
         }
         .onAppear {
-            viewModel.resetAllValues()
-            viewModel.calculateLightFormula()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                viewModel.resetAllValues()
+                viewModel.calculateLightFormula()
+            }
         }
         .background (
             LinearGradient(gradient: Gradient(colors: [

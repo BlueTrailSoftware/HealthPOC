@@ -7,23 +7,29 @@
 
 import Foundation
 
-enum TripDurationCalculatorError {
+enum DaciaHealthError {
     case emptyDataOrPermissionsNotGranted
     case notEnoughSleepHistoryToCalculate
     case errorCalculatingTripDuration
+    case noLastAwakeDateFound
+    case intervalSinceLastAwakeDateIsNegative
+    case couldNotCalculateHoursAwake
 }
 
 class TripDurationCalculator {
     
     private var sleepDataSource = HKSleepDataSource()
+    private var onError: ((DaciaHealthError) -> Void)?
     
     // MARK: - Permissions
     
     // Entry point
     func runCalculation(
         onResult: ((Double) -> Void)?,
-        onError: ((TripDurationCalculatorError) -> Void)?
+        onError: ((DaciaHealthError) -> Void)?
     ) {
+        
+        self.onError = onError
         
         // 1. Sleep for the previous weeks
         fetchSleepHistoryFromHK { sleepHistory in
@@ -77,11 +83,13 @@ class TripDurationCalculator {
         guard
             let lastAwakeDate = sleepDataSource.lastSleepSession?.endDate
         else {
+            self.onError?(.noLastAwakeDateFound)
             return nil
         }
         
         let intervalSinceLastSleep = currentDate.timeIntervalSince(lastAwakeDate)
         if intervalSinceLastSleep < 0 {
+            self.onError?(.intervalSinceLastAwakeDateIsNegative)
             return nil
         }
         
@@ -95,6 +103,7 @@ class TripDurationCalculator {
         
         // 2. hours awake
         guard let hoursAwake = hoursAwake(currentDate: startDate) else {
+            self.onError?(.couldNotCalculateHoursAwake)
             return nil
         }
         
