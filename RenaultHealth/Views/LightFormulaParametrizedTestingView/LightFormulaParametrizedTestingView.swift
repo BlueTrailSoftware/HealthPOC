@@ -231,7 +231,7 @@ struct LightFormulaParametrizedTestingView: View {
                             
                             HStack {
                                 
-                                Text("\(viewModel.sleepHoursInTheLastDays.count - i - 1) nights ago:")
+                                Text("\(viewModel.sleepHoursInTheLastDays.count - i - 1) sleeps ago:")
                                     .padding(.leading, 16)
                                     .opacity(0.6)
                                 

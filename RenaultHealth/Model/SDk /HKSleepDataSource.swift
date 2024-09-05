@@ -206,15 +206,15 @@ class HKSleepDataSource {
             // else
             // - Create new session
             
-            var segmentsAreWithinOneHour: Bool = true
+            var segmentsAreWithinEightHours: Bool = true
             if let lastEndingDate = currentSession.endDate {
-                segmentsAreWithinOneHour = segment.startDate.timeIntervalSince(lastEndingDate) <= 3600
+                segmentsAreWithinEightHours = segment.startDate.timeIntervalSince(lastEndingDate) <= 3600 * 8
             }
             
             // add segment to curr session if it starts within the session's last ending date
             // add segment to curr session if the period from the previous session is less than an hour
             
-            if !segmentsAreWithinOneHour {
+            if !segmentsAreWithinEightHours {
                 if !currentSession.segments.isEmpty {
                     sessions.append(currentSession)
                 }
