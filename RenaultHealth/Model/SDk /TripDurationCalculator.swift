@@ -99,12 +99,26 @@ class TripDurationCalculator {
     
     // MARK: - Calculations
     
+    func lastSignificantSession(
+        currentDate: Date
+    ) -> HKSleepSession? {
+        return sleepDataSource.sessions(
+            within: currentDate.modifyDateBy(hours: -24) ... currentDate
+        ).sorted {
+            $0.totalSleepDuration > $1.totalSleepDuration
+        }.first
+    }
+    
     private func hoursAwake(
         currentDate: Date
     ) -> TimeInterval? {
         
+        let lastSignificantSession = lastSignificantSession(
+            currentDate: currentDate
+        )
+        
         guard
-            let lastAwakeDate = sleepDataSource.lastSleepSession?.endDate
+            let lastAwakeDate = lastSignificantSession?.endDate
         else {
             self.onError?(.noLastAwakeDateFound)
             return nil
