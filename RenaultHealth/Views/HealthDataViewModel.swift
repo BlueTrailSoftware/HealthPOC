@@ -2,132 +2,113 @@
 //  SleepDataViewModel.swift
 //  RenaultHealth
 //
-//  Created by Leonardo Carrillo on 18/07/24.
+//  Created by Blue Trail Software on 18/07/24.
 //
 
 import Foundation
 import SwiftUI
+import Observation
+import Combine
+import DaciaHealthKit
 
-struct HRVEntryTableValue: Hashable {
-    var date: String = ""
-    var value: String = ""
-    var isHighlighted: Bool = false
+enum TripState {
+    case none, running, completed
 }
 
-struct TripPrettyPrintValues {
-    var startDate: String = ""
-    var restDate: String = ""
-    var elapsedTime: String  = ""
-    var intervalUntilRest = ""
-    var realTimeIntervalUntilRest = ""
-}
+@Observable
+class HealthDataViewModel {
 
-class HealthDataViewModel: ObservableObject {
-    
-    let sleepColor: Color = .vibrantPurple
-    let heartColor: Color = Color(red: 255/255, green: 89/255, blue: 94/255)
+    private let healthProvider = HealthDataProvider()
+    private var cancellables = Set<AnyCancellable>()
 
-    @Published var isRefreshing: Bool = true
+    // Publlishers
+    var isRefreshing: Bool = true
+    var tripTimeBeforeRest: Double = 0
+    var elapsedTime: Double = 0
+    var restNow: Bool = false
+    var errorType: DaciaHealthError? = nil
 
-    // Sleep
-    @Published var lastSleepSessionValues: SleepSessionDisplayValues = SleepSessionDisplayValues()
-    @Published var longestSleepSessionValues: SleepSessionDisplayValues = SleepSessionDisplayValues()
-    @Published var allSleepSessionValues: [SleepSessionDisplayValues] = []
-    
-    // Heart
-    @Published var hrvTableValues: [HRVEntryTableValue] = []
-    @Published var hrvAverage: Double = 0
-    
     // Trip
-    @Published var currentTrip: Trip = Trip()
-    @Published var tripMessage: String = "New Trip"
-    @Published var tripMessageColor: Color = .black.opacity(0.4)
-    @Published var tripActionButtonText: String = "Start"
-    @Published var tripActionButtonBackground: Color = .teal
-    @Published var tripValues: TripPrettyPrintValues = TripPrettyPrintValues()
-    @Published var canStartTrip: Bool = false
-    
-    // Managers
-    private var authorizationManager = HKAuthorizationManager()
+    var canStartTrip: Bool = false
+    var tripMessage: String = "New Trip"
+    var tripMessageColor: Color = .black.opacity(0.4)
+    var tripActionButtonText: String = "Start"
+    var tripActionButtonBackground: Color = .teal
 
-    // DataSources
-    private var sleepDataSource = HKSleepDataSource()
-    private var heartDataSource = HKHeartDataSource()
-    
+    var tripStatus: TripState = .none
+
     // MARK: - Permissions
-    
     func requestHKPermission() {
-        authorizationManager.requestPermissions()
-        authorizationManager.onRequestAuthorizationDone = { [weak self] in
-            self?.refreshSleepData()
-        }
-    }
-    
-    //MARK: - Data
-    
-    func refreshData() {
-        refreshSleepData()
-    }
-    
-    // MARK: - Sleep
-    
-    private func refreshSleepData() {
-        
-        DispatchQueue.main.async {
-            self.isRefreshing = true
-        }
-        
-        sleepDataSource.refreshSleepSessions(for: Date()) {
-            
-            DispatchQueue.main.async {
+        setupBindings()
+        healthProvider.requestHealthPermissions()
 
-                self.longestSleepSessionValues = self.sleepDataSource.longestSleepSession?.displayValues ?? SleepSessionDisplayValues()
-                self.lastSleepSessionValues = self.sleepDataSource.lastSleepSession?.displayValues ?? SleepSessionDisplayValues()
-                
-                let allSessions = self.sleepDataSource.allSleepSessions
-                self.allSleepSessionValues = allSessions.compactMap { session in
-                    session.displayValues
-                }
-                
-                self.canStartTrip = self.sleepDataSource.lastSleepSession != nil
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0..<3)) {
-                    self.isRefreshing = false
-                }
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0..<2)) {
+            self.isRefreshing = false
         }
     }
-    
-    // MARK: - Heart
-    
-    private func fetchHRV() {
-        heartDataSource.fetchHRV(
-            from: Date().startOfDay,
-            to: Date().endOfDay
-        ) { entries in
-        
-            DispatchQueue.main.async {
-                
-                guard let entries = entries else {
-                    self.hrvTableValues = []
-                    self.hrvAverage = 0
+
+    // MARK: - Bindings
+    private func setupBindings() {
+        healthProvider.tripTimeBeforeRest
+            .sink { time in
+                print("tiempo para descansar: ", time)
+                guard !time.isZero else {
+                    self.canStartTrip = false
                     return
                 }
-                
-                self.hrvTableValues = entries.map{ entry in
-                    HRVEntryTableValue(
-                        date: entry.startDate.string(withFormat: .readable),
-                        value: "\(entry.value)",
-                        isHighlighted: false
-                    )
-                }
-                self.hrvAverage = entries.map { $0.value }.reduce(0, +) / Double(entries.count)
+
+                self.canStartTrip = true
+                self.tripTimeBeforeRest = time
             }
+            .store(in: &cancellables)
+
+        healthProvider.tripElapsedTime
+            .sink { time in
+                print("Elapsed time: ", time)
+                self.elapsedTime = time
+                self.tripStatus = .running
+                self.refreshTripPublishedValues()
+            }
+            .store(in: &cancellables)
+
+        healthProvider.restNow
+            .sink {
+                self.restNow = true
+                self.tripStatus = .completed
+                self.refreshTripPublishedValues()
+            }
+            .store(in: &cancellables)
+
+        healthProvider.healthDataProviderError
+            .sink { error in
+                print(error.message)
+                self.errorType = error
+            }
+            .store(in: &cancellables)
+
+    }
+
+    func refreshTripTime() {
+        isRefreshing = true
+        errorType = nil
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0..<3)) {
+            self.healthProvider.calculateTripTime()
+            self.isRefreshing = false
         }
     }
-    
-    // MARK: - Trip
 
+    // MARK: - Trip
+    func toggleTrip() {
+        if tripStatus == .none {
+            healthProvider.startTrip()
+        } else {
+            healthProvider.stopTrip()
+        }
+
+        refreshTripPublishedValues()
+    }
+/*
     private func refreshTripInfo() {
         self.tripValues = TripPrettyPrintValues(
             startDate: self.currentTrip.startDatePretty,
@@ -139,9 +120,9 @@ class HealthDataViewModel: ObservableObject {
 
         refreshTripPublishedValues()
     }
-
+ */
     private func refreshTripPublishedValues() {
-        switch currentTrip.activityStatus {
+        switch tripStatus {
         case .running:
             tripActionButtonText = "Stop"
             tripActionButtonBackground = .red
@@ -154,40 +135,12 @@ class HealthDataViewModel: ObservableObject {
             tripMessage = "Rest now!"
             tripMessageColor = .red
 
-        case .idle:
+        case .none:
             tripActionButtonText = "Start"
             tripActionButtonBackground = .teal
             tripMessage = "New Trip"
             tripMessageColor = .black.opacity(0.4)
         }
     }
-    
-    func toggleTrip() {
-        if currentTrip.activityStatus == .idle {
-            startTrip()
-        } else {
-            stopTrip()
-        }
-        
-        refreshTripPublishedValues()
-    }
-    
-    private func startTrip() {
-        guard 
-            let lastSleepSession = sleepDataSource.lastSleepSession
-        else {
-            return
-        }
 
-        currentTrip.start(lastSleepSession: lastSleepSession) { [weak self] _ in
-            self?.refreshTripInfo()
-
-        } restMustStart: { [weak self] in
-            self?.refreshTripInfo()
-        }
-    }
-    
-    private func stopTrip() {
-        self.currentTrip.reset()
-    }
 }

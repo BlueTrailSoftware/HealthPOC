@@ -7,20 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D1287032C6407CC00646015 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287022C6407CC00646015 /* Trip.swift */; };
-		4D1287092C6BDCF100646015 /* TripDurationCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1287082C6BDCF100646015 /* TripDurationCalculator.swift */; };
-		4D148ABB2C7801C80097916E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148ABA2C7801C80097916E /* MainMenuView.swift */; };
 		4D58DA6E2C7E6C3400D278CA /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */; };
-		4D6DAF0B2C751D04008B8FE5 /* LightFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */; };
-		4D6DAF0E2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0D2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift */; };
-		4D6DAF102C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF0F2C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift */; };
-		4D6DAF132C765CC1008B8FE5 /* LightFormulaParametrizedTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF122C765CC1008B8FE5 /* LightFormulaParametrizedTestingView.swift */; };
-		4D6DAF152C765CCA008B8FE5 /* LightFormulaParametrizedTestingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF142C765CCA008B8FE5 /* LightFormulaParametrizedTestingViewModel.swift */; };
 		4D6DAF182C76636F008B8FE5 /* RoundedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF172C76636F008B8FE5 /* RoundedTextFieldStyle.swift */; };
 		4D6DAF1A2C767EE1008B8FE5 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF192C767EE1008B8FE5 /* ViewModifiers.swift */; };
 		4D6DAF1D2C767F13008B8FE5 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6DAF1C2C767F13008B8FE5 /* View+Extension.swift */; };
-		4D9F82642C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */; };
-		4D9F82672C5C1B5B008E4C1D /* HKHeartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */; };
 		4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */; };
 		4DF91DA32C4835AF00C28E55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DA22C4835AF00C28E55 /* ContentView.swift */; };
 		4DF91DA52C4835B000C28E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF91DA42C4835B000C28E55 /* Assets.xcassets */; };
@@ -28,21 +18,16 @@
 		4DF91DB22C4835B000C28E55 /* RenaultHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DB12C4835B000C28E55 /* RenaultHealthTests.swift */; };
 		4DF91DBC2C4835B000C28E55 /* RenaultHealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DBB2C4835B000C28E55 /* RenaultHealthUITests.swift */; };
 		4DF91DBE2C4835B000C28E55 /* RenaultHealthUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DBD2C4835B000C28E55 /* RenaultHealthUITestsLaunchTests.swift */; };
-		4DF91DCE2C48388500C28E55 /* HKSleepDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */; };
-		4DF91DD22C4838C900C28E55 /* HKSleepSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DD12C4838C900C28E55 /* HKSleepSession.swift */; };
-		4DF91DD42C4838EA00C28E55 /* HKSleepStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DD32C4838EA00C28E55 /* HKSleepStage.swift */; };
-		4DF91DD62C48390E00C28E55 /* HKSleepProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DD52C48390E00C28E55 /* HKSleepProperties.swift */; };
 		4DF91DD92C48397B00C28E55 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DD82C48397B00C28E55 /* JSONDecodable.swift */; };
 		4DF91DDE2C4839DD00C28E55 /* DateIntervalCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DDD2C4839DD00C28E55 /* DateIntervalCalculations.swift */; };
 		4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE12C483A8400C28E55 /* Date+Extensions.swift */; };
 		4DF91DE52C483AE000C28E55 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */; };
 		4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */; };
-		4DF91DEB2C483D1000C28E55 /* HKQueryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEA2C483D1000C28E55 /* HKQueryManager.swift */; };
-		4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEC2C499AA400C28E55 /* HKAuthorizationManager.swift */; };
 		4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */; };
 		4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */; };
-		4DF91DFB2C49AA3300C28E55 /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */; };
 		FF34597F2C6FC07D0019A068 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF34597E2C6FC07D0019A068 /* Color+Extensions.swift */; };
+		FF4C6EF92C90B0D500F22D0A /* DaciaHealthKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4C6EF72C90B0BA00F22D0A /* DaciaHealthKit.xcframework */; };
+		FF4C6EFA2C90B0D500F22D0A /* DaciaHealthKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FF4C6EF72C90B0BA00F22D0A /* DaciaHealthKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF68E0EA2C7D5F2F00573536 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68E0E92C7D5F2F00573536 /* LoadingView.swift */; };
 		FF68E0EC2C7D615400573536 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68E0EB2C7D615400573536 /* EmptyStateView.swift */; };
 		FF68E0EE2C7D63EF00573536 /* ButtonCapsuleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68E0ED2C7D63EF00573536 /* ButtonCapsuleStyle.swift */; };
@@ -72,21 +57,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FF4C6EFB2C90B0D500F22D0A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FF4C6EFA2C90B0D500F22D0A /* DaciaHealthKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		4D1287022C6407CC00646015 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		4D1287082C6BDCF100646015 /* TripDurationCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDurationCalculator.swift; sourceTree = "<group>"; };
-		4D148ABA2C7801C80097916E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		4D58DA6D2C7E6C3400D278CA /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
-		4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormula.swift; sourceTree = "<group>"; };
-		4D6DAF0D2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormulaDemonstrationView.swift; sourceTree = "<group>"; };
-		4D6DAF0F2C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormulaDemonstrationViewModel.swift; sourceTree = "<group>"; };
-		4D6DAF122C765CC1008B8FE5 /* LightFormulaParametrizedTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormulaParametrizedTestingView.swift; sourceTree = "<group>"; };
-		4D6DAF142C765CCA008B8FE5 /* LightFormulaParametrizedTestingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightFormulaParametrizedTestingViewModel.swift; sourceTree = "<group>"; };
 		4D6DAF172C76636F008B8FE5 /* RoundedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldStyle.swift; sourceTree = "<group>"; };
 		4D6DAF192C767EE1008B8FE5 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		4D6DAF1C2C767F13008B8FE5 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
-		4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableHKIdentifiers.swift; sourceTree = "<group>"; };
-		4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKHeartDataSource.swift; sourceTree = "<group>"; };
 		4DF91D9D2C4835AF00C28E55 /* RenaultHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenaultHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenaultHealthApp.swift; sourceTree = "<group>"; };
 		4DF91DA22C4835AF00C28E55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,21 +87,15 @@
 		4DF91DBB2C4835B000C28E55 /* RenaultHealthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenaultHealthUITests.swift; sourceTree = "<group>"; };
 		4DF91DBD2C4835B000C28E55 /* RenaultHealthUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenaultHealthUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4DF91DCA2C48366E00C28E55 /* RenaultHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RenaultHealth.entitlements; sourceTree = "<group>"; };
-		4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKSleepDataSource.swift; sourceTree = "<group>"; };
-		4DF91DD12C4838C900C28E55 /* HKSleepSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKSleepSession.swift; sourceTree = "<group>"; };
-		4DF91DD32C4838EA00C28E55 /* HKSleepStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKSleepStage.swift; sourceTree = "<group>"; };
-		4DF91DD52C48390E00C28E55 /* HKSleepProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKSleepProperties.swift; sourceTree = "<group>"; };
 		4DF91DD82C48397B00C28E55 /* JSONDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
 		4DF91DDD2C4839DD00C28E55 /* DateIntervalCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIntervalCalculations.swift; sourceTree = "<group>"; };
 		4DF91DE12C483A8400C28E55 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
 		4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
-		4DF91DEA2C483D1000C28E55 /* HKQueryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKQueryManager.swift; sourceTree = "<group>"; };
-		4DF91DEC2C499AA400C28E55 /* HKAuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKAuthorizationManager.swift; sourceTree = "<group>"; };
 		4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataView.swift; sourceTree = "<group>"; };
 		4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataViewModel.swift; sourceTree = "<group>"; };
-		4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
 		FF34597E2C6FC07D0019A068 /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		FF4C6EF72C90B0BA00F22D0A /* DaciaHealthKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DaciaHealthKit.xcframework; sourceTree = "<group>"; };
 		FF68E0E92C7D5F2F00573536 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FF68E0EB2C7D615400573536 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		FF68E0ED2C7D63EF00573536 /* ButtonCapsuleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCapsuleStyle.swift; sourceTree = "<group>"; };
@@ -127,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF4C6EF92C90B0D500F22D0A /* DaciaHealthKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,43 +131,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D1287072C6BDCE500646015 /* SDk  */ = {
-			isa = PBXGroup;
-			children = (
-				4D1287082C6BDCF100646015 /* TripDurationCalculator.swift */,
-				4D1287022C6407CC00646015 /* Trip.swift */,
-				4DF91DCD2C48388500C28E55 /* HKSleepDataSource.swift */,
-				4D6DAF0A2C751D04008B8FE5 /* LightFormula.swift */,
-			);
-			path = "SDk ";
-			sourceTree = "<group>";
-		};
-		4D148AB72C7801AC0097916E /* MainMenu */ = {
-			isa = PBXGroup;
-			children = (
-				4D148ABA2C7801C80097916E /* MainMenuView.swift */,
-			);
-			path = MainMenu;
-			sourceTree = "<group>";
-		};
-		4D6DAF0C2C755C89008B8FE5 /* LightFormulaDemonstrationView */ = {
-			isa = PBXGroup;
-			children = (
-				4D6DAF0D2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift */,
-				4D6DAF0F2C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift */,
-			);
-			path = LightFormulaDemonstrationView;
-			sourceTree = "<group>";
-		};
-		4D6DAF112C765C8E008B8FE5 /* LightFormulaParametrizedTestingView */ = {
-			isa = PBXGroup;
-			children = (
-				4D6DAF122C765CC1008B8FE5 /* LightFormulaParametrizedTestingView.swift */,
-				4D6DAF142C765CCA008B8FE5 /* LightFormulaParametrizedTestingViewModel.swift */,
-			);
-			path = LightFormulaParametrizedTestingView;
-			sourceTree = "<group>";
-		};
 		4D6DAF162C766360008B8FE5 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,15 +149,6 @@
 				4D6DAF1C2C767F13008B8FE5 /* View+Extension.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		4D9F82662C5C1B5B008E4C1D /* Heart */ = {
-			isa = PBXGroup;
-			children = (
-				4D9F82652C5C1B5B008E4C1D /* HKHeartDataSource.swift */,
-			);
-			name = Heart;
-			path = Entities/Heart;
 			sourceTree = "<group>";
 		};
 		4DF91D942C4835AF00C28E55 = {
@@ -236,10 +174,10 @@
 		4DF91D9F2C4835AF00C28E55 /* RenaultHealth */ = {
 			isa = PBXGroup;
 			children = (
+				FF4C6EF72C90B0BA00F22D0A /* DaciaHealthKit.xcframework */,
 				4DF91DCA2C48366E00C28E55 /* RenaultHealth.entitlements */,
 				4DF91DD72C48396C00C28E55 /* Utilities */,
 				4DF91DEE2C499C8C00C28E55 /* Views */,
-				4DF91DCB2C48381D00C28E55 /* Model */,
 				4DF91DA02C4835AF00C28E55 /* RenaultHealthApp.swift */,
 				4DF91DA22C4835AF00C28E55 /* ContentView.swift */,
 				4DF91DA42C4835B000C28E55 /* Assets.xcassets */,
@@ -273,36 +211,6 @@
 			path = RenaultHealthUITests;
 			sourceTree = "<group>";
 		};
-		4DF91DCB2C48381D00C28E55 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4D1287072C6BDCE500646015 /* SDk  */,
-				4D9F82662C5C1B5B008E4C1D /* Heart */,
-				4DF91DE92C483D0100C28E55 /* HealthKit */,
-				4DF91DCF2C4838A400C28E55 /* Entities */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		4DF91DCF2C4838A400C28E55 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				4D9F82632C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift */,
-				4DF91DD02C4838B100C28E55 /* Sleep */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		4DF91DD02C4838B100C28E55 /* Sleep */ = {
-			isa = PBXGroup;
-			children = (
-				4DF91DD12C4838C900C28E55 /* HKSleepSession.swift */,
-				4DF91DD32C4838EA00C28E55 /* HKSleepStage.swift */,
-				4DF91DD52C48390E00C28E55 /* HKSleepProperties.swift */,
-			);
-			path = Sleep;
-			sourceTree = "<group>";
-		};
 		4DF91DD72C48396C00C28E55 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,8 +227,8 @@
 		4DF91DDF2C483A7100C28E55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4D6DAF1B2C767F04008B8FE5 /* View */,
 				FF34597E2C6FC07D0019A068 /* Color+Extensions.swift */,
+				4D6DAF1B2C767F04008B8FE5 /* View */,
 				4DF91DE62C483AFD00C28E55 /* String */,
 				4DF91DE32C483AD300C28E55 /* Numeric */,
 				4DF91DE02C483A7800C28E55 /* Date */,
@@ -352,34 +260,13 @@
 			path = String;
 			sourceTree = "<group>";
 		};
-		4DF91DE92C483D0100C28E55 /* HealthKit */ = {
-			isa = PBXGroup;
-			children = (
-				4DF91DEA2C483D1000C28E55 /* HKQueryManager.swift */,
-				4DF91DEC2C499AA400C28E55 /* HKAuthorizationManager.swift */,
-			);
-			path = HealthKit;
-			sourceTree = "<group>";
-		};
 		4DF91DEE2C499C8C00C28E55 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4D148AB72C7801AC0097916E /* MainMenu */,
-				4D6DAF112C765C8E008B8FE5 /* LightFormulaParametrizedTestingView */,
-				4D6DAF0C2C755C89008B8FE5 /* LightFormulaDemonstrationView */,
-				4DF91DF72C49AA1700C28E55 /* Cells */,
 				4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */,
 				4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		4DF91DF72C49AA1700C28E55 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				4DF91DFA2C49AA3300C28E55 /* TitleValueCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		FFDE755B2C6A9E80005E90D0 /* Components */ = {
@@ -411,6 +298,7 @@
 				4DF91D992C4835AF00C28E55 /* Sources */,
 				4DF91D9A2C4835AF00C28E55 /* Frameworks */,
 				4DF91D9B2C4835AF00C28E55 /* Resources */,
+				FF4C6EFB2C90B0D500F22D0A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -531,42 +419,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D6DAF0E2C755CA0008B8FE5 /* LightFormulaDemonstrationView.swift in Sources */,
 				FF6BA42F2C7F826C006CCA49 /* CollapseAnimationStyle.swift in Sources */,
 				4DF91DA32C4835AF00C28E55 /* ContentView.swift in Sources */,
-				4DF91DD62C48390E00C28E55 /* HKSleepProperties.swift in Sources */,
-				4D6DAF132C765CC1008B8FE5 /* LightFormulaParametrizedTestingView.swift in Sources */,
 				4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */,
 				FFDE755E2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */,
 				4DF91DD92C48397B00C28E55 /* JSONDecodable.swift in Sources */,
-				4D1287092C6BDCF100646015 /* TripDurationCalculator.swift in Sources */,
-				4DF91DED2C499AA400C28E55 /* HKAuthorizationManager.swift in Sources */,
-				4D6DAF152C765CCA008B8FE5 /* LightFormulaParametrizedTestingViewModel.swift in Sources */,
 				4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */,
 				FF68E0EE2C7D63EF00573536 /* ButtonCapsuleStyle.swift in Sources */,
-				4DF91DCE2C48388500C28E55 /* HKSleepDataSource.swift in Sources */,
-				4D148ABB2C7801C80097916E /* MainMenuView.swift in Sources */,
-				4D9F82642C5C1B3E008E4C1D /* AvailableHKIdentifiers.swift in Sources */,
-				4DF91DD42C4838EA00C28E55 /* HKSleepStage.swift in Sources */,
 				FF34597F2C6FC07D0019A068 /* Color+Extensions.swift in Sources */,
 				FFDE75602C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */,
 				4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */,
 				4D58DA6E2C7E6C3400D278CA /* CornerRadiusStyle.swift in Sources */,
 				4D6DAF1A2C767EE1008B8FE5 /* ViewModifiers.swift in Sources */,
 				4D6DAF1D2C767F13008B8FE5 /* View+Extension.swift in Sources */,
-				4D6DAF0B2C751D04008B8FE5 /* LightFormula.swift in Sources */,
 				FF68E0EA2C7D5F2F00573536 /* LoadingView.swift in Sources */,
-				4D1287032C6407CC00646015 /* Trip.swift in Sources */,
-				4DF91DEB2C483D1000C28E55 /* HKQueryManager.swift in Sources */,
 				4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */,
-				4D9F82672C5C1B5B008E4C1D /* HKHeartDataSource.swift in Sources */,
 				4DF91DA12C4835AF00C28E55 /* RenaultHealthApp.swift in Sources */,
 				FF68E0EC2C7D615400573536 /* EmptyStateView.swift in Sources */,
 				4DF91DE52C483AE000C28E55 /* TimeInterval+Extensions.swift in Sources */,
 				4DF91DDE2C4839DD00C28E55 /* DateIntervalCalculations.swift in Sources */,
-				4D6DAF102C755CAE008B8FE5 /* LightFormulaDemonstrationViewModel.swift in Sources */,
-				4DF91DFB2C49AA3300C28E55 /* TitleValueCell.swift in Sources */,
-				4DF91DD22C4838C900C28E55 /* HKSleepSession.swift in Sources */,
 				FFDE75632C6AA303005E90D0 /* ContentCard.swift in Sources */,
 				4D6DAF182C76636F008B8FE5 /* RoundedTextFieldStyle.swift in Sources */,
 			);

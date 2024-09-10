@@ -7,7 +7,8 @@
 import SwiftUI
 
 struct EmptyStateView: View {
-    let viewModel: HealthDataViewModel
+    let retryAction: () -> Void
+
     var body: some View {
         ContentUnavailableView {
             // Icon & Title
@@ -25,9 +26,7 @@ struct EmptyStateView: View {
         } actions: {
             // Alternative Actions
             VStack {
-                Button {
-                    viewModel.refreshData()
-                } label: {
+                Button(action: retryAction) {
                     Label(EmptyStateValues.emptyButtonTry, systemImage: "arrow.circlepath")
                 }
 
@@ -42,5 +41,7 @@ struct EmptyStateView: View {
 }
 
 #Preview {
-    EmptyStateView(viewModel: HealthDataViewModel())
+    EmptyStateView {
+
+    }
 }

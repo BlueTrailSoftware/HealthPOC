@@ -2,7 +2,7 @@
 //  RenaultHealthUITestsLaunchTests.swift
 //  RenaultHealthUITests
 //
-//  Created by Leonardo Carrillo on 17/07/24.
+//  Created by Blue Trail Software on 17/07/24.
 //
 
 import XCTest

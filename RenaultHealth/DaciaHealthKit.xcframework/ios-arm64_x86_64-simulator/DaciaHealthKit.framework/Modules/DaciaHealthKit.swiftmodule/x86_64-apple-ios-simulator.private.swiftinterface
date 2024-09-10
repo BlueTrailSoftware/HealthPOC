@@ -1,0 +1,124 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name DaciaHealthKit
+import Combine
+@_exported import DaciaHealthKit
+import Foundation
+import HealthKit
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public func decode<T>(_ k: Swift.String, _ d: [Swift.String : Any]) throws -> T
+public func decodeOptional<T>(_ k: Swift.String, _ d: [Swift.String : Any]) throws -> T?
+precedencegroup DecoderPrecedence {
+  higherThan: CastingPrecedence
+}
+infix operator <- : DecoderPrecedence
+infix operator <~ : DecoderPrecedence
+public struct SleepSessions {
+  public var longestSession: DaciaHealthKit.HKSleepSession?
+  public var lastSession: DaciaHealthKit.HKSleepSession?
+  public var allSessions: [DaciaHealthKit.HKSleepSession]
+}
+public struct SleepSessionInfo : Swift.Hashable {
+  public var title: Swift.String?
+  public var value: Swift.String?
+  public var valueInHours: Swift.Double?
+  public var highlightValue: Swift.Bool
+  public var highlightAll: Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: DaciaHealthKit.SleepSessionInfo, b: DaciaHealthKit.SleepSessionInfo) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class HKSleepSession : ObjectiveC.NSObject {
+  public var segments: [DaciaHealthKit.HKSleepStage]
+  public var startingDate: Foundation.Date?
+  public var endDate: Foundation.Date?
+  public var totalSleepDuration: Swift.Double
+  public var summaryInfo: [DaciaHealthKit.SleepSessionInfo]
+  public func refreshProperties()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct HRVEntry : Swift.Hashable {
+  public var value: Swift.Double
+  public var startDate: Foundation.Date
+  public var endDate: Foundation.Date
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: DaciaHealthKit.HRVEntry, b: DaciaHealthKit.HRVEntry) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum TripStatus {
+  case running
+  case completed
+  case idle
+  public static func == (a: DaciaHealthKit.TripStatus, b: DaciaHealthKit.TripStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum DaciaHealthError {
+  case emptyDataOrPermissionsNotGranted
+  case notEnoughSleepHistoryToCalculate
+  case errorCalculatingTripDuration
+  case noLastAwakeDateFound
+  case intervalSinceLastAwakeDateIsNegative
+  case couldNotCalculateHoursAwake
+  public var message: Swift.String {
+    get
+  }
+  public static func == (a: DaciaHealthKit.DaciaHealthError, b: DaciaHealthKit.DaciaHealthError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct TripData {
+  public var startDate: Swift.String
+  public var restDate: Swift.String
+  public var elapsedTime: Swift.String
+  public var intervalUntilRest: Swift.String
+  public var realTimeIntervalUntilRest: Swift.String
+}
+public struct SleepStageInfo : Swift.Hashable {
+  public var title: Swift.String
+  public var start: Swift.String
+  public var end: Swift.String
+  public var duration: Swift.String
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: DaciaHealthKit.SleepStageInfo, b: DaciaHealthKit.SleepStageInfo) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct HKSleepStage {
+  public var startDate: Foundation.Date
+  public var endDate: Foundation.Date
+  public var sleepAnalysis: HealthKit.HKCategoryValueSleepAnalysis?
+  public var info: DaciaHealthKit.SleepStageInfo {
+    get
+  }
+}
+public class HealthDataProvider {
+  public var tripTimeBeforeRest: Combine.PassthroughSubject<Foundation.TimeInterval, Swift.Never>
+  public var tripElapsedTime: Combine.PassthroughSubject<Foundation.TimeInterval, Swift.Never>
+  public var restNow: Combine.PassthroughSubject<Swift.Void, Swift.Never>
+  public var healthDataProviderError: Combine.PassthroughSubject<DaciaHealthKit.DaciaHealthError, Swift.Never>
+  public init()
+  public func requestHealthPermissions()
+  public func calculateTripTime()
+  public func startTrip()
+  public func stopTrip()
+  @objc deinit
+}
+extension DaciaHealthKit.TripStatus : Swift.Equatable {}
+extension DaciaHealthKit.TripStatus : Swift.Hashable {}
+extension DaciaHealthKit.DaciaHealthError : Swift.Equatable {}
+extension DaciaHealthKit.DaciaHealthError : Swift.Hashable {}

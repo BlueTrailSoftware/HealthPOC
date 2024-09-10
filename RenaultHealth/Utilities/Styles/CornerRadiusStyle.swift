@@ -2,7 +2,7 @@
 //  CornerRadiusStyle.swift
 //  RenaultHealth
 //
-//  Created by Leonardo Carrillo on 27/08/24.
+//  Created by Blue Trail Software on 27/08/24.
 //
 
 import Foundation

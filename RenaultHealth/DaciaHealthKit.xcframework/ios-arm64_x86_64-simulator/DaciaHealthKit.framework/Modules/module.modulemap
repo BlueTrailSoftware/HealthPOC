@@ -1,0 +1,6 @@
+framework module DaciaHealthKit {
+  umbrella header "DaciaHealthKit.h"
+  export *
+
+  module * { export * }
+}
