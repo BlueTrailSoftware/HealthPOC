@@ -92,20 +92,23 @@ struct HealthDataView: View {
                 Spacer()
             }
 
-            HStack(spacing: 10) {
-                Spacer()
+            if viewModel.tripStatus == .none {
+                HStack(spacing: 10) {
+                    Spacer()
 
-                HealthAppButton(type: .iconic)
+                    HealthAppButton(type: .iconic)
 
-                Button {
-                    viewModel.refreshTripTime()
-                } label: {
-                    Image(systemName: "arrow.triangle.2.circlepath")
-                        .imageScale(.large)
+                    Button {
+                        viewModel.refreshTripTime()
+                    } label: {
+                        Image(systemName: "arrow.triangle.2.circlepath")
+                            .imageScale(.large)
+                    }
                 }
+                .foregroundColor(.purple)
+                .padding(.horizontal, 8)
             }
-            .foregroundColor(.purple)
-            .padding(.horizontal, 8)
+
         }
         .frame(maxWidth: .infinity)
         .frame(height: 52)
@@ -177,76 +180,28 @@ struct HealthDataView: View {
                         .foregroundColor(viewModel.tripMessageColor)
 
                         if viewModel.tripStatus != .none {
-                            /*
+
                             titleValueCell(
                                 title: "Trip start",
-                                value: viewModel.tripValues.startDate
+                                value: viewModel.startTripDate.string(withFormat: .readable)
                             )
-                            
-                            Divider()
-
-                            titleValueCell(
-                                title: "Last sleep duration",
-                                value: viewModel.lastSleepSessionValues.sleepDuration
-                            )
-                            */
 
                             Divider()
 
-                            Text(
-                                "formula: last_sleep_duration / 60"
-                            )
-                            .opacity(0.4)
-                            
-/*
                             titleValueCell(
-                                title: "",
-                                value: "\(viewModel.lastSleepSessionValues.sleepDuration) / 60 = \(viewModel.tripValues.intervalUntilRest)"
-                            )
-                            
-                            titleValueCell(
-                                title: "Driving time before rest",
-                                value: "\(viewModel.tripValues.intervalUntilRest)",
+                                title: "Trip time before rest",
+                                value: "\(viewModel.tripTimeBeforeRest.formattedTime())",
                                 valueColor: .white,
                                 highlighted: true,
                                 highlightedColor: .teal
                             )
-                            
-                            Text(
-                                "Rest should start \(viewModel.tripValues.intervalUntilRest) after the trip started."
-                            )
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .multilineTextAlignment(.center)
-                            .padding(8)
-                            .fontWeight(.bold)
-                            .foregroundColor(.orange)
-                            */
 
                             Divider()
 
                             titleValueCell(
                                 title: "Trip elapsed time",
-                                value: "\(viewModel.elapsedTime)"
+                                value: "\(viewModel.elapsedTime.verboseTimeString(includeSeconds: true))"
                             )
-
-                            titleValueCell(
-                                title: "Current date",
-                                value: Date().dateTimeString(withFormat: .readableMilitary)
-                            )
-
-
-                            Divider()
-                            /*
-                            titleValueCell(
-                                title: "Rest should start in",
-                                value: viewModel.tripValues.realTimeIntervalUntilRest
-                            )
-                            
-                            titleValueCell(
-                                title: "Rest date",
-                                value: viewModel.tripValues.restDate
-                            )
-                            */
                         }
                         
                         HStack {

@@ -22,7 +22,6 @@
 		4DF91DDE2C4839DD00C28E55 /* DateIntervalCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DDD2C4839DD00C28E55 /* DateIntervalCalculations.swift */; };
 		4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE12C483A8400C28E55 /* Date+Extensions.swift */; };
 		4DF91DE52C483AE000C28E55 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */; };
-		4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */; };
 		4DF91DF02C499CA400C28E55 /* HealthDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */; };
 		4DF91DF22C499CB300C28E55 /* HealthDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */; };
 		FF34597F2C6FC07D0019A068 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF34597E2C6FC07D0019A068 /* Color+Extensions.swift */; };
@@ -91,7 +90,6 @@
 		4DF91DDD2C4839DD00C28E55 /* DateIntervalCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIntervalCalculations.swift; sourceTree = "<group>"; };
 		4DF91DE12C483A8400C28E55 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
-		4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		4DF91DEF2C499CA400C28E55 /* HealthDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataView.swift; sourceTree = "<group>"; };
 		4DF91DF12C499CB300C28E55 /* HealthDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataViewModel.swift; sourceTree = "<group>"; };
 		FF34597E2C6FC07D0019A068 /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 			children = (
 				FF34597E2C6FC07D0019A068 /* Color+Extensions.swift */,
 				4D6DAF1B2C767F04008B8FE5 /* View */,
-				4DF91DE62C483AFD00C28E55 /* String */,
 				4DF91DE32C483AD300C28E55 /* Numeric */,
 				4DF91DE02C483A7800C28E55 /* Date */,
 			);
@@ -250,14 +247,6 @@
 				4DF91DE42C483AE000C28E55 /* TimeInterval+Extensions.swift */,
 			);
 			path = Numeric;
-			sourceTree = "<group>";
-		};
-		4DF91DE62C483AFD00C28E55 /* String */ = {
-			isa = PBXGroup;
-			children = (
-				4DF91DE72C483B0A00C28E55 /* String+Localizable.swift */,
-			);
-			path = String;
 			sourceTree = "<group>";
 		};
 		4DF91DEE2C499C8C00C28E55 /* Views */ = {
@@ -424,7 +413,6 @@
 				4DF91DE22C483A8400C28E55 /* Date+Extensions.swift in Sources */,
 				FFDE755E2C6A9E80005E90D0 /* HealthAppButton.swift in Sources */,
 				4DF91DD92C48397B00C28E55 /* JSONDecodable.swift in Sources */,
-				4DF91DE82C483B0A00C28E55 /* String+Localizable.swift in Sources */,
 				FF68E0EE2C7D63EF00573536 /* ButtonCapsuleStyle.swift in Sources */,
 				FF34597F2C6FC07D0019A068 /* Color+Extensions.swift in Sources */,
 				FFDE75602C6A9E80005E90D0 /* EmptyStateValues.swift in Sources */,

@@ -21,12 +21,13 @@ class HealthDataViewModel {
     private let healthProvider = HealthDataProvider()
     private var cancellables = Set<AnyCancellable>()
 
-    // Publlishers
+    // Publishers
     var isRefreshing: Bool = true
     var tripTimeBeforeRest: Double = 0
     var elapsedTime: Double = 0
     var restNow: Bool = false
     var errorType: DaciaHealthError? = nil
+    var startTripDate = Date()
 
     // Trip
     var canStartTrip: Bool = false
@@ -50,39 +51,38 @@ class HealthDataViewModel {
     // MARK: - Bindings
     private func setupBindings() {
         healthProvider.tripTimeBeforeRest
-            .sink { time in
-                print("tiempo para descansar: ", time)
+            .sink { [weak self] time in
+                print("tiempo para descansar: ", time.formattedTime())
                 guard !time.isZero else {
-                    self.canStartTrip = false
+                    self?.canStartTrip = false
                     return
                 }
 
-                self.canStartTrip = true
-                self.tripTimeBeforeRest = time
+                self?.canStartTrip = true
+                self?.tripTimeBeforeRest = time
             }
             .store(in: &cancellables)
 
         healthProvider.tripElapsedTime
-            .sink { time in
-                print("Elapsed time: ", time)
-                self.elapsedTime = time
-                self.tripStatus = .running
-                self.refreshTripPublishedValues()
+            .sink { [weak self] time in
+                self?.elapsedTime = time
+                self?.tripStatus = .running
+                self?.refreshTripPublishedValues()
             }
             .store(in: &cancellables)
 
         healthProvider.restNow
-            .sink {
-                self.restNow = true
-                self.tripStatus = .completed
-                self.refreshTripPublishedValues()
+            .sink { [weak self] in
+                self?.restNow = true
+                self?.tripStatus = .completed
+                self?.refreshTripPublishedValues()
             }
             .store(in: &cancellables)
 
         healthProvider.healthDataProviderError
-            .sink { error in
+            .sink { [weak self] error in
                 print(error.message)
-                self.errorType = error
+                self?.errorType = error
             }
             .store(in: &cancellables)
 
@@ -101,26 +101,19 @@ class HealthDataViewModel {
     // MARK: - Trip
     func toggleTrip() {
         if tripStatus == .none {
+            startTripDate = Date()
             healthProvider.startTrip()
         } else {
             healthProvider.stopTrip()
+
+            tripStatus = .none
+            tripTimeBeforeRest = 0
+            elapsedTime = 0
         }
 
         refreshTripPublishedValues()
     }
-/*
-    private func refreshTripInfo() {
-        self.tripValues = TripPrettyPrintValues(
-            startDate: self.currentTrip.startDatePretty,
-            restDate: self.currentTrip.restDatePretty,
-            elapsedTime: self.currentTrip.elapsedTimePretty,
-            intervalUntilRest: self.currentTrip.intervalUntilRestPretty,
-            realTimeIntervalUntilRest: self.currentTrip.realTimeIntervalUntilRestPretty
-        )
 
-        refreshTripPublishedValues()
-    }
- */
     private func refreshTripPublishedValues() {
         switch tripStatus {
         case .running:
