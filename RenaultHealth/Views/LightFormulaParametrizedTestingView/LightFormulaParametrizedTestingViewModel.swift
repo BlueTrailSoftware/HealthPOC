@@ -39,7 +39,9 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
         }
     }
     @Published var wakeupHourToday: String = ""
-    @Published var sleepHoursInTheLastDays: [Int] = [8, 8, 8, 8, 8, 8, 8]
+    @Published var sleepDurations: [String] = ["8", "8", "8", "8", "8", "8", "8"]
+    
+//    @Published var sleepDurations: [Double] = [8, 8, 8, 8, 8, 8, 8]
     
     @Published var results: [LightFormulaParametrizedResultItem] = []
     
@@ -75,10 +77,10 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
         resetAllSleepHistoryTo(value: 8)
     }
     
-    func resetAllSleepHistoryTo(value: Int) {
+    func resetAllSleepHistoryTo(value: TimeInterval) {
         
-        for i in 0 ..< sleepHoursInTheLastDays.count {
-            sleepHoursInTheLastDays[i] = value
+        for i in 0 ..< sleepDurations.count {
+            sleepDurations[i] = "\(value)"
         }
     }
     
@@ -96,18 +98,13 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
     
     private func fetchSleepHistoryFromHK() {
         
-        sleepDataSource.fetchSleepSessions(
-            forPastDays: 7
-        ) {
-                
+        TripDurationCalculator().fetchSleepHistory(
+            to: Date()
+        ) { durations in
+            
             DispatchQueue.main.async {
-                
-                let durations = self.sleepDataSource.lastSleepSessions(sessionCount: 7).map { Int($0.totalSleepDuration / 3600)
-                }
-                
-                for i in 0 ..< self.sleepHoursInTheLastDays.count {   
-                    let newValue = durations.count > i ? durations[i] : 0
-                    self.sleepHoursInTheLastDays[self.sleepHoursInTheLastDays.count - 1 - i] = newValue
+                self.sleepDurations = durations.map{
+                    String(format: "%.2f", $0)
                 }
             }
         }
@@ -136,10 +133,14 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
         // calculateSafeDriving
         let lightFormula = LightFormula(parameters: params)
         
+        let sleepHistory = sleepDurations.map {
+            Double($0) ?? 0
+        }
+        
         var res: [Int: Double] = [:]
         for currentTime in startTimes {
             res[currentTime] = lightFormula.calculateSafeDrivingTime(
-                lastSleepHours: sleepHoursInTheLastDays.map{ Double($0) },
+                lastSleepHours: sleepHistory,
                 hoursAwake: currentTime - wakeUpHour,
                 currentHour: currentTime
             )

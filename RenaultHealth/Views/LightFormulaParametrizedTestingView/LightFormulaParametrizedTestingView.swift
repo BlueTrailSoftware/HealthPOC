@@ -227,17 +227,17 @@ struct LightFormulaParametrizedTestingView: View {
                     
                     VStack {
                         
-                        ForEach(0 ..< viewModel.sleepHoursInTheLastDays.count, id: \.self) { i in
+                        ForEach(0 ..< viewModel.sleepDurations.count, id: \.self) { i in
                             
                             HStack {
                                 
-                                Text("\(viewModel.sleepHoursInTheLastDays.count - i - 1) sleeps ago:")
+                                Text("\(viewModel.sleepDurations.count - i - 1) sleeps ago:")
                                     .padding(.leading, 16)
                                     .opacity(0.6)
                                 
                                 hourPicker(
-                                    value: $viewModel.sleepHoursInTheLastDays[i],
-                                    text:"\(viewModel.sleepHoursInTheLastDays[i])"
+                                    value: $viewModel.sleepDurations[i],
+                                    text:viewModel.sleepDurations[i]
                                 )
                                 .frame(width: 64)
                             }
@@ -384,7 +384,7 @@ struct LightFormulaParametrizedTestingView: View {
     
     @ViewBuilder
     private func hourPicker(
-        value: Binding<Int>,
+        value: Binding<String>,
         text: String
     ) -> some View {
         
@@ -400,7 +400,7 @@ struct LightFormulaParametrizedTestingView: View {
                 .font(.title3)
                 .foregroundColor(.black)
         }
-        .contentShape(Rectangle())
+        //.contentShape(Rectangle())
         .frame(height: 44)
         .frame(maxWidth: .infinity)
         .background(.white)

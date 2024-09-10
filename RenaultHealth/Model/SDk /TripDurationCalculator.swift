@@ -31,8 +31,12 @@ class TripDurationCalculator {
         
         self.onError = onError
         
+        let date = Date()
+        
         // 1. Sleep for the previous weeks
-        fetchSleepHistoryFromHK { sleepHistory in
+        fetchSleepHistory(
+            to: date
+        ) { sleepHistory in
             
             // No sleep data could be fetched
             // NOTE: This could mean no HealthKit permissions have been granted so the HK data is unacessible.
@@ -61,14 +65,33 @@ class TripDurationCalculator {
     
     // MARK: - Healthkit
     
-    private func fetchSleepHistoryFromHK(
-        completion: (([Int]) -> Void)?
+    func fetchSleepHistory(
+        to date: Date,
+        completion: (([TimeInterval]) -> Void)?
     ) {
+        
         sleepDataSource.fetchSleepSessions(
-            forPastDays: 8
+            from: date.modifyDateBy(days: -8),
+            to: date
         ) {
+            
+            var durations: [TimeInterval] = []
+            var upperDate: Date = date
+            for _ in 0 ..< 7 {
+                
+                let lowerDate = upperDate.modifyDateBy(hours: -24)
+                
+                let dayDuration = self.sleepDataSource.totalSleepDuration(
+                    within: lowerDate ... upperDate
+                )
+                durations.append(dayDuration / 3600)
+                
+                print("fetchSleepHistory : \(lowerDate) ::: \(upperDate) ::: \(dayDuration)")
+                
+                upperDate = lowerDate
+            }
+            
             DispatchQueue.main.async {
-                let durations = self.sleepDataSource.lastSleepSessions(sessionCount: 7).map { Int($0.totalSleepDuration / 3600)}
                 completion?(durations.reversed())
             }
         }
@@ -98,7 +121,7 @@ class TripDurationCalculator {
     
     private func calculateLightFormula(
         startDate: Date,
-        sleepHistory: [Int]
+        sleepHistory: [TimeInterval]
     ) -> Double? {
         
         // 2. hours awake
