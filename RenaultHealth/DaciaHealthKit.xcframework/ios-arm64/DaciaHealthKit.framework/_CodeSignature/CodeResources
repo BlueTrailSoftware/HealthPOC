@@ -14,7 +14,7 @@
 		</data>
 		<key>Modules/DaciaHealthKit.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		bGBqAUiBdKAi8WN2+LTKIWrgfU0=
+		2WOsSIRGOePLLaO56jYdZz1oJo8=
 		</data>
 		<key>Modules/DaciaHealthKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/DaciaHealthKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		XAsYAUyGtbcePvFJF7/9ZufOSBE=
+		nNhPcU32bUGa+I9i4+3X1rPj72Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,7 +50,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OspXi076oz3Ng34dzScH64Dhfr1wzBb6BvdxqFN9Vls=
+			d1deslmbMVKIAqfwzRFoLrkr8qqOpviu1d/vhIF52YA=
 			</data>
 		</dict>
 		<key>Modules/DaciaHealthKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -78,7 +78,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TS8bV/QoB6naFAZtz+pdY0IexBxKiDcCoVQ2Mn3E//E=
+			azBFcB/3z+xjmy1+pAbov7//uRFvnyZOaCuPPRPYkc8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

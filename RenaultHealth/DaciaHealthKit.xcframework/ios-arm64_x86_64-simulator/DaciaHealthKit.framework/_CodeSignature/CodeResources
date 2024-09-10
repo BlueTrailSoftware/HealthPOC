@@ -14,7 +14,7 @@
 		</data>
 		<key>Modules/DaciaHealthKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		bGBqAUiBdKAi8WN2+LTKIWrgfU0=
+		2WOsSIRGOePLLaO56jYdZz1oJo8=
 		</data>
 		<key>Modules/DaciaHealthKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/DaciaHealthKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		QU024oJXoPkkdndqaqjo1oouT1A=
+		ObjKbbV6Im9z1x3GxyXqvAWbD+I=
 		</data>
 		<key>Modules/DaciaHealthKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		bGBqAUiBdKAi8WN2+LTKIWrgfU0=
+		2WOsSIRGOePLLaO56jYdZz1oJo8=
 		</data>
 		<key>Modules/DaciaHealthKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/DaciaHealthKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		13NXywxX8UWjTfhsa+KaCG5FNLY=
+		UqNLITRAVrbxKYT8/9EJj6qwLXQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,7 +70,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OspXi076oz3Ng34dzScH64Dhfr1wzBb6BvdxqFN9Vls=
+			d1deslmbMVKIAqfwzRFoLrkr8qqOpviu1d/vhIF52YA=
 			</data>
 		</dict>
 		<key>Modules/DaciaHealthKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -98,14 +98,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dkVSm2FBYwRjgm9JudaY18nJO/vDUSu3fu+8XpzAQ7s=
+			O3l0thgu1I9HUAJUFLYRYFEwGO9Ca1OjLB2BKy8MYQU=
 			</data>
 		</dict>
 		<key>Modules/DaciaHealthKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OspXi076oz3Ng34dzScH64Dhfr1wzBb6BvdxqFN9Vls=
+			d1deslmbMVKIAqfwzRFoLrkr8qqOpviu1d/vhIF52YA=
 			</data>
 		</dict>
 		<key>Modules/DaciaHealthKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -133,7 +133,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XlxwTrAzzvTrDIUvfd3FT9/oPmKKgnFb0hMBUFKXxXs=
+			EbnJeYc4nMwcLorRlC5Q0AOsz2Ep/PqUNrD1pXCQKz0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
