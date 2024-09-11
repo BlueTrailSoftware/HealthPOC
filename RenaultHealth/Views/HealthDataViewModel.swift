@@ -52,7 +52,7 @@ class HealthDataViewModel {
     private func setupBindings() {
         healthProvider.tripTimeBeforeRest
             .sink { [weak self] time in
-                print("tiempo para descansar: ", time.formattedTime())
+                print("* * Time Before Rest -> ", time.formattedTime())
                 guard !time.isZero else {
                     self?.canStartTrip = false
                     return
