@@ -89,7 +89,7 @@ class LightFormula {
     // Result is resturned in seconds
     func timeBeforeTired(
         alertnessLevel: Double,
-        threshold: Double = 7
+        threshold: Double = 5
     ) -> Double {
         if alertnessLevel <= threshold {
             return 0
