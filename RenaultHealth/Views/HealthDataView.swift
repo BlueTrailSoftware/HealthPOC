@@ -230,7 +230,8 @@ struct HealthDataView: View {
                                 .resizable()
                                 .frame(width: 100, height: 100)
                                 .foregroundStyle(.red)
-                            
+                                .symbolEffect(.pulse)
+
                             Text(error.message)
                                 .font(.title3)
                                 .foregroundStyle(.black)
@@ -241,8 +242,9 @@ struct HealthDataView: View {
                                 .resizable()
                                 .frame(width: 100, height: 100)
                                 .foregroundStyle(.red)
+                                .symbolEffect(.pulse)
 
-                            Text("You are not able to drive")
+                            Text("You cannot drive")
                                 .font(.title)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                                 .multilineTextAlignment(.center)
