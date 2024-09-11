@@ -274,37 +274,18 @@ struct LightFormulaParametrizedTestingView: View {
         VStack {
             HStack {
                 sectionHeader(
-                    title: "Results",
-                    subtitle: "Showing the safe driving time for every two hours after the wake up hour."
+                    title: "Result",
+                    subtitle: "Result for the current date"
                 )
             }
             
-            ForEach(viewModel.results, id: \.self) { value in
-                HStack {
-                    Text (
-                        value.title
-                    )
-                    .font(.system(size: 16))
-                    .fontWeight(.bold)
-                    .opacity(0.4)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    
-                    Circle()
-                        .frame(width: 22)
-                        .foregroundColor(value.color)
-                    
-                    Text (
-                        value.value
-                    )
-                    .font(.system(size: 16))
-                    
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .frame(height: 32)
-                    .foregroundColor(.black.opacity(0.5))
-                }
-                .frame(maxWidth: .infinity)
-                .cornerRadius(4)
-            }
+            Text (
+                viewModel.lightFormulaResult
+            )
+            .font(.system(size: 32))
+            .fontWeight(.bold)
+            .opacity(0.4)
+            .frame(maxWidth: .infinity, alignment: .trailing)
         }
         .frame(maxWidth: .infinity)
     }

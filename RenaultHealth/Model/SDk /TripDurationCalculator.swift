@@ -133,7 +133,7 @@ class TripDurationCalculator {
         return intervalSinceLastSleep / 3600
     }
     
-    private func calculateLightFormula(
+    func calculateLightFormula(
         startDate: Date,
         sleepHistory: [TimeInterval]
     ) -> Double? {
