@@ -22,7 +22,6 @@ struct LightFormulaParametrizedResultItem: Hashable {
 }
 
 class LightFormulaParametrizedTestingViewModel: ObservableObject {
-    @Published var test: String = ""
     
     @Published var decayConstant: String = ""
     @Published var lowAsymptote: String = ""
@@ -38,9 +37,10 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
             refreshSleepHistory()
         }
     }
-    @Published var wakeupHourToday: String = ""
-    @Published var sleepHoursInTheLastDays: [Int] = [8, 8, 8, 8, 8, 8, 8]
-    
+    @Published var wakeupHourToday: String = "7"
+    @Published var sleepDurations: [String] = ["8", "8", "8", "8", "8", "8", "8"]
+        
+    @Published var lightFormulaResult: String = ""
     @Published var results: [LightFormulaParametrizedResultItem] = []
     
     // HealthKit
@@ -69,17 +69,16 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
         self.circadianAmplitude = "\(defaultValues.circadianAmplitude)"
         self.circadianAcrophase = "\(defaultValues.circadianAcrophase)"
         self.maxSafetyTime = "\(defaultValues.maxSafetyTime)"
-        self.wakeupHourToday = "\(defaultValues.wakeupHourToday)"
     }
     
     func resetSleepHistory() {
         resetAllSleepHistoryTo(value: 8)
     }
     
-    func resetAllSleepHistoryTo(value: Int) {
+    func resetAllSleepHistoryTo(value: TimeInterval) {
         
-        for i in 0 ..< sleepHoursInTheLastDays.count {
-            sleepHoursInTheLastDays[i] = value
+        for i in 0 ..< sleepDurations.count {
+            sleepDurations[i] = "\(value)"
         }
     }
     
@@ -96,18 +95,14 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
     }
     
     private func fetchSleepHistoryFromHK() {
-        sleepDataSource.fetchSleepSessions(
-            forPastDays: 7
-        ) {
-                
+        
+        TripDurationCalculator().fetchSleepHistory(
+            to: Date()
+        ) { durations in
+            
             DispatchQueue.main.async {
-                
-                let durations = self.sleepDataSource.lastSleepSessions(sessionCount: 7).map { Int($0.totalSleepDuration / 3600)
-                }
-                
-                for i in 0 ..< self.sleepHoursInTheLastDays.count {   
-                    let newValue = durations.count > i ? durations[i] : 0
-                    self.sleepHoursInTheLastDays[self.sleepHoursInTheLastDays.count - 1 - i] = newValue
+                self.sleepDurations = durations.map{
+                    String(format: "%.2f", $0)
                 }
             }
         }
@@ -124,34 +119,28 @@ class LightFormulaParametrizedTestingViewModel: ObservableObject {
             initialSleepPressure: Double(initialSleepPressure) ?? 0,
             circadianAmplitude: Double(circadianAmplitude) ?? 0,
             circadianAcrophase: Double(circadianAcrophase) ?? 0,
-            maxSafetyTime: Double(maxSafetyTime) ?? 0,
-            wakeupHourToday: Double(wakeupHourToday) ?? 0
+            maxSafetyTime: Double(maxSafetyTime) ?? 0
         )
         
         // Start times
-        let startTimes: [Int] = [7, 9, 11, 13, 15, 17, 19, 21, 23].filter { i in
-            i >= Int(params.wakeupHourToday)
+        let wakeUpHour = Int(wakeupHourToday) ?? 7
+        let sleepHistory = sleepDurations.map {
+            Double($0) ?? 0
         }
         
         // calculateSafeDriving
-        let res = LightFormula(
-            parameters: params
-        ).calculateSafeDriving(
-            startTimes: startTimes,
-            sleepData: sleepHoursInTheLastDays.map{ Double($0) }
+        let currentTime = Date().hourOfDate
+        let res = LightFormula(parameters: params).calculateSafeDrivingTime(
+            lastSleepHours: sleepHistory,
+            hoursAwake: currentTime - wakeUpHour,
+            currentHour: currentTime
         )
         
-        // Parse results for display
-        self.results = res.map{ key, value in
-            LightFormulaParametrizedResultItem(
-                dayNumber: key,
-                title: "\(key)",
-                value: String(format: "%.2f", value),
-                color: value > 6 ? .green : value > 4 ? .orange : value == 0 ? .red : .yellow
-            )
-        }.sorted(by: { $0.dayNumber < $1.dayNumber })
-        
-        print("calculateLightFormula results: \(res as AnyObject)")
-        print("calculateLightFormula results: \(results as AnyObject)")
+        let (h,m,_) = secondsToHoursMinutesSeconds(Int(res))
+        self.lightFormulaResult = "\(h) Hours, \(m) Minutes"
+    }
+    
+    private func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
 }

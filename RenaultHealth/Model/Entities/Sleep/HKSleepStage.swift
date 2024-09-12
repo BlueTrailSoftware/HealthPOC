@@ -37,7 +37,7 @@ struct HKSleepStage: JSONDecodable {
                     )
                 ]
             ).verboseTimeString(),
-            highlight: sleepAnalysis == .asleepCore || sleepAnalysis == .asleepREM || sleepAnalysis == .asleepDeep
+            highlight: sleepAnalysis == .asleepCore || sleepAnalysis == .asleepREM || sleepAnalysis == .asleepDeep || sleepAnalysis == .asleepUnspecified
         )
     }
 

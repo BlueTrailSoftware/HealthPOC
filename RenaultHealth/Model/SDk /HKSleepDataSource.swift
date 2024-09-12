@@ -43,6 +43,54 @@ class HKSleepDataSource {
         return Array(sorted.prefix(sessionCount))
     }
     
+    func sessions(
+        within dates: ClosedRange<Date>
+    ) -> [HKSleepSession] {
+
+        return sleepSessions.filter {
+            guard let start = $0.startingDate, let end = $0.endDate else {
+                return false
+            }
+            
+            return dates.contains(start) || dates.contains(end)
+        }
+    }
+    
+    func totalSleepDuration(
+        within dates: ClosedRange<Date>
+    ) -> TimeInterval {
+
+        let sessions = sessions(within: dates)
+        
+        var totalDuration: TimeInterval = 0
+        sessions.forEach {
+            if 
+                let start = $0.startingDate,
+                let end = $0.endDate
+            {
+                print("totalSleepDuration : \(start) ::: \(end)")
+                if dates.contains(start) && dates.contains(end) {
+                    // Sleep session is fully contained in range
+                    print("// Sleep session is fully contained in range")
+                    totalDuration += $0.totalSleepDuration
+                } else if dates.contains(start) {
+                    // Sleep session is partially contained in range
+                    // Sleep session only starts within range
+                    totalDuration += dates.upperBound.timeIntervalSince(start)
+                    print("// Sleep session only starts within range : \(dates.upperBound.timeIntervalSince(start))")
+                } else if dates.contains(end) {
+                    // Sleep session is partially contained in range
+                    // Sleep session only ends within range
+                    
+                    totalDuration += end.timeIntervalSince(dates.lowerBound)
+                    print("// Sleep session only ends within range : \(end.timeIntervalSince(dates.lowerBound))")
+                }
+            }
+        }
+        
+        return totalDuration
+    }
+    
     // MARK: Sleep stages
     
     func fetchSleepStages (
@@ -123,7 +171,7 @@ class HKSleepDataSource {
     
     // MARK: Fetch sleep sessions
     
-    private func fetchSleepSessions(
+    func fetchSleepSessions(
         from startDate: Date,
         to endDate: Date,
         completion: (() -> Void)?
@@ -137,6 +185,7 @@ class HKSleepDataSource {
                 let sleepSegments = sleepSegments,
                 !sleepSegments.isEmpty
             else {
+                self.sleepSessions = []
                 completion?()
                 return
             }
@@ -144,19 +193,6 @@ class HKSleepDataSource {
             self.sleepSessions = self.arrangeSleepSessions(from: sleepSegments)
             completion?()
         }
-    }
-    
-    func fetchSleepSessions(
-        forPastDays: Int,
-        since: Date = Date(),
-        completion: (() -> Void)?
-    ) {
-        
-        fetchSleepSessions(
-            from: since.startOfDay.modifyDateBy(days: -forPastDays),
-            to: since,
-            completion: completion
-        )
     }
     
     func refreshSleepSessions(
@@ -207,7 +243,7 @@ class HKSleepDataSource {
             
             var segmentsAreWithinOneHour: Bool = true
             if let lastEndingDate = currentSession.endDate {
-                segmentsAreWithinOneHour = segment.startDate.timeIntervalSince(lastEndingDate) <= 3600
+                segmentsAreWithinOneHour = segment.startDate.timeIntervalSince(lastEndingDate) <= 3600 * 1
             }
             
             // add segment to curr session if it starts within the session's last ending date

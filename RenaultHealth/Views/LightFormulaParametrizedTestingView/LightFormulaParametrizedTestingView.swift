@@ -83,8 +83,10 @@ struct LightFormulaParametrizedTestingView: View {
             }
         }
         .onAppear {
-            viewModel.resetAllValues()
-            viewModel.calculateLightFormula()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                viewModel.resetAllValues()
+                viewModel.calculateLightFormula()
+            }
         }
         .background (
             LinearGradient(gradient: Gradient(colors: [
@@ -225,17 +227,17 @@ struct LightFormulaParametrizedTestingView: View {
                     
                     VStack {
                         
-                        ForEach(0 ..< viewModel.sleepHoursInTheLastDays.count, id: \.self) { i in
+                        ForEach(0 ..< viewModel.sleepDurations.count, id: \.self) { i in
                             
                             HStack {
                                 
-                                Text("\(viewModel.sleepHoursInTheLastDays.count - i - 1) nights ago:")
+                                Text("\(viewModel.sleepDurations.count - i - 1) sleeps ago:")
                                     .padding(.leading, 16)
                                     .opacity(0.6)
                                 
                                 hourPicker(
-                                    value: $viewModel.sleepHoursInTheLastDays[i],
-                                    text:"\(viewModel.sleepHoursInTheLastDays[i])"
+                                    value: $viewModel.sleepDurations[i],
+                                    text:viewModel.sleepDurations[i]
                                 )
                                 .frame(width: 64)
                             }
@@ -272,37 +274,18 @@ struct LightFormulaParametrizedTestingView: View {
         VStack {
             HStack {
                 sectionHeader(
-                    title: "Results",
-                    subtitle: "Showing the safe driving time for every two hours after the wake up hour."
+                    title: "Result",
+                    subtitle: "Result for the current date"
                 )
             }
             
-            ForEach(viewModel.results, id: \.self) { value in
-                HStack {
-                    Text (
-                        value.title
-                    )
-                    .font(.system(size: 16))
-                    .fontWeight(.bold)
-                    .opacity(0.4)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    
-                    Circle()
-                        .frame(width: 22)
-                        .foregroundColor(value.color)
-                    
-                    Text (
-                        value.value
-                    )
-                    .font(.system(size: 16))
-                    
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .frame(height: 32)
-                    .foregroundColor(.black.opacity(0.5))
-                }
-                .frame(maxWidth: .infinity)
-                .cornerRadius(4)
-            }
+            Text (
+                viewModel.lightFormulaResult
+            )
+            .font(.system(size: 32))
+            .fontWeight(.bold)
+            .opacity(0.4)
+            .frame(maxWidth: .infinity, alignment: .trailing)
         }
         .frame(maxWidth: .infinity)
     }
@@ -382,7 +365,7 @@ struct LightFormulaParametrizedTestingView: View {
     
     @ViewBuilder
     private func hourPicker(
-        value: Binding<Int>,
+        value: Binding<String>,
         text: String
     ) -> some View {
         
@@ -398,7 +381,7 @@ struct LightFormulaParametrizedTestingView: View {
                 .font(.title3)
                 .foregroundColor(.black)
         }
-        .contentShape(Rectangle())
+        //.contentShape(Rectangle())
         .frame(height: 44)
         .frame(maxWidth: .infinity)
         .background(.white)
